@@ -41,7 +41,7 @@ export default function HeroSection() {
   }, [text, index, isDeleting]);
 
   return (
-    <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[calc(60vh-50px)] flex items-center justify-center overflow-hidden pt-0">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/40 to-black animate-[gradientShift_10s_ease_infinite]" />
 
@@ -53,7 +53,51 @@ export default function HeroSection() {
 
       <Stars />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+      {/* Bottom Circular Design */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none">
+        {/* Main Circle */}
+        <div className="relative w-full h-32">
+          {/* Gradient Circle */}
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[150%] h-32 rounded-t-full bg-gradient-to-t from-purple-600/20 via-purple-600/10 to-transparent blur-xl" />
+
+          {/* Multiple Circular Rings */}
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[120%] h-24 rounded-t-full border-t-2 border-purple-500/30 animate-pulse-slow" />
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[140%] h-28 rounded-t-full border-t border-purple-400/20 animate-spin-slow" />
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[160%] h-32 rounded-t-full border-t border-purple-500/10 animate-spin-slow-reverse" />
+
+          {/* Glowing Orbs */}
+          <div className="absolute bottom-0 left-[10%] w-4 h-4 rounded-full bg-purple-500 shadow-lg shadow-purple-500/50 animate-float" />
+          <div className="absolute bottom-0 left-[25%] w-2 h-2 rounded-full bg-purple-400 shadow-lg shadow-purple-400/50 animate-float-delay" />
+          <div className="absolute bottom-0 left-[40%] w-3 h-3 rounded-full bg-purple-600 shadow-lg shadow-purple-600/50 animate-float" />
+          <div className="absolute bottom-0 left-[55%] w-2 h-2 rounded-full bg-purple-300 shadow-lg shadow-purple-300/50 animate-float-delay" />
+          <div className="absolute bottom-0 left-[70%] w-4 h-4 rounded-full bg-purple-500 shadow-lg shadow-purple-500/50 animate-float" />
+          <div className="absolute bottom-0 left-[85%] w-3 h-3 rounded-full bg-purple-400 shadow-lg shadow-purple-400/50 animate-float-delay" />
+          <div className="absolute bottom-0 left-[95%] w-2 h-2 rounded-full bg-purple-600 shadow-lg shadow-purple-600/50 animate-float" />
+
+          {/* Center Large Glow */}
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-40 h-20 rounded-t-full bg-gradient-to-t from-purple-500/30 to-transparent blur-2xl" />
+        </div>
+
+        {/* Animated Waves */}
+        <svg
+          className="absolute bottom-0 left-0 w-full h-20"
+          preserveAspectRatio="none"
+          viewBox="0 0 1440 120"
+        >
+          <path
+            d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+            fill="rgba(147, 51, 234, 0.15)"
+            className="animate-wave"
+          />
+          <path
+            d="M0,96L80,90.7C160,85,320,75,480,80C640,85,800,107,960,106.7C1120,107,1280,96,1360,90.7L1440,85L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+            fill="rgba(139, 92, 246, 0.1)"
+            className="animate-wave-delay"
+          />
+        </svg>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* LEFT */}
           <div className="text-center lg:text-left">
@@ -93,7 +137,7 @@ export default function HeroSection() {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start animate-slideUp delay-300">
               <Link href="/work">
-                <button className="px-6 py-2.5 rounded-full text-white bg-gradient-to-r from-purple-600 to-purple-800 hover:scale-105 transition">
+                <button className="px-6 py-2.5 rounded-full text-white bg-gradient-to-r from-purple-600 to-purple-800 hover:scale-105 transition shadow-lg shadow-purple-500/25">
                   View My Work →
                 </button>
               </Link>
@@ -104,27 +148,10 @@ export default function HeroSection() {
                 </button>
               </Link>
             </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mt-8 pt-6 border-t border-purple-500/20 animate-slideUp delay-500">
-              {[
-                ["50+", "Projects"],
-                ["30+", "Clients"],
-                ["4+", "Years"],
-              ].map(([num, label], i) => (
-                <div key={i} className="hover:scale-110 transition">
-                  <div className="text-xl font-bold text-purple-400">{num}</div>
-                  <div className="text-xs text-gray-400">{label}</div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* RIGHT */}
           <div className="relative group">
-            {/* Glow Border */}
-            <div className="absolute -inset-1 rounded-2xl blur opacity-30 group-hover:opacity-100 transition" />
-
             {/* Image */}
             <div className="relative rounded-2xl overflow-hidden">
               <Image
@@ -132,22 +159,142 @@ export default function HeroSection() {
                 alt="Hero"
                 width={500}
                 height={400}
-                className="w-full h-auto object-cover rounded-2xl transition group-hover:scale-105"
+                className="w-full h-auto object-cover rounded-2xl transition group-hover:scale-105 duration-500"
                 priority
               />
-            </div>
-
-            {/* Floating Icons */}
-            <div className="absolute -top-4 -right-4 bg-purple-600/20 backdrop-blur rounded-lg p-2 border border-purple-400/30 animate-bounce">
-              ⚛️
-            </div>
-
-            <div className="absolute -bottom-4 -left-4 bg-purple-600/20 backdrop-blur rounded-lg p-2 border border-purple-400/30 animate-bounce delay-300">
-              🟢
             </div>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes gradientShift {
+          0%,
+          100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+
+        @keyframes wave {
+          0% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(-10px);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes spin-slow {
+          from {
+            transform: translateX(-50%) rotate(0deg);
+          }
+          to {
+            transform: translateX(-50%) rotate(360deg);
+          }
+        }
+
+        @keyframes spin-slow-reverse {
+          from {
+            transform: translateX(-50%) rotate(360deg);
+          }
+          to {
+            transform: translateX(-50%) rotate(0deg);
+          }
+        }
+
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+
+        .animate-fadeIn {
+          animation: fadeIn 0.8s ease-out;
+        }
+
+        .animate-slideUp {
+          animation: slideUp 0.6s ease-out forwards;
+          opacity: 0;
+        }
+
+        .animate-wave {
+          animation: wave 4s ease-in-out infinite;
+        }
+
+        .animate-wave-delay {
+          animation: wave 4s ease-in-out infinite reverse;
+        }
+
+        .animate-spin-slow {
+          animation: spin-slow 12s linear infinite;
+        }
+
+        .animate-spin-slow-reverse {
+          animation: spin-slow-reverse 15s linear infinite;
+        }
+
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-float-delay {
+          animation: float 3s ease-in-out infinite 1.5s;
+        }
+
+        .animate-pulse-slow {
+          animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+          0%,
+          100% {
+            opacity: 0.3;
+          }
+          50% {
+            opacity: 0.8;
+          }
+        }
+
+        .delay-200 {
+          animation-delay: 0.2s;
+        }
+        .delay-300 {
+          animation-delay: 0.3s;
+        }
+        .delay-500 {
+          animation-delay: 0.5s;
+        }
+      `}</style>
     </section>
   );
 }
