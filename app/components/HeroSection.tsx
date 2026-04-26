@@ -41,7 +41,7 @@ export default function HeroSection() {
   }, [text, index, isDeleting]);
 
   return (
-    <section className="relative min-h-[calc(60vh-50px)] flex items-center justify-center overflow-hidden pt-0">
+    <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden pt-">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/40 to-black animate-[gradientShift_10s_ease_infinite]" />
 
@@ -97,8 +97,8 @@ export default function HeroSection() {
         </svg>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-3 pt-1 pb-3 w-full">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* LEFT */}
           <div className="text-center lg:text-left">
             {/* Badge */}
@@ -151,14 +151,14 @@ export default function HeroSection() {
           </div>
 
           {/* RIGHT */}
-          <div className="relative group">
+          <div className="relative group mb-7 pb-5">
             {/* Image */}
             <div className="relative rounded-2xl overflow-hidden">
               <Image
                 src="/Hero.png"
                 alt="Hero"
-                width={500}
-                height={400}
+                width={300}
+                height={200}
                 className="w-full h-auto object-cover rounded-2xl transition group-hover:scale-105 duration-500"
                 priority
               />

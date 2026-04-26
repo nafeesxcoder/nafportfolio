@@ -23,7 +23,7 @@ export default function ServicesSection() {
         "Establish your online presence and attract more customers globally",
       price: "Starting from $499",
       delivery: "2-3 weeks",
-      image: "/services/business-website.png",
+      image: "/business.png",
     },
     {
       id: 2,
@@ -43,7 +43,7 @@ export default function ServicesSection() {
         "Sell your products worldwide with a secure and scalable online store",
       price: "Starting from $999",
       delivery: "4-6 weeks",
-      image: "/services/ecommerce.png",
+      image: "/ecommerce.png",
     },
     {
       id: 3,
@@ -58,7 +58,7 @@ export default function ServicesSection() {
         "Convert visitors into paying customers with high-performing landing pages",
       price: "Starting from $199",
       delivery: "1-2 weeks",
-      image: "/services/landing-page.png",
+      image: "/landing-page.png",
     },
     {
       id: 4,
@@ -78,7 +78,7 @@ export default function ServicesSection() {
         "Showcase your work professionally and attract global clients",
       price: "Starting from $349",
       delivery: "2-3 weeks",
-      image: "/services/portfolio.png",
+      image: "/portfolio.png",
     },
     {
       id: 5,
