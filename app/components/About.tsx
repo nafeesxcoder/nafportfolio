@@ -98,7 +98,7 @@ export default function About() {
               <div className="absolute w-[300px] h-[300px] rounded-full bg-gradient-to-r from-purple-600 to-pink-600 opacity-20 blur-2xl animate-pulse-slow" />
               <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-purple-500/30 group-hover:scale-105 transition-all duration-500">
                 <Image
-                  src="/about-image.png"
+                  src="/Hero.png"
                   alt="Nafees Ahmad"
                   width={256}
                   height={256}
