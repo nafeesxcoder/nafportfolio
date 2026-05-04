@@ -47,7 +47,7 @@ export default function ProjectsSection() {
         "Digital trade platform with smart contract integration and secure document exchange.",
       image: "/dtl.png",
       tech: ["Vue.js", "Django", "Web3", "Redis"],
-      liveLink: "https://dtl.example.com",
+      liveLink: "https://dtlparking.vercel.app/",
       color: "#f59e0b",
     },
   ];
