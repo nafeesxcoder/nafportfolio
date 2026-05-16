@@ -20,7 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    // ✅ Fixed: Added data-scroll-behavior attribute
+    <html lang="en" data-scroll-behavior="smooth">
       <head>
         <link
           rel="stylesheet"

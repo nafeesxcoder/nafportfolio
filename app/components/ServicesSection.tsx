@@ -313,10 +313,13 @@ export default function ServicesSection() {
               {/* Left Side - Full Cover Image (Reduced Height) */}
               <div className="relative h-[300px] lg:h-[400px] overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10 lg:bg-gradient-to-r" />
+
+                {/* ✅ FIXED: Added sizes prop to Image */}
                 <Image
                   src={currentService.image}
                   alt={currentService.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   priority
                 />
@@ -472,7 +475,11 @@ export default function ServicesSection() {
                 }`}
               >
                 <div
-                  className={`w-6 h-6 mx-auto rounded-lg flex items-center justify-center transition-all ${currentSlide === idx ? `bg-gradient-to-br ${service.gradient} scale-110` : "bg-white/10"}`}
+                  className={`w-6 h-6 mx-auto rounded-lg flex items-center justify-center transition-all ${
+                    currentSlide === idx
+                      ? `bg-gradient-to-br ${service.gradient} scale-110`
+                      : "bg-white/10"
+                  }`}
                 >
                   <i
                     className={`fas ${service.icon} text-[10px] ${
