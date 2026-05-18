@@ -135,22 +135,22 @@ export default function Header() {
         }`}
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
-          {/* LEFT SIDE - Logo First */}
+          {/* LEFT SIDE - Logo + Navigation */}
           <div className="flex items-center gap-8">
-            {/* LOGO - First */}
+            {/* LOGO */}
             <Link
               href="/"
-              className="group relative text-2xl font-bold tracking-tight z-50"
+              className="group relative flex items-center z-50"
               onClick={() => setIsMenuOpen(false)}
             >
-              <span className="bg-gradient-to-r from-white via-purple-300 to-purple-400 bg-clip-text text-transparent">
-                Nafees
-              </span>
-              <span className="text-[#b665f2]">.dev</span>
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#751f8c] to-[#b665f2] group-hover:w-full transition-all duration-500"></span>
+              <img
+                src="/logo1.png"
+                alt="Logo"
+                className="h-15 w-50 object-contain"
+              />
             </Link>
 
-            {/* Pages Navigation (No Icons) */}
+            {/* Pages Navigation */}
             <div className="hidden md:flex items-center gap-6">
               {navItems.map((item) => (
                 <Link
@@ -169,7 +169,7 @@ export default function Header() {
                 </Link>
               ))}
 
-              {/* SERVICES DROPDOWN - No Icons */}
+              {/* SERVICES DROPDOWN */}
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -212,7 +212,7 @@ export default function Header() {
             </div>
           </div>
 
-          {/* RIGHT SIDE - Hire Me Button + Social Icons */}
+          {/* RIGHT SIDE */}
           <div className="flex items-center gap-4">
             {/* Hire Me Button */}
             <Link href="/contact">
