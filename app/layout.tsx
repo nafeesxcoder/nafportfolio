@@ -15,7 +15,6 @@ export const metadata: Metadata = {
 
   keywords: [
     "Unique Web Layer",
-    "uniqueweblayer.com",
     "business website maker",
     "website development services",
     "website developer India",
@@ -48,7 +47,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Unique Web Layer - Web Development Agency",
+        alt: "Unique Web Layer",
       },
     ],
   },
@@ -66,6 +65,7 @@ export const metadata: Metadata = {
     follow: true,
   },
 
+  // ✅ FINAL FAVICON FIX (NO CONFLICT, ORIGINAL COLOR SAFE)
   icons: {
     icon: "/favicon.ico",
   },
@@ -77,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en">
       <head>
         {/* Font Awesome */}
         <link
@@ -88,13 +88,14 @@ export default function RootLayout({
         {/* Viewport */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        {/* SEO extra boost */}
+        {/* SEO */}
         <meta name="theme-color" content="#7c3aed" />
         <meta name="author" content="Unique Web Layer" />
       </head>
 
-      <body className={`${inter.className} custom-scrollbar antialiased`}>
+      <body className={`${inter.className} antialiased`}>
         <Stars />
+
         <div className="relative z-10">
           <Header />
           <main className="min-h-screen pt-20">{children}</main>
