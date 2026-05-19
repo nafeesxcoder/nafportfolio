@@ -146,7 +146,7 @@ export default function Header() {
               <img
                 src="/logo1.png"
                 alt="Logo"
-                className="h-15 w-50 object-contain"
+                className="h-13 w-45 object-contain"
               />
             </Link>
 
