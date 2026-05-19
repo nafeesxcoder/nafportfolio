@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { Stars } from "./components/Stars";
@@ -8,10 +9,12 @@ import { Stars } from "./components/Stars";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://uniqueweblayer.com"),
+
   title: "Unique Web Layer | Business Website Maker & Web Development Services",
 
   description:
-    "Unique Web Layer (uniqueweblayer.com) is a professional web development agency in India. We build business websites, e-commerce stores, landing pages, SaaS platforms, and custom MERN stack applications that are fast, SEO optimized, and high converting.",
+    "Unique Web Layer is a professional web development agency in India. We build business websites, e-commerce stores, landing pages, SaaS platforms, and custom MERN stack applications that are fast, SEO optimized, and high converting.",
 
   keywords: [
     "Unique Web Layer",
@@ -33,7 +36,16 @@ export const metadata: Metadata = {
   creator: "Unique Web Layer",
   publisher: "Unique Web Layer",
 
-  metadataBase: new URL("https://uniqueweblayer.com"),
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 
   openGraph: {
     title: "Unique Web Layer | Business Website Maker",
@@ -42,6 +54,7 @@ export const metadata: Metadata = {
     url: "https://uniqueweblayer.com",
     siteName: "Unique Web Layer",
     type: "website",
+
     images: [
       {
         url: "/og-image.png",
@@ -58,16 +71,6 @@ export const metadata: Metadata = {
     description:
       "Professional web development services using React, Node.js, Next.js & MERN Stack.",
     images: ["/og-image.png"],
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-  },
-
-  // ✅ FINAL FAVICON FIX (NO CONFLICT, ORIGINAL COLOR SAFE)
-  icons: {
-    icon: "/favicon.ico",
   },
 };
 
@@ -88,9 +91,12 @@ export default function RootLayout({
         {/* Viewport */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        {/* SEO */}
+        {/* Theme Color */}
         <meta name="theme-color" content="#7c3aed" />
-        <meta name="author" content="Unique Web Layer" />
+
+        {/* Favicon */}
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
       </head>
 
       <body className={`${inter.className} antialiased`}>
