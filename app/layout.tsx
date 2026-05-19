@@ -42,8 +42,8 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
+    icon: [{ url: "/favicon.ico" }, { url: "/favicon.png", type: "image/png" }],
+    shortcut: "/favicon.ico",
     apple: "/favicon.png",
   },
 
@@ -94,7 +94,8 @@ export default function RootLayout({
         {/* Theme Color */}
         <meta name="theme-color" content="#7c3aed" />
 
-        {/* Favicon */}
+        {/* Favicons */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
       </head>
