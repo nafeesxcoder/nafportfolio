@@ -17,8 +17,10 @@ export default function ServicesListPage() {
       path: "/services/business",
       icon: "fa-building",
       gradient: "from-cyan-500 to-blue-600",
-      desc: "Establish your online presence and attract more customers globally",
+      desc: "Establish your online presence and attract customers worldwide",
       features: ["Home Page", "About Us", "Services", "Contact Form"],
+      globalDesc:
+        "Professional business websites for companies in USA, UK, Canada, Australia, UAE & Europe",
     },
     {
       name: "E-Commerce Website",
@@ -32,6 +34,8 @@ export default function ServicesListPage() {
         "Payment Gateway",
         "Order Tracking",
       ],
+      globalDesc:
+        "Global e-commerce solutions with multi-currency support for international sellers",
     },
     {
       name: "Landing Page",
@@ -40,6 +44,7 @@ export default function ServicesListPage() {
       gradient: "from-orange-500 to-red-600",
       desc: "Convert visitors into paying customers with high-performing pages",
       features: ["Single Page", "CTA Buttons", "Lead Form", "Analytics Ready"],
+      globalDesc: "High-converting landing pages for global campaigns",
     },
     {
       name: "Portfolio Website",
@@ -53,6 +58,7 @@ export default function ServicesListPage() {
         "Contact Form",
         "Resume Download",
       ],
+      globalDesc: "Stunning portfolios that attract international clients",
     },
     {
       name: "Blog / Content Website",
@@ -61,6 +67,7 @@ export default function ServicesListPage() {
       gradient: "from-emerald-500 to-teal-600",
       desc: "Grow your audience and rank on Google with SEO-friendly blogs",
       features: ["Articles", "Categories", "Comments", "SEO Optimized"],
+      globalDesc: "SEO-optimized blogs that rank globally",
     },
     {
       name: "Booking / Appointment Website",
@@ -74,6 +81,7 @@ export default function ServicesListPage() {
         "Email Confirmation",
         "Availability Management",
       ],
+      globalDesc: "24/7 booking systems for global clients across time zones",
     },
     {
       name: "Education / LMS Website",
@@ -87,6 +95,7 @@ export default function ServicesListPage() {
         "Student Dashboard",
         "Quiz System",
       ],
+      globalDesc: "LMS platforms for educators worldwide",
     },
     {
       name: "Real Estate Website",
@@ -100,6 +109,8 @@ export default function ServicesListPage() {
         "Map Integration",
         "Agent Profiles",
       ],
+      globalDesc:
+        "Real estate portals for agents in USA, UK, Canada & Australia",
     },
     {
       name: "Restaurant / Food Website",
@@ -113,6 +124,7 @@ export default function ServicesListPage() {
         "Table Reservation",
         "Location Map",
       ],
+      globalDesc: "Restaurant websites with online ordering for global chains",
     },
     {
       name: "SaaS / Web App",
@@ -121,6 +133,7 @@ export default function ServicesListPage() {
       gradient: "from-purple-500 to-pink-600",
       desc: "Build scalable web applications with secure backend systems",
       features: ["User Login", "Dashboard", "API Integration", "Subscription"],
+      globalDesc: "Scalable SaaS platforms for startups worldwide",
     },
     {
       name: "Membership Website",
@@ -134,7 +147,20 @@ export default function ServicesListPage() {
         "Subscription Plans",
         "Member Dashboard",
       ],
+      globalDesc: "Membership sites with global payment support",
     },
+  ];
+
+  // Countries we serve
+  const countries = [
+    { name: "USA", flag: "🇺🇸", code: "US" },
+    { name: "UK", flag: "🇬🇧", code: "GB" },
+    { name: "Canada", flag: "🇨🇦", code: "CA" },
+    { name: "Australia", flag: "🇦🇺", code: "AU" },
+    { name: "UAE", flag: "🇦🇪", code: "AE" },
+    { name: "Germany", flag: "🇩🇪", code: "DE" },
+    { name: "France", flag: "🇫🇷", code: "FR" },
+    { name: "Singapore", flag: "🇸🇬", code: "SG" },
   ];
 
   return (
@@ -146,7 +172,7 @@ export default function ServicesListPage() {
       <Stars />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* Section Header - With Global Message */}
         <div
           className={`text-center mb-12 transition-all duration-700 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
@@ -155,16 +181,35 @@ export default function ServicesListPage() {
           <div className="inline-flex items-center gap-2 bg-purple-600/10 backdrop-blur-sm px-4 py-2 rounded-full mb-4 border border-purple-500/20">
             <i className="fas fa-globe text-purple-400 text-sm"></i>
             <span className="text-sm font-medium text-purple-300">
-              What I Build
+              Serving Clients Worldwide
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
-            All Services
+            All Website Development Services
           </h1>
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-            Choose the perfect website for your business needs. Each project is
-            built with attention to detail, performance, and user experience.
+          <p className="text-gray-400 mt-4 max-w-3xl mx-auto">
+            From Business Websites to Complex SaaS Platforms — We deliver
+            complete web solutions for clients{" "}
+            <span className="text-purple-400">worldwide</span> (USA, UK, Canada,
+            Australia, UAE, Europe)
           </p>
+        </div>
+
+        {/* Countries We Serve Banner - SEO Friendly */}
+        <div className="mb-12 p-4 bg-gradient-to-r from-purple-900/20 to-pink-900/20 rounded-2xl border border-white/10">
+          <div className="text-center mb-3">
+            <span className="text-sm text-purple-300">
+              🌍 Trusted by clients in
+            </span>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4">
+            {countries.map((country) => (
+              <div key={country.code} className="flex items-center gap-2">
+                <span className="text-xl">{country.flag}</span>
+                <span className="text-gray-300 text-sm">{country.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Services Grid */}
@@ -172,7 +217,7 @@ export default function ServicesListPage() {
           {services.map((service, idx) => (
             <Link href={service.path} key={idx}>
               <div
-                className={`group bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/10 cursor-pointer ${
+                className={`group bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/10 cursor-pointer h-full ${
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-10 opacity-0"
@@ -193,6 +238,11 @@ export default function ServicesListPage() {
 
                 {/* Description */}
                 <p className="text-gray-400 text-sm mb-3">{service.desc}</p>
+
+                {/* Global Service Hint */}
+                <p className="text-purple-400/70 text-xs mb-3 italic">
+                  {service.globalDesc}
+                </p>
 
                 {/* Features Tags */}
                 <div className="flex flex-wrap gap-1.5 mb-4">
@@ -221,22 +271,42 @@ export default function ServicesListPage() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
+        {/* Global Reach CTA */}
         <div
           className={`text-center mt-12 transition-all duration-700 delay-600 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
           <div className="inline-flex items-center gap-4 bg-gradient-to-r from-purple-900/20 to-black/40 backdrop-blur-sm px-6 py-3 rounded-full border border-purple-500/30">
-            <i className="fas fa-question-circle text-purple-400"></i>
+            <i className="fas fa-globe text-purple-400"></i>
             <span className="text-gray-300 text-sm">
-              Need a custom solution?
+              Need a custom solution for your country?
             </span>
             <Link href="/contact">
               <button className="px-4 py-1.5 rounded-full bg-purple-600/20 text-purple-300 text-sm hover:bg-purple-600/40 transition-all">
-                Contact Me
+                Contact Us Worldwide
               </button>
             </Link>
+          </div>
+        </div>
+
+        {/* Stats Section - SEO Boost */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="text-center p-4 bg-white/5 rounded-xl">
+            <div className="text-2xl font-bold text-purple-400">15+</div>
+            <div className="text-gray-500 text-xs">Countries Served</div>
+          </div>
+          <div className="text-center p-4 bg-white/5 rounded-xl">
+            <div className="text-2xl font-bold text-purple-400">50+</div>
+            <div className="text-gray-500 text-xs">International Clients</div>
+          </div>
+          <div className="text-center p-4 bg-white/5 rounded-xl">
+            <div className="text-2xl font-bold text-purple-400">24/7</div>
+            <div className="text-gray-500 text-xs">Global Support</div>
+          </div>
+          <div className="text-center p-4 bg-white/5 rounded-xl">
+            <div className="text-2xl font-bold text-purple-400">100+</div>
+            <div className="text-gray-500 text-xs">Projects Delivered</div>
           </div>
         </div>
       </div>

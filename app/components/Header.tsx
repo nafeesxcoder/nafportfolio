@@ -8,24 +8,29 @@ import {
   FaInstagram,
   FaTwitter,
   FaYoutube,
-} from "react-icons/fa6";
+  FaChevronDown,
+  FaTimes,
+  FaRocket,
+} from "react-icons/fa";
 
 export default function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
-  // Scroll effect
+  // Handle scroll for header background
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Outside click close desktop dropdown
+  // Close desktop dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
@@ -39,7 +44,7 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Lock scroll when menu is open
+  // Lock scroll when mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -56,79 +61,23 @@ export default function Header() {
   ];
 
   const services = [
-    {
-      name: "Business/Company Website",
-      path: "/services/business",
-      color: "#06b6d4",
-    },
-    {
-      name: "E-Commerce Website",
-      path: "/services/ecommerce",
-      color: "#ec4899",
-    },
-    { name: "Landing Page", path: "/services/landing", color: "#f59e0b" },
-    {
-      name: "Portfolio Website",
-      path: "/services/portfolio",
-      color: "#8b5cf6",
-    },
-    { name: "Blog/Content Website", path: "/services/blog", color: "#10b981" },
-    {
-      name: "Booking/Appointment Website",
-      path: "/services/booking",
-      color: "#3b82f6",
-    },
-    { name: "Education/LMS Website", path: "/services/lms", color: "#14b8a6" },
-    {
-      name: "Real Estate Website",
-      path: "/services/real-estate",
-      color: "#ef4444",
-    },
-    {
-      name: "Restaurant/Food Website",
-      path: "/services/restaurant",
-      color: "#f97316",
-    },
-    { name: "SaaS/Web App", path: "/services/saas", color: "#a855f7" },
-    {
-      name: "Membership Website",
-      path: "/services/membership",
-      color: "#06b6d4",
-    },
-  ];
-
-  const socialLinks = [
-    {
-      icon: FaFacebookF,
-      href: "https://facebook.com/nafeesxcoder",
-      label: "Facebook",
-      color: "hover:text-[#1877f2]",
-    },
-    {
-      icon: FaInstagram,
-      href: "https://instagram.com/nafeesxcoder",
-      label: "Instagram",
-      color: "hover:text-[#e4405f]",
-    },
-    {
-      icon: FaTwitter,
-      href: "https://twitter.com/nafeesxcoder",
-      label: "Twitter",
-      color: "hover:text-[#1da1f2]",
-    },
-    {
-      icon: FaYoutube,
-      href: "https://youtube.com/@nafeesxcoder",
-      label: "YouTube",
-      color: "hover:text-[#ff0000]",
-    },
+    { name: "Business/Company Website", path: "/services/business" },
+    { name: "E-Commerce Website", path: "/services/ecommerce" },
+    { name: "Landing Page", path: "/services/landing" },
+    { name: "Portfolio Website", path: "/services/portfolio" },
+    { name: "Blog/Content Website", path: "/services/blog" },
+    { name: "Booking/Appointment Website", path: "/services/booking" },
+    { name: "Education/LMS Website", path: "/services/lms" },
+    { name: "Real Estate Website", path: "/services/real-estate" },
+    { name: "Restaurant/Food Website", path: "/services/restaurant" },
+    { name: "SaaS/Web App", path: "/services/saas" },
+    { name: "Membership Website", path: "/services/membership" },
   ];
 
   return (
     <>
-      {/* HEADER */}
       <header
-        className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        className={`w-full transition-all duration-500 ${
           scrolled
             ? "bg-black/95 backdrop-blur-xl py-3 shadow-2xl shadow-purple-900/20"
             : "bg-black/80 backdrop-blur-md py-4"
@@ -137,20 +86,19 @@ export default function Header() {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
           {/* LEFT SIDE - Logo + Navigation */}
           <div className="flex items-center gap-8">
-            {/* LOGO */}
             <Link
               href="/"
               className="group relative flex items-center z-50"
               onClick={() => setIsMenuOpen(false)}
             >
               <img
-                src="/logo1.png"
+                src="/logo.png"
                 alt="Logo"
-                className="h-13 w-45 object-contain"
+                className="h-10 md:h-12 w-auto object-contain"
               />
             </Link>
 
-            {/* Pages Navigation */}
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-6">
               {navItems.map((item) => (
                 <Link
@@ -169,7 +117,7 @@ export default function Header() {
                 </Link>
               ))}
 
-              {/* SERVICES DROPDOWN */}
+              {/* SERVICES DROPDOWN - Desktop */}
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -182,11 +130,9 @@ export default function Header() {
                   }`}
                 >
                   Services
-                  <i
-                    className={`fas fa-chevron-down text-xs transition-transform duration-300 ${
-                      isServicesOpen ? "rotate-180" : ""
-                    }`}
-                  ></i>
+                  <FaChevronDown
+                    className={`text-xs transition-transform duration-300 ${isServicesOpen ? "rotate-180" : ""}`}
+                  />
                 </button>
 
                 {isServicesOpen && (
@@ -201,6 +147,7 @@ export default function Header() {
                           key={s.path}
                           href={s.path}
                           className="block px-4 py-2.5 text-sm text-gray-300 hover:text-[#b665f2] hover:bg-white/5 transition-all duration-300"
+                          onClick={() => setIsServicesOpen(false)}
                         >
                           {s.name}
                         </Link>
@@ -212,34 +159,17 @@ export default function Header() {
             </div>
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT SIDE - Hire Me button (desktop only) */}
           <div className="flex items-center gap-4">
-            {/* Hire Me Button */}
-            <Link href="/contact">
+            <Link href="/contact" className="hidden md:block">
               <button className="group relative px-5 py-2 bg-gradient-to-r from-[#751f8c] to-[#b665f2] rounded-full text-white text-sm font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
                 <span className="relative z-10 flex items-center gap-2">
-                  <i className="fas fa-rocket text-xs"></i>
+                  <FaRocket className="text-xs" />
                   Hire Me
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#b665f2] to-[#751f8c] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
             </Link>
-
-            {/* Social Icons */}
-            <div className="hidden md:flex items-center gap-2">
-              {socialLinks.map((social, idx) => (
-                <a
-                  key={idx}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 transition-all duration-300 hover:scale-110 ${social.color}`}
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-3.5 h-3.5" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* MOBILE MENU BUTTON */}
@@ -257,34 +187,34 @@ export default function Header() {
       </header>
 
       {/* MOBILE MENU */}
+      {/* MOBILE MENU */}
       <div
-        ref={mobileMenuRef}
-        className={`fixed top-0 right-0 w-[85%] max-w-sm h-screen bg-black/95 backdrop-blur-xl z-40 transform transition-transform duration-300 ease-out shadow-2xl md:hidden ${
+        className={`fixed top-0 right-0 w-[85%] max-w-sm h-screen bg-black/95 backdrop-blur-xl z-[200] transform transition-transform duration-300 ease-out shadow-2xl md:hidden ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Close Button */}
         <div className="flex justify-between items-center p-5 border-b border-white/10 sticky top-0 bg-black/95 z-10">
+          {/* Logo */}
           <Link
             href="/"
-            className="text-xl font-bold"
+            className="flex items-center"
             onClick={() => setIsMenuOpen(false)}
           >
-            <span className="bg-gradient-to-r from-white via-purple-300 to-purple-400 bg-clip-text text-transparent">
-              Nafees
-            </span>
-            <span className="text-[#b665f2]">.dev</span>
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="h-10 w-auto object-contain"
+            />
           </Link>
           <button
             onClick={() => setIsMenuOpen(false)}
             className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center"
           >
-            <i className="fas fa-times text-white text-sm"></i>
+            <FaTimes className="text-white text-sm" />
           </button>
         </div>
 
-        {/* Scrollable Content */}
-        <div className="h-full overflow-y-auto pb-32">
+        <div className="h-full overflow-y-auto pb-28">
           <div className="p-5 space-y-2">
             {navItems.map((item) => (
               <Link
@@ -301,10 +231,10 @@ export default function Header() {
               </Link>
             ))}
 
-            {/* Services Section - Mobile (No Icons) */}
+            {/* Mobile Services Dropdown - Smaller */}
             <div className="relative">
               <button
-                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                 className={`flex items-center justify-between w-full px-4 py-3 rounded-xl transition-all duration-300 ${
                   pathname.includes("/services")
                     ? "bg-gradient-to-r from-[#751f8c]/20 to-[#b665f2]/20 text-[#b665f2] border border-purple-500/30"
@@ -312,23 +242,21 @@ export default function Header() {
                 }`}
               >
                 <span className="font-medium">Services</span>
-                <i
-                  className={`fas fa-chevron-down text-xs transition-transform duration-300 ${
-                    isServicesOpen ? "rotate-180" : ""
-                  }`}
-                ></i>
+                <FaChevronDown
+                  className={`text-xs transition-transform duration-300 ${isMobileServicesOpen ? "rotate-180" : ""}`}
+                />
               </button>
 
-              {/* Services Dropdown - Scrollable (No Icons) */}
-              {isServicesOpen && (
-                <div className="ml-4 mt-2 space-y-1 border-l border-purple-500/30 pl-3 max-h-80 overflow-y-auto">
+              {/* Services Dropdown Menu - Smaller height */}
+              {isMobileServicesOpen && (
+                <div className="ml-4 mt-2 space-y-1 border-l border-purple-500/30 pl-3 max-h-48 overflow-y-auto">
                   {services.map((s) => (
                     <Link
                       key={s.path}
                       href={s.path}
                       onClick={() => {
                         setIsMenuOpen(false);
-                        setIsServicesOpen(false);
+                        setIsMobileServicesOpen(false);
                       }}
                       className="block px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-[#b665f2] hover:bg-white/5 transition-all duration-300"
                     >
@@ -340,38 +268,24 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Hire Me Button + Social Icons - Fixed at Bottom */}
-          <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black to-transparent pt-8 space-y-3">
-            <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-              <button className="w-full py-3 bg-gradient-to-r from-[#751f8c] to-[#b665f2] rounded-xl text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95">
-                <i className="fas fa-rocket text-xs"></i>
-                Hire Me
+          {/* Bottom Section - Hire Me Button with better positioning */}
+          <div className="absolute bottom-0 left-0 right-0 flex justify-center p-2 bg-gradient-to-t from-black to-transparent pt-3">
+            <Link
+              href="/contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="w-full max-w-[calc(100%-2rem)]"
+            >
+              <button className="w-full py-3 bg-gradient-to-r from-[#751f8c] to-[#b665f2] rounded-lg text-white font-medium text-[11px] flex items-center justify-center gap-1">
+                <FaRocket className="text-[12px]" /> Hire Me
               </button>
             </Link>
-
-            {/* Social Icons in Mobile Menu */}
-            <div className="flex justify-center gap-4 pt-2">
-              {socialLinks.map((social, idx) => (
-                <a
-                  key={idx}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gray-400 transition-all duration-300 hover:scale-110 ${social.color}`}
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-3.5 h-3.5" />
-                </a>
-              ))}
-            </div>
           </div>
         </div>
       </div>
 
-      {/* OVERLAY */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-black/60 z-35 md:hidden"
+          className="fixed inset-0 bg-black/60 z-[199] md:hidden"
           onClick={() => setIsMenuOpen(false)}
         />
       )}
@@ -385,26 +299,6 @@ export default function Header() {
           border-radius: 10px;
         }
         .custom-scroll::-webkit-scrollbar-thumb {
-          background: linear-gradient(135deg, #751f8c, #b665f2);
-          border-radius: 10px;
-        }
-
-        /* Mobile menu scroll styles */
-        .overflow-y-auto {
-          scrollbar-width: thin;
-          scrollbar-color: #b665f2 rgba(255, 255, 255, 0.1);
-        }
-
-        .overflow-y-auto::-webkit-scrollbar {
-          width: 4px;
-        }
-
-        .overflow-y-auto::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.05);
-          border-radius: 10px;
-        }
-
-        .overflow-y-auto::-webkit-scrollbar-thumb {
           background: linear-gradient(135deg, #751f8c, #b665f2);
           border-radius: 10px;
         }

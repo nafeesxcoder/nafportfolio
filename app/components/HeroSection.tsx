@@ -42,7 +42,7 @@ export default function HeroSection() {
   }, [text, index, isDeleting]);
 
   return (
-    <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/30 to-black animate-gradient" />
 
@@ -56,18 +56,18 @@ export default function HeroSection() {
 
       {/* Bottom Circular Design */}
       <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none">
-        <div className="relative w-full h-24">
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[200%] h-24 rounded-t-full bg-gradient-to-t from-purple-600/15 via-purple-600/5 to-transparent blur-xl animate-pulse-slow" />
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[140%] h-20 rounded-t-full border-t border-purple-500/30 animate-spin-slow" />
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[180%] h-24 rounded-t-full border-t border-dashed border-purple-500/20 animate-spin-slow-reverse" />
+        <div className="relative w-full h-20">
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[200%] h-20 rounded-t-full bg-gradient-to-t from-purple-600/15 via-purple-600/5 to-transparent blur-xl animate-pulse-slow" />
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[140%] h-16 rounded-t-full border-t border-purple-500/30 animate-spin-slow" />
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[180%] h-20 rounded-t-full border-t border-dashed border-purple-500/20 animate-spin-slow-reverse" />
 
           <div className="absolute bottom-0 left-[20%] w-2 h-2 rounded-full bg-purple-500/60 animate-float" />
-          <div className="absolute bottom-0 left-[50%] w-3 h-3 rounded-full bg-purple-400/60 animate-float-delay" />
+          <div className="absolute bottom-0 left-[50%] w-2.5 h-2.5 rounded-full bg-purple-400/60 animate-float-delay" />
           <div className="absolute bottom-0 left-[80%] w-2 h-2 rounded-full bg-purple-600/60 animate-float" />
         </div>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* LEFT - Content */}
           <div className="text-center lg:text-left space-y-5">
@@ -135,9 +135,9 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* RIGHT - Image with Clean Hover (No Background Effects) */}
+          {/* RIGHT - Image */}
           <div className="relative group flex justify-center items-center">
-            {/* Only Floating Tech Icons */}
+            {/* Floating Tech Icons */}
             <div className="absolute -top-8 -right-8 w-10 h-10 rounded-full bg-purple-600/20 backdrop-blur-sm flex items-center justify-center border border-purple-500/30 animate-float z-20">
               <i className="fab fa-react text-purple-400 text-sm"></i>
             </div>
@@ -145,7 +145,7 @@ export default function HeroSection() {
               <i className="fab fa-node-js text-purple-400 text-sm"></i>
             </div>
 
-            {/* Clean Image Container - No background hover effects */}
+            {/* Image Container */}
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-2">
                 <Image

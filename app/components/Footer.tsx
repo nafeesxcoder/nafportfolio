@@ -14,7 +14,7 @@ import {
 } from "react-icons/fa";
 import { MdLocationOn, MdEmail, MdAccessTime, MdPhone } from "react-icons/md";
 import Link from "next/link";
-import { FaWhatsapp, FaXTwitter } from "react-icons/fa6";
+import Image from "next/image";
 
 const footerLinks = {
   quickLinks: [
@@ -25,7 +25,7 @@ const footerLinks = {
   ],
 };
 
-// Your services array
+// All services
 const services = [
   {
     name: "Business/Company Website",
@@ -95,7 +95,7 @@ const services = [
   },
 ];
 
-// Fixed Modal Component with proper types
+// Modal Component
 const Modal = ({
   isOpen,
   onClose,
@@ -107,7 +107,6 @@ const Modal = ({
   title: string;
   children: React.ReactNode;
 }) => {
-  // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -119,7 +118,6 @@ const Modal = ({
     };
   }, [isOpen]);
 
-  // Handle ESC key press
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isOpen) {
@@ -181,190 +179,212 @@ export default function Footer() {
   const [isTermsConditionsOpen, setIsTermsConditionsOpen] = useState(false);
 
   return (
-    <div className="relative bg-gradient-to-b from-gray-900 to-black">
-      {/* Main Footer */}
-      <footer className="relative bg-black/80 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Brand Info */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h3 className="text-2xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-white to-purple-400 bg-clip-text text-transparent">
-                  Nafees
+    <footer className="relative bg-black/95 backdrop-blur-sm mt-20">
+      {/* Distinct Top Border - Purple Gradient Line */}
+      <div className="absolute -top-0.5 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-purple-500 to-transparent" />
+
+      {/* Top Purple Glow Effect */}
+      <div className="absolute -top-4 left-0 right-0 h-8 bg-gradient-to-b from-purple-500/20 to-transparent blur-md pointer-events-none" />
+
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {/* Brand Info - With Logo */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <Link href="/" className="block mb-6">
+              <Image
+                src="/logo.png"
+                alt="Unique Web Layer"
+                width={160}
+                height={50}
+                className="w-auto h-12 object-contain"
+              />
+            </Link>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Full-stack developer passionate about creating beautiful,
+              functional, and user-friendly web applications. Let's bring your
+              ideas to life.
+            </p>
+
+            {/* Social Links */}
+            <div className="flex gap-3 mt-6">
+              <a
+                href="https://github.com/nafeesahmad"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-purple-500 hover:bg-purple-500/10 transition-all duration-300 hover:scale-110"
+              >
+                <FaGithub className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/nafeesahmad/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-purple-500 hover:bg-purple-500/10 transition-all duration-300 hover:scale-110"
+              >
+                <FaLinkedinIn className="w-4 h-4" />
+              </a>
+              <a
+                href="https://twitter.com/nafeesahmad"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-purple-500 hover:bg-purple-500/10 transition-all duration-300 hover:scale-110"
+              >
+                <FaTwitter className="w-4 h-4" />
+              </a>
+              <a
+                href="https://instagram.com/nafeesahmad"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-purple-500 hover:bg-purple-500/10 transition-all duration-300 hover:scale-110"
+              >
+                <FaInstagram className="w-4 h-4" />
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Quick Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <h3 className="text-lg font-semibold text-white mb-4 relative inline-block">
+              Quick Links
+              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-purple-500 rounded-full"></span>
+            </h3>
+            <ul className="space-y-3 mt-6">
+              {footerLinks.quickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-400 hover:text-purple-500 transition-colors text-sm flex items-center gap-2 group"
+                  >
+                    <span className="w-1 h-1 bg-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Services - Simple List with Scroll */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h3 className="text-lg font-semibold text-white mb-4 relative inline-block">
+              Services
+              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-purple-500 rounded-full"></span>
+            </h3>
+            <ul className="space-y-2 max-h-64 overflow-y-auto pr-2 custom-scroll mt-6">
+              {services.map((service) => (
+                <li key={service.name}>
+                  <Link
+                    href={service.path}
+                    className="text-gray-400 hover:text-purple-500 transition-colors text-sm flex items-center gap-2 group"
+                  >
+                    <i
+                      className={`fas ${service.icon} text-xs transition-colors`}
+                      style={{ color: service.color }}
+                    ></i>
+                    <span className="group-hover:text-purple-500 transition-colors">
+                      {service.name}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <h3 className="text-lg font-semibold text-white mb-4 relative inline-block">
+              Get in Touch
+              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-purple-500 rounded-full"></span>
+            </h3>
+            <ul className="space-y-4 mt-6">
+              <li className="flex items-start gap-3 text-gray-400 text-sm group">
+                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-purple-500/10 transition-colors">
+                  <MdEmail className="w-4 h-4 text-purple-500" />
+                </div>
+                <a
+                  href="mailto:info@uniqueweblayer.com"
+                  className="hover:text-purple-500 transition-colors break-all"
+                >
+                  info@uniqueweblayer.com
+                </a>
+              </li>
+              <li className="flex items-start gap-3 text-gray-400 text-sm group">
+                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-purple-500/10 transition-colors">
+                  <MdPhone className="w-4 h-4 text-purple-500" />
+                </div>
+                <a
+                  href="tel:+917409233994"
+                  className="hover:text-purple-500 transition-colors"
+                >
+                  +91 (740) 923-3994
+                </a>
+              </li>
+              <li className="flex items-start gap-3 text-gray-400 text-sm group">
+                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-purple-500/10 transition-colors">
+                  <MdLocationOn className="w-4 h-4 text-purple-500" />
+                </div>
+                <span>
+                  G-34, Sector -3, Noida, Uttar Pradesh -201301, India
                 </span>
-                <span className="text-purple-500">.dev</span>
-              </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Full-stack developer passionate about creating beautiful,
-                functional, and user-friendly web applications. Let's bring your
-                ideas to life.
-              </p>
+              </li>
+              <li className="flex items-start gap-3 text-gray-400 text-sm group">
+                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-purple-500/10 transition-colors">
+                  <MdAccessTime className="w-4 h-4 text-purple-500" />
+                </div>
+                <div>
+                  <p>Mon - Fri: 9:00 AM - 7:00 PM</p>
+                  <p>Sat - Sun: Available for meetings</p>
+                </div>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
 
-              {/* Social Links */}
-              <div className="flex gap-4 mt-6">
-                <a
-                  href="https://github.com/nafeesahmad"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-purple-500 transition-colors"
-                >
-                  <FaGithub className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/nafeesahmad/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-purple-500 transition-colors"
-                >
-                  <FaLinkedinIn className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://twitter.com/nafeesahmad"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-purple-500 transition-colors"
-                >
-                  <FaTwitter className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://instagram.com/nafeesahmad"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-purple-500 transition-colors"
-                >
-                  <FaInstagram className="w-5 h-5" />
-                </a>
-              </div>
-            </motion.div>
+        {/* Bottom Divider */}
+        <div className="border-t border-white/10 mt-10 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-500 text-sm">
+              © {new Date().getFullYear()} Unique Web Layer. All rights
+              reserved.
+            </p>
 
-            {/* Quick Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <h3 className="text-lg font-semibold text-white mb-4">
-                Quick Links
-              </h3>
-              <ul className="space-y-2">
-                {footerLinks.quickLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-gray-400 hover:text-purple-500 transition-colors text-sm"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Services */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <h3 className="text-lg font-semibold text-white mb-4">
-                Services
-              </h3>
-              <ul className="space-y-2 max-h-60 overflow-y-auto pr-2 custom-scroll">
-                {services.map((service) => (
-                  <li key={service.name}>
-                    <Link
-                      href={service.path}
-                      className="text-gray-400 hover:text-purple-500 transition-colors text-sm flex items-center gap-2 group"
-                    >
-                      <i
-                        className={`fas ${service.icon} text-xs transition-colors`}
-                        style={{ color: service.color }}
-                      ></i>
-                      <span className="group-hover:text-purple-500 transition-colors">
-                        {service.name}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Contact Info */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <h3 className="text-lg font-semibold text-white mb-4">
-                Get in Touch
-              </h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3 text-gray-400 text-sm">
-                  <MdEmail className="w-5 h-5 mt-0.5 text-purple-500" />
-                  <a
-                    href="mailto:rafeetashali@gmail.com"
-                    className="hover:text-purple-500 transition-colors"
-                  >
-                    nafeesahadbly@gmail.com
-                  </a>
-                </li>
-                <li className="flex items-start gap-3 text-gray-400 text-sm">
-                  <MdPhone className="w-5 h-5 mt-0.5 text-purple-500" />
-                  <a
-                    href="tel:+917409233994"
-                    className="hover:text-purple-500 transition-colors"
-                  >
-                    +91 (740) 923-3994
-                  </a>
-                </li>
-                <li className="flex items-start gap-3 text-gray-400 text-sm">
-                  <MdLocationOn className="w-5 h-5 mt-0.5 text-purple-500" />
-                  <span>A-2/111 New Kondli, New Delhi, india </span>
-                </li>
-                <li className="flex items-start gap-3 text-gray-400 text-sm">
-                  <MdAccessTime className="w-5 h-5 mt-0.5 text-purple-500" />
-                  <div>
-                    <p>Mon - Fri: 9:00 AM - 7:00 PM</p>
-                    <p>Sat - Sun: Available for meetings</p>
-                  </div>
-                </li>
-              </ul>
-            </motion.div>
-          </div>
-
-          {/* Divider */}
-          <div className="border-t border-gray-800 mt-10 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-gray-500 text-sm">
-                © {new Date().getFullYear()} Nafees.dev. All rights reserved.
-              </p>
-
-              <div className="flex gap-6">
-                <button
-                  onClick={() => setIsTermsConditionsOpen(true)}
-                  className="text-gray-500 hover:text-purple-500 transition-colors text-sm"
-                >
-                  Terms & Conditions
-                </button>
-                <button
-                  onClick={() => setIsPrivacyPolicyOpen(true)}
-                  className="text-gray-500 hover:text-purple-500 transition-colors text-sm"
-                >
-                  Privacy Policy
-                </button>
-              </div>
+            <div className="flex gap-6">
+              <button
+                onClick={() => setIsTermsConditionsOpen(true)}
+                className="text-gray-500 hover:text-purple-500 transition-colors text-sm"
+              >
+                Terms & Conditions
+              </button>
+              <button
+                onClick={() => setIsPrivacyPolicyOpen(true)}
+                className="text-gray-500 hover:text-purple-500 transition-colors text-sm"
+              >
+                Privacy Policy
+              </button>
             </div>
           </div>
         </div>
-      </footer>
+      </div>
 
       {/* Privacy Policy Modal */}
       <Modal
@@ -377,50 +397,38 @@ export default function Footer() {
             Privacy Policy
           </h3>
           <p>
-            Your privacy is important to me. This privacy policy explains how I
+            Your privacy is important to us. This privacy policy explains how we
             collect, use, and protect your personal information.
           </p>
-
           <h4 className="font-semibold text-gray-800 dark:text-white">
-            1. Information I Collect
+            1. Information We Collect
           </h4>
           <p>
-            I may collect personal information such as your name, email address,
-            and project details when you contact me through the website.
+            We may collect personal information such as your name, email
+            address, and project details when you contact us through the
+            website.
           </p>
-
           <h4 className="font-semibold text-gray-800 dark:text-white">
-            2. How I Use Your Information
+            2. How We Use Your Information
           </h4>
           <p>
-            I use your information to respond to inquiries, provide services,
-            and improve my website.
+            We use your information to respond to inquiries, provide services,
+            and improve our website.
           </p>
-
           <h4 className="font-semibold text-gray-800 dark:text-white">
             3. Data Security
           </h4>
           <p>
-            I take reasonable measures to protect your personal information from
-            unauthorized access.
+            We take reasonable measures to protect your personal information
+            from unauthorized access.
           </p>
-
           <h4 className="font-semibold text-gray-800 dark:text-white">
-            4. Third-Party Services
+            4. Contact Us
           </h4>
           <p>
-            I may use third-party services that collect information to improve
-            my website.
+            If you have questions about this policy, please contact us at
+            info@uniqueweblayer.com
           </p>
-
-          <h4 className="font-semibold text-gray-800 dark:text-white">
-            5. Contact
-          </h4>
-          <p>
-            If you have questions about this policy, please contact me at
-            nafeesahadbly@gmail.com.
-          </p>
-
           <p className="text-gray-500 text-xs">
             Last updated: {new Date().toLocaleDateString()}
           </p>
@@ -437,20 +445,17 @@ export default function Footer() {
           <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
             Terms & Conditions
           </h3>
-
           <h4 className="font-semibold text-gray-800 dark:text-white">
             1. Acceptance of Terms
           </h4>
-          <p>By using my services, you agree to these terms and conditions.</p>
-
+          <p>By using our services, you agree to these terms and conditions.</p>
           <h4 className="font-semibold text-gray-800 dark:text-white">
             2. Services
           </h4>
           <p>
-            I provide web development and related services as agreed upon in our
-            contract.
+            We provide web development and related services as agreed upon in
+            our contract.
           </p>
-
           <h4 className="font-semibold text-gray-800 dark:text-white">
             3. Payment Terms
           </h4>
@@ -458,7 +463,6 @@ export default function Footer() {
             Payment terms are specified in the project agreement. A deposit may
             be required before work begins.
           </p>
-
           <h4 className="font-semibold text-gray-800 dark:text-white">
             4. Project Timeline
           </h4>
@@ -466,28 +470,24 @@ export default function Footer() {
             Project timelines are estimates and may be adjusted based on project
             requirements and feedback.
           </p>
-
           <h4 className="font-semibold text-gray-800 dark:text-white">
             5. Intellectual Property
           </h4>
           <p>
-            Upon full payment, the client owns the final deliverables. I retain
-            the right to showcase the work in my portfolio.
+            Upon full payment, the client owns the final deliverables. We retain
+            the right to showcase the work in our portfolio.
           </p>
-
           <h4 className="font-semibold text-gray-800 dark:text-white">
             6. Limitation of Liability
           </h4>
           <p>
-            I am not liable for any indirect damages arising from the use of my
-            services.
+            We are not liable for any indirect damages arising from the use of
+            our services.
           </p>
-
           <h4 className="font-semibold text-gray-800 dark:text-white">
             7. Governing Law
           </h4>
-          <p>These terms are governed by the laws of California.</p>
-
+          <p>These terms are governed by the laws of India.</p>
           <p className="text-gray-500 text-xs">
             Last updated: {new Date().toLocaleDateString()}
           </p>
@@ -507,6 +507,6 @@ export default function Footer() {
           border-radius: 10px;
         }
       `}</style>
-    </div>
+    </footer>
   );
 }

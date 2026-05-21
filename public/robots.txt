@@ -1,0 +1,17 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /_next/
+Disallow: /_static/
+
+# Sitemap location
+Sitemap: https://uniqueweblayer.com/sitemap.xml
+
+# Host
+Host: https://uniqueweblayer.com
+
+# Crawl delay (optional)
+Crawl-delay: 1
