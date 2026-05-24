@@ -1,14 +1,15 @@
 "use client";
 
 import { useMemo, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 interface StarProps {
   top: string;
   left: string;
   size: number;
   opacity: number;
-  delay: string;
-  duration: string;
+  delay: number;
+  duration: number;
 }
 
 const Star: React.FC<StarProps> = ({
@@ -19,16 +20,23 @@ const Star: React.FC<StarProps> = ({
   delay,
   duration,
 }) => (
-  <div
-    className="absolute rounded-full bg-white animate-twinkle"
+  <motion.div
+    className="absolute rounded-full bg-white"
     style={{
       top,
       left,
       width: `${size}px`,
       height: `${size}px`,
       opacity,
-      animationDelay: delay,
-      animationDuration: duration,
+    }}
+    animate={{
+      opacity: [opacity, opacity * 1.5, opacity],
+    }}
+    transition={{
+      duration: duration,
+      repeat: Infinity,
+      delay: delay,
+      ease: "easeInOut",
     }}
   />
 );
@@ -36,33 +44,38 @@ const Star: React.FC<StarProps> = ({
 export const Stars = () => {
   const [isClient, setIsClient] = useState(false);
 
+  // Generate stars - simple and clean like preloader
   const stars = useMemo(() => {
-    // Fixed stars with deterministic positions (no random)
-    // This ensures server and client render the same thing
-    return Array.from({ length: 150 }, (_, i) => ({
-      id: i,
-      top: `${(i * 7.3 + 13) % 100}%`,
-      left: `${(i * 11.7 + 23) % 100}%`,
-      size: (i % 3) + 1,
-      opacity: 0.3 + ((i * 3) % 5) * 0.1,
-      delay: `${i % 5}s`,
-      duration: `${2 + (i % 4)}s`,
-    }));
+    const starArray = [];
+    const starCount = 150;
+
+    for (let i = 0; i < starCount; i++) {
+      starArray.push({
+        id: i,
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+        size: Math.random() * 2 + 1, // 1-3px
+        opacity: 0.2 + Math.random() * 0.5,
+        delay: Math.random() * 5,
+        duration: 2 + Math.random() * 3,
+      });
+    }
+
+    return starArray;
   }, []);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  // During hydration, render nothing
-  // After hydration, render stars with animations
+  // During hydration, render static stars
   if (!isClient) {
     return (
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {stars.map((star) => (
           <div
             key={star.id}
-            className="absolute rounded-full bg-white opacity-50"
+            className="absolute rounded-full bg-white/30"
             style={{
               top: star.top,
               left: star.left,
