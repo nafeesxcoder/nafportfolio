@@ -16,28 +16,29 @@ export default function ClientLayout({
   const [showPreloader, setShowPreloader] = useState(true);
 
   useEffect(() => {
+    // Ensure preloader shows for at least 2.5 seconds
     const timer = setTimeout(() => {
       setShowPreloader(false);
-    }, 2500); // Reduced loading time
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-      {/* Preloader */}
+      {/* Preloader - Shows first */}
       {showPreloader && (
         <Preloader onComplete={() => setShowPreloader(false)} />
       )}
 
-      {/* Main Website */}
+      {/* Main Website - Shows after preloader */}
       {!showPreloader && (
         <>
           {/* Background Stars */}
           <Stars />
 
           {/* Top Contact Bar */}
-          <div className="fixed top-0 left-0 w-full z-50">
+          <div className="fixed top-0 left-0 w-full z-[100]">
             <TopContactBar />
           </div>
 
@@ -47,7 +48,7 @@ export default function ClientLayout({
           </div>
 
           {/* Main Content */}
-          <main className="min-h-screen pt-24 md:pt-32">{children}</main>
+          <main className="min-h-screen pt-16 md:pt-28">{children}</main>
 
           {/* Footer */}
           <Footer />
