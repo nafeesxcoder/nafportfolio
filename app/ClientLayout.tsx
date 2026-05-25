@@ -16,7 +16,7 @@ export default function ClientLayout({
   const [showPreloader, setShowPreloader] = useState(true);
 
   useEffect(() => {
-    // Ensure preloader shows for at least 2.5 seconds
+    // Ensure preloader shows for at least 3 seconds
     const timer = setTimeout(() => {
       setShowPreloader(false);
     }, 3000);
@@ -37,17 +37,17 @@ export default function ClientLayout({
           {/* Background Stars */}
           <Stars />
 
-          {/* Top Contact Bar */}
-          <div className="fixed top-0 left-0 w-full z-[100]">
+          {/* Top Contact Bar - Hidden on mobile */}
+          <div className="fixed top-0 left-0 w-full z-[100] hidden md:block">
             <TopContactBar />
           </div>
 
-          {/* Header */}
-          <div className="fixed top-8 left-0 w-full z-40">
+          {/* Header - Fixed at top for both mobile and desktop */}
+          <div className="fixed top-0 md:top-8 left-0 w-full z-40">
             <Header />
           </div>
 
-          {/* Main Content */}
+          {/* Main Content - Adjust padding based on device */}
           <main className="min-h-screen pt-16 md:pt-28">{children}</main>
 
           {/* Footer */}

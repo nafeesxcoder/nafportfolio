@@ -214,7 +214,7 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex gap-3 mt-6">
               <a
-                href="https://github.com/nafeesahmad"
+                href="https://github.com/nafeesxcoder"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-purple-500 hover:bg-purple-500/10 transition-all duration-300 hover:scale-110"
@@ -222,7 +222,7 @@ export default function Footer() {
                 <FaGithub className="w-4 h-4" />
               </a>
               <a
-                href="https://www.linkedin.com/in/nafeesahmad/"
+                href="https://www.linkedin.com/in/uniqueweblayer/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-purple-500 hover:bg-purple-500/10 transition-all duration-300 hover:scale-110"
@@ -230,7 +230,7 @@ export default function Footer() {
                 <FaLinkedinIn className="w-4 h-4" />
               </a>
               <a
-                href="https://twitter.com/nafeesahmad"
+                href="https://x.com/uniqueweblayer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-purple-500 hover:bg-purple-500/10 transition-all duration-300 hover:scale-110"
@@ -238,7 +238,7 @@ export default function Footer() {
                 <FaTwitter className="w-4 h-4" />
               </a>
               <a
-                href="https://instagram.com/nafeesahmad"
+                href="https://instagram.com/uniqueweblayer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-purple-500 hover:bg-purple-500/10 transition-all duration-300 hover:scale-110"

@@ -163,10 +163,9 @@ const organizationSchema = {
   },
 
   sameAs: [
-    "https://facebook.com/uniqueweblayer",
     "https://instagram.com/uniqueweblayer",
-    "https://linkedin.com/company/uniqueweblayer",
-    "https://twitter.com/uniqueweblayer",
+    "https://www.linkedin.com/in/uniqueweblayer",
+    "https://x.com/uniqueweblayer",
   ],
 };
 

@@ -3,42 +3,28 @@
 import {
   FaEnvelope,
   FaPhoneAlt,
-  FaFacebookF,
   FaInstagram,
   FaTwitter,
-  FaYoutube,
   FaLinkedinIn,
 } from "react-icons/fa";
 
 export default function TopContactBar() {
   const socialLinks = [
     {
-      icon: FaFacebookF,
-      href: "https://facebook.com",
-      label: "Facebook",
-      color: "hover:text-[#1877f2]",
-    },
-    {
       icon: FaInstagram,
-      href: "https://instagram.com",
+      href: "https://instagram.com/uniqueweblayer",
       label: "Instagram",
       color: "hover:text-[#e4405f]",
     },
     {
       icon: FaTwitter,
-      href: "https://twitter.com",
+      href: "https://x.com/uniqueweblayer",
       label: "Twitter",
       color: "hover:text-[#1da1f2]",
     },
     {
-      icon: FaYoutube,
-      href: "https://youtube.com",
-      label: "YouTube",
-      color: "hover:text-[#ff0000]",
-    },
-    {
       icon: FaLinkedinIn,
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/uniqueweblayer",
       label: "LinkedIn",
       color: "hover:text-[#0077b5]",
     },
