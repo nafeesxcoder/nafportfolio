@@ -5,7 +5,6 @@ import ClientLayout from "./ClientLayout";
 
 const inter = Inter({
   subsets: ["latin"],
-  display: "swap",
   variable: "--font-inter",
   preload: true,
 });
@@ -21,12 +20,15 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://uniqueweblayer.com"),
+
   title: {
     default: "Unique Web Layer | Expert Web Development Agency",
     template: "%s | Unique Web Layer",
   },
+
   description:
-    "Unique Web Layer is a full-service web development agency based in India, delivering all types of websites worldwide. We build Business Websites, E-commerce Stores, SaaS Platforms, Portfolio Sites, Real Estate Websites, Restaurant Websites, LMS Portals, Booking Systems, and Custom Web Applications using React, Next.js, Node.js, and MERN Stack.",
+    "Unique Web Layer is a full-service web development agency based in India, delivering Business Websites, E-commerce Stores, SaaS Platforms, Portfolio Sites, Real Estate Websites, Restaurant Websites, LMS Portals, Booking Systems, and Custom Web Applications worldwide.",
+
   keywords: [
     "business website development",
     "ecommerce website development",
@@ -35,14 +37,21 @@ export const metadata: Metadata = {
     "real estate website development",
     "restaurant website development",
     "web development agency India",
-    "hire web developer from India",
     "React.js development",
     "Next.js development",
     "MERN stack development",
   ],
-  authors: [{ name: "Unique Web Layer", url: "https://uniqueweblayer.com" }],
+
+  authors: [
+    {
+      name: "Unique Web Layer",
+      url: "https://uniqueweblayer.com",
+    },
+  ],
+
   creator: "Unique Web Layer",
   publisher: "Unique Web Layer",
+
   robots: {
     index: true,
     follow: true,
@@ -54,94 +63,123 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+
   alternates: {
     canonical: "https://uniqueweblayer.com",
   },
+
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+      {
+        url: "/icon-192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        url: "/icon-512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
     ],
+
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      {
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
     ],
+
     shortcut: ["/favicon.ico"],
   },
+
   manifest: "/site.webmanifest",
+
   openGraph: {
     title: "Unique Web Layer | Complete Web Development Agency",
+
     description:
-      "We build every type of website: Business, E-commerce, SaaS, Portfolio, Real Estate, Restaurant, LMS, Booking Systems & more. Serving clients worldwide from India.",
+      "We build Business, E-commerce, SaaS, Portfolio, Real Estate, Restaurant, LMS, Booking Systems & Custom Web Apps worldwide.",
+
     url: "https://uniqueweblayer.com",
+
     siteName: "Unique Web Layer",
-    type: "website",
+
     locale: "en_US",
+
+    type: "website",
+
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Unique Web Layer - Complete Web Development Agency",
-        type: "image/jpeg",
+        alt: "Unique Web Layer",
       },
     ],
-    emails: ["info@uniqueweblayer.com"],
-    phoneNumbers: ["+918800278502", "+18588791912"],
-    countryName: "India",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Unique Web Layer | Full-Service Web Development Agency",
+
+    title: "Unique Web Layer | Web Development Agency",
+
     description:
-      "Business Websites • E-commerce • SaaS • Portfolio • Real Estate • Restaurant • LMS • Booking Systems • Custom Web Apps",
+      "Business Websites • SaaS • E-commerce • Portfolio • Booking Systems • Custom Web Apps",
+
     images: ["/og-image.jpg"],
+
     creator: "@uniqueweblayer",
-    site: "@uniqueweblayer",
   },
+
   verification: {
-    google: "your-google-verification-code",
+    google: "PASTE_YOUR_GOOGLE_VERIFICATION_CODE",
   },
 };
 
-// JSON-LD Structured Data
+// Organization Schema
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+
   name: "Unique Web Layer",
+
   alternateName: "UWL",
+
   url: "https://uniqueweblayer.com",
+
   logo: "https://uniqueweblayer.com/icon-512.png",
-  description:
-    "Full-service web development agency building all types of websites.",
+
+  description: "Professional full-service web development agency.",
+
   email: "info@uniqueweblayer.com",
-  telephone: "+91-8800278502",
+
+  telephone: "+91-7409233994",
+
   address: {
     "@type": "PostalAddress",
     addressCountry: "IN",
   },
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+91-8800278502",
-    contactType: "customer service",
-    availableLanguage: ["English", "Hindi"],
-    areaServed: [
-      "Worldwide",
-      "USA",
-      "UK",
-      "Canada",
-      "Australia",
-      "UAE",
-      "Europe",
-    ],
-  },
+
   sameAs: [
     "https://facebook.com/uniqueweblayer",
     "https://instagram.com/uniqueweblayer",
-    "https://twitter.com/uniqueweblayer",
     "https://linkedin.com/company/uniqueweblayer",
+    "https://twitter.com/uniqueweblayer",
   ],
-  areaServed: "Worldwide",
+};
+
+// Website Schema
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+
+  name: "Unique Web Layer",
+
+  alternateName: "UniqueWebLayer",
+
+  url: "https://uniqueweblayer.com",
 };
 
 export default function RootLayout({
@@ -152,31 +190,43 @@ export default function RootLayout({
   return (
     <html lang="en" className="m-0 p-0">
       <head>
+        {/* Organization Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationSchema),
           }}
         />
+
+        {/* Website Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+
+        {/* Performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
+        {/* SEO Meta */}
         <meta name="author" content="Unique Web Layer" />
-        <meta name="copyright" content="Unique Web Layer" />
-        <meta name="distribution" content="global" />
-        <meta name="rating" content="General" />
-        <meta name="geo.region" content="IN" />
-        <meta name="geo.placename" content="India" />
-        <meta
-          name="target_country"
-          content="US,GB,CA,AU,AE,DE,FR,SG,Worldwide"
-        />
+
         <meta name="application-name" content="Unique Web Layer" />
+
         <meta name="apple-mobile-web-app-title" content="Unique Web Layer" />
+
+        <meta name="geo.region" content="IN" />
+
+        <meta name="geo.placename" content="India" />
       </head>
 
       <body className={`${inter.className} antialiased bg-black m-0 p-0`}>
