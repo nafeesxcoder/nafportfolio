@@ -18,36 +18,44 @@ export default function ClientLayout({
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPreloader(false);
-    }, 4200);
+    }, 2500); // Reduced loading time
+
     return () => clearTimeout(timer);
   }, []);
 
-  if (showPreloader) {
-    return <Preloader onComplete={() => setShowPreloader(false)} />;
-  }
-
   return (
     <>
-      <Stars />
+      {/* Preloader */}
+      {showPreloader && (
+        <Preloader onComplete={() => setShowPreloader(false)} />
+      )}
 
-      {/* TopContactBar */}
-      <div className="fixed top-0 left-0 w-full z-[100]">
-        <TopContactBar />
-      </div>
+      {/* Main Website */}
+      {!showPreloader && (
+        <>
+          {/* Background Stars */}
+          <Stars />
 
-      {/* Header */}
-      <div className="fixed top-8 left-0 w-full z-40">
-        <Header />
-      </div>
+          {/* Top Contact Bar */}
+          <div className="fixed top-0 left-0 w-full z-50">
+            <TopContactBar />
+          </div>
 
-      {/* Main Content */}
-      <main className="min-h-screen pt-16 md:pt-28">{children}</main>
+          {/* Header */}
+          <div className="fixed top-8 left-0 w-full z-40">
+            <Header />
+          </div>
 
-      {/* Footer */}
-      <Footer />
+          {/* Main Content */}
+          <main className="min-h-screen pt-24 md:pt-32">{children}</main>
 
-      {/* WhatsApp Button */}
-      <WhatsAppWrapper />
+          {/* Footer */}
+          <Footer />
+
+          {/* WhatsApp Button */}
+          <WhatsAppWrapper />
+        </>
+      )}
     </>
   );
 }
