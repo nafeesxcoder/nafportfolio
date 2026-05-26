@@ -142,6 +142,16 @@ export default function Header() {
                     className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-xl rounded-2xl border border-purple-500/30 shadow-2xl py-3 z-50"
                   >
                     <div className="max-h-96 overflow-y-auto custom-scroll">
+                      {/* ✅ ADDED: All Services Link */}
+                      <Link
+                        href="/services"
+                        className="block px-4 py-2.5 text-sm text-purple-400 hover:text-purple-300 hover:bg-white/5 transition-all duration-300 border-b border-white/10 mb-2 font-semibold"
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        <i className="fas fa-grid-2 mr-2"></i> All Services (
+                        {services.length})
+                      </Link>
+
                       {services.map((s) => (
                         <Link
                           key={s.path}
@@ -187,14 +197,12 @@ export default function Header() {
       </header>
 
       {/* MOBILE MENU */}
-      {/* MOBILE MENU */}
       <div
         className={`fixed top-0 right-0 w-[85%] max-w-sm h-screen bg-black/95 backdrop-blur-xl z-[200] transform transition-transform duration-300 ease-out shadow-2xl md:hidden ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex justify-between items-center p-5 border-b border-white/10 sticky top-0 bg-black/95 z-10">
-          {/* Logo */}
           <Link
             href="/"
             className="flex items-center"
@@ -231,7 +239,7 @@ export default function Header() {
               </Link>
             ))}
 
-            {/* Mobile Services Dropdown - Smaller */}
+            {/* Mobile Services Dropdown */}
             <div className="relative">
               <button
                 onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
@@ -247,9 +255,22 @@ export default function Header() {
                 />
               </button>
 
-              {/* Services Dropdown Menu - Smaller height */}
+              {/* Services Dropdown Menu */}
               {isMobileServicesOpen && (
                 <div className="ml-4 mt-2 space-y-1 border-l border-purple-500/30 pl-3 max-h-48 overflow-y-auto">
+                  {/* ✅ ADDED: All Services Link for Mobile */}
+                  <Link
+                    href="/services"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      setIsMobileServicesOpen(false);
+                    }}
+                    className="block px-3 py-2 rounded-lg text-sm text-purple-400 hover:text-purple-300 hover:bg-white/5 transition-all duration-300 font-semibold"
+                  >
+                    <i className="fas fa-grid-2 mr-2"></i> All Services (
+                    {services.length})
+                  </Link>
+
                   {services.map((s) => (
                     <Link
                       key={s.path}
@@ -268,15 +289,15 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Bottom Section - Hire Me Button with better positioning */}
+          {/* Bottom Section - Hire Me Button */}
           <div className="absolute bottom-0 left-0 right-0 flex justify-center p-2 bg-gradient-to-t from-black to-transparent pt-3">
             <Link
               href="/contact"
               onClick={() => setIsMenuOpen(false)}
               className="w-full max-w-[calc(100%-2rem)]"
             >
-              <button className="w-full py-3 bg-gradient-to-r from-[#751f8c] to-[#b665f2] rounded-lg text-white font-medium text-[11px] flex items-center justify-center gap-1">
-                <FaRocket className="text-[12px]" /> Hire Me
+              <button className="w-full py-3 bg-gradient-to-r from-[#751f8c] to-[#b665f2] rounded-lg text-white font-medium text-sm flex items-center justify-center gap-1">
+                <FaRocket className="text-sm" /> Hire Me
               </button>
             </Link>
           </div>

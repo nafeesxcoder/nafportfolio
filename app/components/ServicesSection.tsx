@@ -1,9 +1,34 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Stars } from "./Stars";
 import Link from "next/link";
 import Image from "next/image";
+import {
+  FiCheck,
+  FiArrowRight,
+  FiDollarSign,
+  FiClock,
+  FiTarget,
+  FiStar,
+  FiInfo,
+} from "react-icons/fi";
+import { FaRocket, FaCrown } from "react-icons/fa";
+// ✅ Import React Icons for services
+import {
+  FaBuilding,
+  FaShoppingCart,
+  FaBullseye,
+  FaUserAstronaut,
+  FaBlog,
+  FaCalendarCheck,
+  FaGraduationCap,
+  FaHome,
+  FaUtensils,
+  FaCloud,
+  FaUsers,
+} from "react-icons/fa";
 
 export default function ServicesSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,9 +38,10 @@ export default function ServicesSection() {
   const services = [
     {
       id: 1,
+      slug: "business",
       title: "Business / Company Website",
       category: "For Local Businesses & Startups",
-      icon: "fa-building",
+      icon: FaBuilding, // ✅ React Icon
       color: "#06b6d4",
       gradient: "from-cyan-500 to-blue-600",
       targetAudience: "Local businesses, Agencies, Startups",
@@ -35,9 +61,10 @@ export default function ServicesSection() {
     },
     {
       id: 2,
+      slug: "ecommerce",
       title: "E-Commerce Website",
       category: "High Paying Category 💰",
-      icon: "fa-cart-shopping",
+      icon: FaShoppingCart, // ✅ React Icon
       color: "#ec4899",
       gradient: "from-pink-500 to-rose-600",
       targetAudience: "Online stores, Product sellers",
@@ -57,9 +84,10 @@ export default function ServicesSection() {
     },
     {
       id: 3,
+      slug: "landing",
       title: "Landing Page",
       category: "Marketing Focused Site 🎯",
-      icon: "fa-bullseye",
+      icon: FaBullseye, // ✅ React Icon
       color: "#f59e0b",
       gradient: "from-orange-500 to-red-600",
       targetAudience: "Ads campaigns, Product launches",
@@ -79,9 +107,10 @@ export default function ServicesSection() {
     },
     {
       id: 4,
+      slug: "portfolio",
       title: "Portfolio Website",
       category: "For Freelancers & Creatives",
-      icon: "fa-user-astronaut",
+      icon: FaUserAstronaut, // ✅ React Icon
       color: "#8b5cf6",
       gradient: "from-purple-600 to-indigo-600",
       targetAudience: "Developers, Designers, Freelancers",
@@ -101,9 +130,10 @@ export default function ServicesSection() {
     },
     {
       id: 5,
+      slug: "blog",
       title: "Blog / Content Website",
       category: "SEO Based Income 📝",
-      icon: "fa-blog",
+      icon: FaBlog, // ✅ React Icon
       color: "#10b981",
       gradient: "from-emerald-500 to-teal-600",
       targetAudience: "Bloggers, Content creators",
@@ -123,9 +153,10 @@ export default function ServicesSection() {
     },
     {
       id: 6,
+      slug: "booking",
       title: "Booking / Appointment Website",
       category: "High Demand Real-world Use Case 📅",
-      icon: "fa-calendar-check",
+      icon: FaCalendarCheck, // ✅ React Icon
       color: "#3b82f6",
       gradient: "from-blue-500 to-cyan-600",
       targetAudience: "Salons, Doctors, Coaches",
@@ -144,9 +175,10 @@ export default function ServicesSection() {
     },
     {
       id: 7,
+      slug: "lms",
       title: "Education / LMS Website",
       category: "Trending Niche 🎓",
-      icon: "fa-graduation-cap",
+      icon: FaGraduationCap, // ✅ React Icon
       color: "#14b8a6",
       gradient: "from-teal-500 to-emerald-600",
       targetAudience: "Coaching centers, Online teachers",
@@ -166,9 +198,10 @@ export default function ServicesSection() {
     },
     {
       id: 8,
+      slug: "real-estate",
       title: "Real Estate Website",
       category: "Popular Among Foreign Clients 🏢",
-      icon: "fa-home",
+      icon: FaHome, // ✅ React Icon
       color: "#ef4444",
       gradient: "from-red-500 to-orange-600",
       targetAudience: "Property dealers, Real estate agents",
@@ -188,9 +221,10 @@ export default function ServicesSection() {
     },
     {
       id: 9,
+      slug: "restaurant",
       title: "Restaurant / Food Website",
       category: "Easy + Fast Projects 🍔",
-      icon: "fa-utensils",
+      icon: FaUtensils, // ✅ React Icon
       color: "#f97316",
       gradient: "from-orange-500 to-amber-600",
       targetAudience: "Restaurants, Cafes, Food trucks",
@@ -209,9 +243,10 @@ export default function ServicesSection() {
     },
     {
       id: 10,
+      slug: "saas",
       title: "SaaS / Web App",
       category: "Premium Level (High Price) 💎",
-      icon: "fa-cloud",
+      icon: FaCloud, // ✅ React Icon
       color: "#a855f7",
       gradient: "from-purple-500 to-pink-600",
       targetAudience: "Startups, Entrepreneurs",
@@ -231,9 +266,10 @@ export default function ServicesSection() {
     },
     {
       id: 11,
+      slug: "membership",
       title: "Membership Website",
       category: "Recurring Income Model 🔐",
-      icon: "fa-users",
+      icon: FaUsers, // ✅ React Icon
       color: "#06b6d4",
       gradient: "from-cyan-500 to-blue-600",
       targetAudience: "Content creators, Coaches",
@@ -267,253 +303,296 @@ export default function ServicesSection() {
     return () => observer.disconnect();
   }, []);
 
-  // Auto slide
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % services.length);
-    }, 6000);
+    }, 8000);
     return () => clearInterval(timer);
   }, [services.length]);
 
   const currentService = services[currentSlide];
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative py-12 lg:py-16 overflow-hidden"
-    >
-      {/* Black Background */}
-      <div className="absolute inset-0 bg-black" />
+    <section ref={sectionRef} className="relative py-20 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black" />
       <Stars />
 
+      {/* Animated Background Orbs */}
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-pink-600/10 rounded-full blur-3xl animate-pulse delay-1000" />
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header - Reduced Margin */}
-        <div
-          className={`text-center mb-8 transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 bg-purple-600/10 backdrop-blur-sm px-3 py-1 rounded-full mb-3 border border-purple-500/20">
-            <i className="fas fa-globe text-purple-400 text-xs"></i>
-            <span className="text-xs font-medium text-purple-300">
-              What I Build
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 backdrop-blur-sm mb-4">
+            <FaRocket className="w-3 h-3 text-purple-400" />
+            <span className="text-xs font-semibold tracking-wider text-purple-300 uppercase">
+              Our Services
             </span>
           </div>
-          <h2 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
-            All Types of Websites
+
+          <h2 className="text-4xl md:text-5xl font-bold">
+            <span className="bg-gradient-to-r from-white via-purple-300 to-white bg-clip-text text-transparent">
+              Everything You Need
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Under One Roof
+            </span>
           </h2>
-          <p className="text-gray-400 mt-2 text-xs max-w-2xl mx-auto">
-            From simple landing pages to complex web applications
+
+          <p className="text-gray-400 text-base mt-4 max-w-2xl mx-auto">
+            From simple landing pages to complex web applications — we build it
+            all
           </p>
-        </div>
+        </motion.div>
 
-        {/* Slider Container - Reduced Height */}
+        {/* Premium Slider */}
         <div className="relative group">
-          {/* Main Card */}
-          <div className="relative bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl border border-purple-500/20 overflow-hidden shadow-2xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              {/* Left Side - Full Cover Image (Reduced Height) */}
-              <div className="relative h-[300px] lg:h-[400px] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10 lg:bg-gradient-to-r" />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+              className="relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden shadow-2xl"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                {/* Left Side - Stylish Image (Clickable) */}
+                <Link href={`/services/${currentService.slug}`}>
+                  <div className="relative h-[350px] lg:h-[500px] overflow-hidden group/image cursor-pointer">
+                    <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent z-10 lg:bg-gradient-to-r" />
 
-                {/* ✅ FIXED: Added sizes prop to Image */}
-                <Image
-                  src={currentService.image}
-                  alt={currentService.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  priority
-                />
+                    <motion.div
+                      whileHover={{ scale: 1.08 }}
+                      transition={{ duration: 0.6 }}
+                      className="w-full h-full"
+                    >
+                      <Image
+                        src={currentService.image}
+                        alt={currentService.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover"
+                        priority
+                      />
+                    </motion.div>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-20" />
-
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4 z-30">
-                  <div className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20">
-                    <i className="fas fa-crown text-yellow-500 text-[10px]"></i>
-                    <span className="text-[10px] font-medium text-white">
-                      {currentService.category}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Animated Icon */}
-                <div className="absolute bottom-4 right-4 z-30">
-                  <div
-                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${currentService.gradient} flex items-center justify-center shadow-2xl animate-bounce-slow`}
-                  >
-                    <i
-                      className={`fas ${currentService.icon} text-xl text-white`}
-                    ></i>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Side - Content (Reduced Padding) */}
-              <div className="p-5 lg:p-6">
-                {/* Title */}
-                <h3 className="text-xl md:text-2xl font-bold mb-2 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                  {currentService.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-                  {currentService.description}
-                </p>
-
-                {/* Target Audience */}
-                <div className="relative mb-4 p-3 rounded-xl bg-gradient-to-r from-purple-600/10 to-transparent border-l-4 border-purple-500">
-                  <div className="flex items-start gap-2">
-                    <i className="fas fa-users text-sm text-purple-400 mt-0.5"></i>
-                    <div>
-                      <span className="text-[10px] text-gray-400 uppercase tracking-wider">
-                        Target Audience
-                      </span>
-                      <p className="text-xs text-white font-medium mt-0.5">
-                        {currentService.targetAudience}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Features - Compact Grid */}
-                <div className="mb-4">
-                  <h4 className="text-xs font-semibold text-white mb-2 flex items-center gap-2">
-                    <i className="fas fa-gem text-purple-400 text-[10px]"></i>
-                    Key Features
-                  </h4>
-                  <div className="grid grid-cols-2 gap-1.5">
-                    {currentService.features.slice(0, 4).map((feature, idx) => (
-                      <div
-                        key={idx}
-                        className="flex items-center gap-1.5 text-[10px] px-2 py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-300"
-                      >
-                        <i className="fas fa-check-circle text-purple-400 text-[8px]"></i>
-                        <span>{feature}</span>
+                    {/* Overlay on Hover */}
+                    <div className="absolute inset-0 bg-purple-600/30 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 z-20 flex items-center justify-center">
+                      <div className="bg-black/70 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2">
+                        <FiInfo className="text-white" />
+                        <span className="text-white text-sm font-medium">
+                          View Details
+                        </span>
                       </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Price & Delivery - Compact */}
-                <div className="relative mb-4 p-3 rounded-xl bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-500/30">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <span className="text-[10px] text-gray-300 uppercase tracking-wider">
-                        Starting from
-                      </span>
-                      <p className="text-lg font-bold text-white mt-0.5">
-                        {currentService.price}
-                      </p>
                     </div>
-                    <div className="text-right">
-                      <span className="text-[10px] text-gray-300 uppercase tracking-wider">
-                        Delivery
-                      </span>
-                      <p className="text-base font-bold text-purple-400 mt-0.5">
-                        {currentService.delivery}
-                      </p>
-                    </div>
-                  </div>
-                </div>
 
-                {/* CTA Button - Compact */}
-                <Link href="/contact">
-                  <button className="w-full px-4 py-2.5 rounded-xl text-sm font-medium bg-gradient-to-r from-purple-600 to-purple-800 text-white hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 flex items-center justify-center gap-2 group">
-                    <span>Get This Website</span>
-                    <i className="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-                  </button>
+                    {/* Corner Decor */}
+                    <div className="absolute top-4 left-4 z-30">
+                      <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-purple-500/30">
+                        <FaCrown className="w-3 h-3 text-yellow-500" />
+                        <span className="text-xs font-medium text-white">
+                          {currentService.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Floating Icon - ✅ Now using React Icon */}
+                    <motion.div
+                      animate={{ y: [0, -8, 0] }}
+                      transition={{ duration: 3, repeat: Infinity }}
+                      className="absolute bottom-6 right-6 z-30"
+                    >
+                      <div
+                        className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${currentService.gradient} flex items-center justify-center shadow-2xl backdrop-blur-sm`}
+                      >
+                        <currentService.icon className="text-2xl text-white" />
+                      </div>
+                    </motion.div>
+                  </div>
                 </Link>
-              </div>
-            </div>
 
-            {/* Slider Dots */}
-            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1.5 z-20">
-              {services.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentSlide(idx)}
-                  className={`transition-all duration-300 rounded-full ${
-                    currentSlide === idx
-                      ? "w-6 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500"
-                      : "w-1.5 h-1.5 bg-white/30 hover:bg-white/50"
-                  }`}
-                />
-              ))}
-            </div>
+                {/* Right Side - Information */}
+                <div className="p-6 lg:p-8">
+                  <Link href={`/services/${currentService.slug}`}>
+                    <h3 className="text-2xl lg:text-3xl font-bold mb-3 bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent hover:from-purple-300 hover:to-white transition-all duration-300 cursor-pointer">
+                      {currentService.title}
+                      <span className="text-sm text-purple-400 ml-2">↗</span>
+                    </h3>
+                  </Link>
 
-            {/* Navigation Arrows - Smaller */}
-            <button
-              onClick={() =>
-                setCurrentSlide(
-                  (prev) => (prev - 1 + services.length) % services.length,
-                )
-              }
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white hover:bg-purple-600/80 transition-all duration-300 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100"
-            >
-              <i className="fas fa-chevron-left text-sm"></i>
-            </button>
-            <button
-              onClick={() =>
-                setCurrentSlide((prev) => (prev + 1) % services.length)
-              }
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white hover:bg-purple-600/80 transition-all duration-300 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100"
-            >
-              <i className="fas fa-chevron-right text-sm"></i>
-            </button>
-          </div>
+                  <p className="text-gray-300 text-sm lg:text-base mb-6 leading-relaxed">
+                    {currentService.description}
+                  </p>
 
-          {/* Quick Navigation - Compact Grid */}
-          <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-11 gap-1.5 mt-4">
-            {services.map((service, idx) => (
-              <button
-                key={service.id}
-                onClick={() => setCurrentSlide(idx)}
-                className={`p-1.5 rounded-lg text-center transition-all duration-300 ${
-                  currentSlide === idx
-                    ? "bg-gradient-to-r from-purple-600/30 to-pink-600/30 border border-purple-500/50"
-                    : "bg-white/5 border border-white/10 hover:bg-white/10"
-                }`}
-              >
-                <div
-                  className={`w-6 h-6 mx-auto rounded-lg flex items-center justify-center transition-all ${
-                    currentSlide === idx
-                      ? `bg-gradient-to-br ${service.gradient} scale-110`
-                      : "bg-white/10"
-                  }`}
-                >
-                  <i
-                    className={`fas ${service.icon} text-[10px] ${
-                      currentSlide === idx ? "text-white" : "text-gray-500"
-                    }`}
-                  ></i>
+                  {/* Target Audience Card */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className="relative mb-6 p-4 rounded-xl bg-gradient-to-r from-purple-600/10 to-transparent border-l-4 border-purple-500"
+                  >
+                    <div className="flex items-start gap-3">
+                      <FiTarget className="text-purple-400 mt-0.5" />
+                      <div>
+                        <span className="text-xs text-gray-400 uppercase tracking-wider">
+                          Target Audience
+                        </span>
+                        <p className="text-sm text-white font-medium mt-1">
+                          {currentService.targetAudience}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Features Grid */}
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+                      <FiStar className="text-purple-400" />
+                      Key Features
+                    </h4>
+                    <div className="grid grid-cols-2 gap-2">
+                      {currentService.features.map((feature, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.2 + idx * 0.05 }}
+                          className="flex items-center gap-2 text-xs px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:border-purple-500/30 transition-all duration-300"
+                        >
+                          <FiCheck className="text-purple-400 text-xs flex-shrink-0" />
+                          <span>{feature}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Price & Delivery */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="relative mb-6 p-4 rounded-xl bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-500/30"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                          <FiDollarSign className="text-white text-xl" />
+                        </div>
+                        <div>
+                          <span className="text-xs text-gray-300 uppercase tracking-wider">
+                            Starting from
+                          </span>
+                          <p className="text-xl font-bold text-white">
+                            {currentService.price}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+                          <FiClock className="text-white text-xl" />
+                        </div>
+                        <div className="text-right">
+                          <span className="text-xs text-gray-300 uppercase tracking-wider">
+                            Delivery
+                          </span>
+                          <p className="text-xl font-bold text-purple-400">
+                            {currentService.delivery}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* CTA Buttons */}
+                  <div className="flex gap-3">
+                    <Link href="/contact" className="flex-1">
+                      <button className="group w-full px-6 py-3 rounded-xl text-sm font-semibold bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 flex items-center justify-center gap-2">
+                        <span>Get This Website</span>
+                        <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    </Link>
+
+                    <Link href={`/services/${currentService.slug}`}>
+                      <button className="px-5 py-3 rounded-xl text-sm font-medium bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-purple-600/30 hover:border-purple-500/50 transition-all duration-300 flex items-center gap-2">
+                        <FiInfo className="text-sm" />
+                        <span className="hidden sm:inline">Learn More</span>
+                      </button>
+                    </Link>
+                  </div>
                 </div>
-                <p
-                  className={`text-[8px] mt-1 hidden lg:block ${
-                    currentSlide === idx ? "text-purple-400" : "text-gray-500"
-                  }`}
-                >
-                  {service.title.split(" ")[0]}
-                </p>
-              </button>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Slider Dots */}
+          <div className="flex justify-center gap-2 mt-6">
+            {services.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`transition-all duration-300 rounded-full ${
+                  currentSlide === idx
+                    ? "w-8 h-2 bg-gradient-to-r from-purple-500 to-pink-500"
+                    : "w-2 h-2 bg-white/30 hover:bg-white/50"
+                }`}
+              />
             ))}
           </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={() =>
+              setCurrentSlide(
+                (prev) => (prev - 1 + services.length) % services.length,
+              )
+            }
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white hover:bg-purple-600/80 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100"
+          >
+            <i className="fas fa-chevron-left"></i>
+          </button>
+          <button
+            onClick={() =>
+              setCurrentSlide((prev) => (prev + 1) % services.length)
+            }
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white hover:bg-purple-600/80 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100"
+          >
+            <i className="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+        {/* Quick Navigation Pills */}
+        <div className="flex flex-wrap justify-center gap-2 mt-8">
+          {services.slice(0, 6).map((service, idx) => (
+            <button
+              key={service.id}
+              onClick={() => setCurrentSlide(idx)}
+              className={`px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 ${
+                currentSlide === idx
+                  ? `bg-gradient-to-r ${service.gradient} text-white shadow-lg`
+                  : "bg-white/5 border border-white/10 text-gray-400 hover:bg-white/10"
+              }`}
+            >
+              <service.icon className="text-xs mr-2 inline" />
+              {service.title.split(" ")[0]}
+            </button>
+          ))}
+          <Link href="/services">
+            <button className="px-4 py-2 rounded-full text-xs font-medium bg-purple-600/20 border border-purple-500/30 text-purple-300 hover:bg-purple-600/40 transition-all duration-300">
+              <i className="fas fa-arrow-right mr-2"></i>
+              View All ({services.length})
+            </button>
+          </Link>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes bounce-slow {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-5px);
-          }
-        }
-        .animate-bounce-slow {
-          animation: bounce-slow 2s ease-in-out infinite;
-        }
-      `}</style>
     </section>
   );
 }
