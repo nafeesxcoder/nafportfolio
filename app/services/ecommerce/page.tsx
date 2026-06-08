@@ -1,4 +1,4 @@
-import ServiceDetail from "@/app/components/ServiceDetail";
+import ServiceDetail from "@/components/ServiceDetail";
 
 export default function EcommerceServicePage() {
   return (
@@ -24,7 +24,7 @@ export default function EcommerceServicePage() {
         "Admin Dashboard",
       ]}
       description="Sell your products worldwide with a secure and scalable online store"
-      longDescription="Launch your online store with a fully functional e-commerce platform. I build secure, scalable, and feature-rich online stores that help you sell products globally."
+      longDescription="Launch your online store with a fully functional e-commerce platform. I build secure, scalable, and feature-rich online stores that help you sell products globally. From product listings to payment processing, everything is handled seamlessly."
       price="$999"
       delivery="4-6 weeks"
       benefits={[

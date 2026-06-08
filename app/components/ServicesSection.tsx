@@ -15,7 +15,7 @@ import {
   FiInfo,
 } from "react-icons/fi";
 import { FaRocket, FaCrown } from "react-icons/fa";
-// ✅ Import React Icons for services
+// React Icons for services
 import {
   FaBuilding,
   FaShoppingCart,
@@ -35,13 +35,14 @@ export default function ServicesSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sectionRef = useRef(null);
 
+  // Services with correct prices from your data
   const services = [
     {
       id: 1,
       slug: "business",
       title: "Business / Company Website",
       category: "For Local Businesses & Startups",
-      icon: FaBuilding, // ✅ React Icon
+      icon: FaBuilding,
       color: "#06b6d4",
       gradient: "from-cyan-500 to-blue-600",
       targetAudience: "Local businesses, Agencies, Startups",
@@ -55,7 +56,8 @@ export default function ServicesSection() {
       ],
       description:
         "Establish your online presence and attract more customers globally",
-      price: "Starting from $499",
+      price: "$499",
+      priceDisplay: "$499",
       delivery: "2-3 weeks",
       image: "/business.png",
     },
@@ -64,7 +66,7 @@ export default function ServicesSection() {
       slug: "ecommerce",
       title: "E-Commerce Website",
       category: "High Paying Category 💰",
-      icon: FaShoppingCart, // ✅ React Icon
+      icon: FaShoppingCart,
       color: "#ec4899",
       gradient: "from-pink-500 to-rose-600",
       targetAudience: "Online stores, Product sellers",
@@ -78,7 +80,8 @@ export default function ServicesSection() {
       ],
       description:
         "Sell your products worldwide with a secure and scalable online store",
-      price: "Starting from $999",
+      price: "$999",
+      priceDisplay: "$999",
       delivery: "4-6 weeks",
       image: "/ecommerce.png",
     },
@@ -87,7 +90,7 @@ export default function ServicesSection() {
       slug: "landing",
       title: "Landing Page",
       category: "Marketing Focused Site 🎯",
-      icon: FaBullseye, // ✅ React Icon
+      icon: FaBullseye,
       color: "#f59e0b",
       gradient: "from-orange-500 to-red-600",
       targetAudience: "Ads campaigns, Product launches",
@@ -101,7 +104,8 @@ export default function ServicesSection() {
       ],
       description:
         "Convert visitors into paying customers with high-performing landing pages",
-      price: "Starting from $199",
+      price: "$199",
+      priceDisplay: "$199",
       delivery: "1-2 weeks",
       image: "/landing-page.png",
     },
@@ -110,7 +114,7 @@ export default function ServicesSection() {
       slug: "portfolio",
       title: "Portfolio Website",
       category: "For Freelancers & Creatives",
-      icon: FaUserAstronaut, // ✅ React Icon
+      icon: FaUserAstronaut,
       color: "#8b5cf6",
       gradient: "from-purple-600 to-indigo-600",
       targetAudience: "Developers, Designers, Freelancers",
@@ -124,7 +128,8 @@ export default function ServicesSection() {
       ],
       description:
         "Showcase your work professionally and attract global clients",
-      price: "Starting from $349",
+      price: "$349",
+      priceDisplay: "$349",
       delivery: "2-3 weeks",
       image: "/portfolio.png",
     },
@@ -133,7 +138,7 @@ export default function ServicesSection() {
       slug: "blog",
       title: "Blog / Content Website",
       category: "SEO Based Income 📝",
-      icon: FaBlog, // ✅ React Icon
+      icon: FaBlog,
       color: "#10b981",
       gradient: "from-emerald-500 to-teal-600",
       targetAudience: "Bloggers, Content creators",
@@ -147,7 +152,8 @@ export default function ServicesSection() {
       ],
       description:
         "Grow your audience and rank on Google with SEO-friendly blogs",
-      price: "Starting from $299",
+      price: "$299",
+      priceDisplay: "$299",
       delivery: "2-3 weeks",
       image: "/blog.png",
     },
@@ -156,7 +162,7 @@ export default function ServicesSection() {
       slug: "booking",
       title: "Booking / Appointment Website",
       category: "High Demand Real-world Use Case 📅",
-      icon: FaCalendarCheck, // ✅ React Icon
+      icon: FaCalendarCheck,
       color: "#3b82f6",
       gradient: "from-blue-500 to-cyan-600",
       targetAudience: "Salons, Doctors, Coaches",
@@ -169,7 +175,8 @@ export default function ServicesSection() {
         "Automated reminders",
       ],
       description: "Allow customers to book appointments easily online",
-      price: "Starting from $449",
+      price: "$449",
+      priceDisplay: "$449",
       delivery: "3-4 weeks",
       image: "/booking.png",
     },
@@ -178,7 +185,7 @@ export default function ServicesSection() {
       slug: "lms",
       title: "Education / LMS Website",
       category: "Trending Niche 🎓",
-      icon: FaGraduationCap, // ✅ React Icon
+      icon: FaGraduationCap,
       color: "#14b8a6",
       gradient: "from-teal-500 to-emerald-600",
       targetAudience: "Coaching centers, Online teachers",
@@ -192,7 +199,8 @@ export default function ServicesSection() {
       ],
       description:
         "Create and sell online courses with a powerful learning platform",
-      price: "Starting from $799",
+      price: "$799",
+      priceDisplay: "$799",
       delivery: "4-6 weeks",
       image: "/lms.png",
     },
@@ -201,7 +209,7 @@ export default function ServicesSection() {
       slug: "real-estate",
       title: "Real Estate Website",
       category: "Popular Among Foreign Clients 🏢",
-      icon: FaHome, // ✅ React Icon
+      icon: FaHome,
       color: "#ef4444",
       gradient: "from-red-500 to-orange-600",
       targetAudience: "Property dealers, Real estate agents",
@@ -215,7 +223,8 @@ export default function ServicesSection() {
       ],
       description:
         "Showcase properties with advanced search and attract serious buyers",
-      price: "Starting from $649",
+      price: "$649",
+      priceDisplay: "$649",
       delivery: "4-5 weeks",
       image: "/real-estate.png",
     },
@@ -224,7 +233,7 @@ export default function ServicesSection() {
       slug: "restaurant",
       title: "Restaurant / Food Website",
       category: "Easy + Fast Projects 🍔",
-      icon: FaUtensils, // ✅ React Icon
+      icon: FaUtensils,
       color: "#f97316",
       gradient: "from-orange-500 to-amber-600",
       targetAudience: "Restaurants, Cafes, Food trucks",
@@ -237,7 +246,8 @@ export default function ServicesSection() {
         "Delivery integration",
       ],
       description: "Increase orders with a modern and mobile-friendly website",
-      price: "Starting from $349",
+      price: "$349",
+      priceDisplay: "$349",
       delivery: "2-3 weeks",
       image: "/restaurant.png",
     },
@@ -246,7 +256,7 @@ export default function ServicesSection() {
       slug: "saas",
       title: "SaaS / Web App",
       category: "Premium Level (High Price) 💎",
-      icon: FaCloud, // ✅ React Icon
+      icon: FaCloud,
       color: "#a855f7",
       gradient: "from-purple-500 to-pink-600",
       targetAudience: "Startups, Entrepreneurs",
@@ -260,7 +270,8 @@ export default function ServicesSection() {
       ],
       description:
         "Build scalable web applications with secure backend systems",
-      price: "Starting from $1499",
+      price: "$1499+",
+      priceDisplay: "$1499+",
       delivery: "6-10 weeks",
       image: "/saas.png",
     },
@@ -269,7 +280,7 @@ export default function ServicesSection() {
       slug: "membership",
       title: "Membership Website",
       category: "Recurring Income Model 🔐",
-      icon: FaUsers, // ✅ React Icon
+      icon: FaUsers,
       color: "#06b6d4",
       gradient: "from-cyan-500 to-blue-600",
       targetAudience: "Content creators, Coaches",
@@ -282,7 +293,8 @@ export default function ServicesSection() {
         "Community forums",
       ],
       description: "Monetize your content with membership-based platforms",
-      price: "Starting from $899",
+      price: "$899",
+      priceDisplay: "$899",
       delivery: "4-5 weeks",
       image: "/membership.png",
     },
@@ -365,7 +377,7 @@ export default function ServicesSection() {
               className="relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden shadow-2xl"
             >
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                {/* Left Side - Stylish Image (Clickable) */}
+                {/* Left Side - Image (Clickable) */}
                 <Link href={`/services/${currentService.slug}`}>
                   <div className="relative h-[350px] lg:h-[500px] overflow-hidden group/image cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent z-10 lg:bg-gradient-to-r" />
@@ -405,7 +417,7 @@ export default function ServicesSection() {
                       </div>
                     </div>
 
-                    {/* Floating Icon - ✅ Now using React Icon */}
+                    {/* Floating Icon */}
                     <motion.div
                       animate={{ y: [0, -8, 0] }}
                       transition={{ duration: 3, repeat: Infinity }}
@@ -414,7 +426,9 @@ export default function ServicesSection() {
                       <div
                         className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${currentService.gradient} flex items-center justify-center shadow-2xl backdrop-blur-sm`}
                       >
-                        <currentService.icon className="text-2xl text-white" />
+                        {currentService.icon && (
+                          <currentService.icon className="text-2xl text-white" />
+                        )}
                       </div>
                     </motion.div>
                   </div>
@@ -460,18 +474,20 @@ export default function ServicesSection() {
                       Key Features
                     </h4>
                     <div className="grid grid-cols-2 gap-2">
-                      {currentService.features.map((feature, idx) => (
-                        <motion.div
-                          key={idx}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.2 + idx * 0.05 }}
-                          className="flex items-center gap-2 text-xs px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:border-purple-500/30 transition-all duration-300"
-                        >
-                          <FiCheck className="text-purple-400 text-xs flex-shrink-0" />
-                          <span>{feature}</span>
-                        </motion.div>
-                      ))}
+                      {currentService.features
+                        .slice(0, 4)
+                        .map((feature, idx) => (
+                          <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.2 + idx * 0.05 }}
+                            className="flex items-center gap-2 text-xs px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:border-purple-500/30 transition-all duration-300"
+                          >
+                            <FiCheck className="text-purple-400 text-xs flex-shrink-0" />
+                            <span>{feature}</span>
+                          </motion.div>
+                        ))}
                     </div>
                   </div>
 
@@ -557,7 +573,19 @@ export default function ServicesSection() {
             }
             className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white hover:bg-purple-600/80 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100"
           >
-            <i className="fas fa-chevron-left"></i>
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
           </button>
           <button
             onClick={() =>
@@ -565,7 +593,19 @@ export default function ServicesSection() {
             }
             className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white hover:bg-purple-600/80 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100"
           >
-            <i className="fas fa-chevron-right"></i>
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
           </button>
         </div>
 
@@ -575,19 +615,31 @@ export default function ServicesSection() {
             <button
               key={service.id}
               onClick={() => setCurrentSlide(idx)}
-              className={`px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 ${
+              className={`px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 flex items-center gap-2 ${
                 currentSlide === idx
                   ? `bg-gradient-to-r ${service.gradient} text-white shadow-lg`
                   : "bg-white/5 border border-white/10 text-gray-400 hover:bg-white/10"
               }`}
             >
-              <service.icon className="text-xs mr-2 inline" />
+              {service.icon && <service.icon className="text-xs" />}
               {service.title.split(" ")[0]}
             </button>
           ))}
           <Link href="/services">
-            <button className="px-4 py-2 rounded-full text-xs font-medium bg-purple-600/20 border border-purple-500/30 text-purple-300 hover:bg-purple-600/40 transition-all duration-300">
-              <i className="fas fa-arrow-right mr-2"></i>
+            <button className="px-4 py-2 rounded-full text-xs font-medium bg-purple-600/20 border border-purple-500/30 text-purple-300 hover:bg-purple-600/40 transition-all duration-300 flex items-center gap-2">
+              <svg
+                className="w-3 h-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
               View All ({services.length})
             </button>
           </Link>

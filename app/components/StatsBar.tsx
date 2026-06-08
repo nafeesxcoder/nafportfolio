@@ -17,8 +17,8 @@ export default function StatsBar() {
     if (!hasStarted) return;
 
     const interval = window.setInterval(() => {
-      setProjects((prev) => (prev < 35 ? prev + 1 : 35));
-      setClients((prev) => (prev < 30 ? prev + 1 : 30));
+      setProjects((prev) => (prev < 30 ? prev + 1 : 30));
+      setClients((prev) => (prev < 20 ? prev + 1 : 20));
       setTech((prev) => (prev < 15 ? prev + 1 : 15));
       setSatisfaction((prev) => (prev < 100 ? Math.min(100, prev + 2) : 100));
     }, 60);

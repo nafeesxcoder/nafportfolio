@@ -1,4 +1,4 @@
-import ServiceDetail from "@/app/components/ServiceDetail";
+import ServiceDetail from "@/components/ServiceDetail";
 
 export default function MembershipServicePage() {
   return (

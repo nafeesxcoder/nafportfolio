@@ -58,7 +58,7 @@ export default function About() {
     },
     {
       icon: FiBriefcase,
-      value: "50+",
+      value: "30+",
       label: "Projects Delivered",
       color: "#06b6d4",
       gradient: "from-cyan-500 to-blue-500",
@@ -287,13 +287,13 @@ export default function About() {
                 {
                   icon: FiClock,
                   text: "",
-                  highlight: "4+ years",
+                  highlight: "2+ years",
                   suffix: " of professional experience",
                 },
                 {
                   icon: FiCheckCircle,
                   text: "",
-                  highlight: "50+ projects",
+                  highlight: "30+ projects",
                   suffix: " delivered successfully",
                 },
               ].map((item, idx) => (

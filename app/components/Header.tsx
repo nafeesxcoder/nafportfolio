@@ -3,15 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-  FaYoutube,
-  FaChevronDown,
-  FaTimes,
-  FaRocket,
-} from "react-icons/fa";
+import { FaChevronDown, FaTimes, FaRocket } from "react-icons/fa";
 
 export default function Header() {
   const pathname = usePathname();
@@ -76,8 +68,9 @@ export default function Header() {
 
   return (
     <>
+      {/* Fixed Header - Mobile: top-0, Desktop: top-8 */}
       <header
-        className={`w-full transition-all duration-500 ${
+        className={`fixed top-0 md:top-8 left-0 w-full z-40 transition-all duration-500 ${
           scrolled
             ? "bg-black/95 backdrop-blur-xl py-3 shadow-2xl shadow-purple-900/20"
             : "bg-black/80 backdrop-blur-md py-4"
@@ -142,7 +135,6 @@ export default function Header() {
                     className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-xl rounded-2xl border border-purple-500/30 shadow-2xl py-3 z-50"
                   >
                     <div className="max-h-96 overflow-y-auto custom-scroll">
-                      {/* ✅ ADDED: All Services Link */}
                       <Link
                         href="/services"
                         className="block px-4 py-2.5 text-sm text-purple-400 hover:text-purple-300 hover:bg-white/5 transition-all duration-300 border-b border-white/10 mb-2 font-semibold"
@@ -169,7 +161,7 @@ export default function Header() {
             </div>
           </div>
 
-          {/* RIGHT SIDE - Hire Me button (desktop only) */}
+          {/* RIGHT SIDE - Only Hire Me Button */}
           <div className="flex items-center gap-4">
             <Link href="/contact" className="hidden md:block">
               <button className="group relative px-5 py-2 bg-gradient-to-r from-[#751f8c] to-[#b665f2] rounded-full text-white text-sm font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
@@ -222,7 +214,7 @@ export default function Header() {
           </button>
         </div>
 
-        <div className="h-full overflow-y-auto pb-28">
+        <div className="h-full overflow-y-auto pb-32">
           <div className="p-5 space-y-2">
             {navItems.map((item) => (
               <Link
@@ -255,10 +247,8 @@ export default function Header() {
                 />
               </button>
 
-              {/* Services Dropdown Menu */}
               {isMobileServicesOpen && (
                 <div className="ml-4 mt-2 space-y-1 border-l border-purple-500/30 pl-3 max-h-48 overflow-y-auto">
-                  {/* ✅ ADDED: All Services Link for Mobile */}
                   <Link
                     href="/services"
                     onClick={() => {
@@ -290,14 +280,10 @@ export default function Header() {
           </div>
 
           {/* Bottom Section - Hire Me Button */}
-          <div className="absolute bottom-0 left-0 right-0 flex justify-center p-2 bg-gradient-to-t from-black to-transparent pt-3">
-            <Link
-              href="/contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="w-full max-w-[calc(100%-2rem)]"
-            >
-              <button className="w-full py-3 bg-gradient-to-r from-[#751f8c] to-[#b665f2] rounded-lg text-white font-medium text-sm flex items-center justify-center gap-1">
-                <FaRocket className="text-sm" /> Hire Me
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent pt-6">
+            <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+              <button className="w-full py-3 bg-gradient-to-r from-[#751f8c] to-[#b665f2] rounded-xl text-white font-semibold text-sm flex items-center justify-center gap-2">
+                <FaRocket className="text-xs" /> Hire Me
               </button>
             </Link>
           </div>

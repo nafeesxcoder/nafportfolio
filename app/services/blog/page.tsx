@@ -1,4 +1,6 @@
-import ServiceDetail from "@/app/components/ServiceDetail";
+"use client";
+
+import ServiceDetail from "@/components/ServiceDetail";
 
 export default function BlogServicePage() {
   return (

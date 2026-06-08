@@ -1,0 +1,47 @@
+{
+  "company": {
+    "name": "Unique Web Layer",
+    "tagline": "Professional Web Development Agency | Custom Websites & Web Applications",
+    "founded": "2020",
+    "mission": "Delivering high-quality, custom web solutions that help businesses grow online."
+  },
+  "contact": {
+    "email": "info@uniqueweblayer.com",
+    "phone": "+91 (740) 923-3994",
+
+    "address": "A-2/111 New Kondli, New Delhi, India - 110096",
+    "whatsapp": "+91 (740) 923-3994"
+  },
+  "hours": {
+    "monday_friday": {
+      "open": "09:00",
+      "close": "19:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "16:00"
+    },
+    "sunday": {
+      "open": "Closed",
+      "close": "Emergency support only"
+    }
+  },
+  "serviceArea": {
+    "primary": [
+      "India",
+      "United States",
+      "Canada",
+      "United Kingdom",
+      "Australia"
+    ],
+    "global": ["Worldwide Online Services"],
+    "local": ["Delhi NCR", "Noida", "Gurugram", "Faridabad", "Ghaziabad"]
+  },
+  "social": {
+    "github": "https://github.com/uniqueweblayer",
+    "linkedin": "https://linkedin.com/company/uniqueweblayer",
+    "twitter": "https://twitter.com/uniqueweblayer",
+    "instagram": "https://instagram.com/uniqueweblayer",
+    "facebook": "https://facebook.com/uniqueweblayer"
+  }
+}

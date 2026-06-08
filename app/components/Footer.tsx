@@ -222,9 +222,10 @@ export default function Footer() {
                 <FaGithub className="w-4 h-4" />
               </a>
               <a
-                href="https://www.linkedin.com/in/uniqueweblayer/"
+                href="https://www.linkedin.com/company/uniqueweblayer/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Unique Web Layer on LinkedIn"
                 className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-purple-500 hover:bg-purple-500/10 transition-all duration-300 hover:scale-110"
               >
                 <FaLinkedinIn className="w-4 h-4" />

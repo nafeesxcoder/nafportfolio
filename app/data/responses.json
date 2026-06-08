@@ -1,0 +1,14 @@
+{
+  "greetings": [
+    "👋 Hello! Welcome to Unique Web Layer. How can I help you with your website project today?",
+    "🚀 Namaste! Ready to build your website? Unique Web Layer is here to help!",
+    "✨ Welcome to Unique Web Layer - Your trusted partner for custom web development!"
+  ],
+  "farewells": [
+    "Thank you for reaching out! We'll get back to you within 24 hours.",
+    "Have a great day! Feel free to return anytime.",
+    "Looking forward to working with you on your web project!"
+  ],
+  "fallback": "Thanks for reaching out to Unique Web Layer! Please share your name, email, and project details, and our team will contact you within 24 hours.",
+  "booking": "📅 Ready to start your web project?\n\nPlease share:\n1. Your name\n2. Email address\n3. Project type\n4. Budget range\n5. Timeline requirements\n\nWe'll get back to you within 24 hours!"
+}

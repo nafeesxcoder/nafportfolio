@@ -45,7 +45,6 @@ export default function ServiceDetail({
 
   return (
     <section className="relative min-h-screen py-32 overflow-hidden">
-      {/* Black Background */}
       <div className="absolute inset-0 bg-black" />
       <Stars />
 
@@ -55,6 +54,7 @@ export default function ServiceDetail({
           className={`text-center mb-12 transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
           <div className="inline-flex items-center gap-2 bg-purple-600/10 backdrop-blur-sm px-4 py-2 rounded-full mb-4 border border-purple-500/20">
+            {/* ✅ Fixed: Font Awesome icon with proper classes */}
             <i className={`fas ${icon} text-purple-400 text-sm`}></i>
             <span className="text-sm font-medium text-purple-300">
               {category}
@@ -67,12 +67,10 @@ export default function ServiceDetail({
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Main Content - Left 2 columns */}
+          {/* Left side - Main content */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Long Description */}
-            <div
-              className={`bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20 transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-            >
+            {/* Overview */}
+            <div className="bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <i className="fas fa-info-circle text-purple-400"></i>
                 Overview
@@ -81,9 +79,7 @@ export default function ServiceDetail({
             </div>
 
             {/* Features */}
-            <div
-              className={`bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20 transition-all duration-700 delay-100 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-            >
+            <div className="bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <i className="fas fa-list-check text-purple-400"></i>
                 Key Features
@@ -102,9 +98,7 @@ export default function ServiceDetail({
             </div>
 
             {/* Process */}
-            <div
-              className={`bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20 transition-all duration-700 delay-200 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-            >
+            <div className="bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <i className="fas fa-chart-line text-purple-400"></i>
                 Development Process
@@ -126,9 +120,7 @@ export default function ServiceDetail({
             </div>
 
             {/* Technologies */}
-            <div
-              className={`bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20 transition-all duration-700 delay-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-            >
+            <div className="bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <i className="fas fa-microchip text-purple-400"></i>
                 Technologies Used
@@ -146,13 +138,12 @@ export default function ServiceDetail({
             </div>
           </div>
 
-          {/* Sidebar - Right 1 column */}
+          {/* Right side - Sidebar */}
           <div className="space-y-6">
             {/* Price Card */}
-            <div
-              className={`bg-gradient-to-br from-purple-900/40 to-black/60 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30 sticky top-24 transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-            >
+            <div className="bg-gradient-to-br from-purple-900/40 to-black/60 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30 sticky top-24">
               <div className="text-center mb-6">
+                {/* ✅ Fixed: Large icon in price card */}
                 <div
                   className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center mx-auto mb-4`}
                 >

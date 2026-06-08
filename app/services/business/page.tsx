@@ -1,4 +1,4 @@
-import ServiceDetail from "@/app/components/ServiceDetail";
+import ServiceDetail from "@/components/ServiceDetail";
 
 export default function BusinessServicePage() {
   return (
@@ -33,7 +33,6 @@ export default function BusinessServicePage() {
         "Increased Brand Credibility",
         "More Customer Leads",
         "Better Search Engine Ranking",
-        "Professional Business Image",
       ]}
       process={[
         "Requirement Gathering & Business Analysis",
@@ -41,14 +40,12 @@ export default function BusinessServicePage() {
         "Development & Content Integration",
         "Testing & Quality Assurance",
         "Launch & Deployment",
-        "Post-Launch Support",
       ]}
       technologies={[
         "React.js / Next.js",
         "Tailwind CSS",
         "Node.js / Express",
         "MongoDB / PostgreSQL",
-        "SEO Best Practices",
       ]}
     />
   );

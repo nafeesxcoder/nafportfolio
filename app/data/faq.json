@@ -1,0 +1,44 @@
+{
+  "faqs": [
+    {
+      "question": "What services does Unique Web Layer offer?",
+      "answer": "We offer Web Development, App Development, Digital Marketing, and Video Production services. We build custom websites, mobile apps, run marketing campaigns, and create professional videos for businesses of all sizes."
+    },
+    {
+      "question": "How much does a website cost?",
+      "answer": "Our website pricing starts from $499 for a basic 5-page website, $999 for a business website with CMS, $1999 for e-commerce websites, and custom web apps from $5000. Contact us for a personalized quote based on your requirements."
+    },
+    {
+      "question": "Do you work with international clients?",
+      "answer": "Yes! We work with clients worldwide including US, Canada, UK, Australia, and many other countries. Our remote workflow is optimized for global collaboration."
+    },
+    {
+      "question": "How long does it take to build a website?",
+      "answer": "Timeline depends on complexity: Basic websites take 2-3 weeks, business websites 3-4 weeks, e-commerce 4-6 weeks, and custom web apps 6-10 weeks."
+    },
+    {
+      "question": "Do you provide support after project completion?",
+      "answer": "Yes, we provide free support for 1-3 months depending on the package. Extended support and maintenance packages are also available starting from $99/month."
+    },
+    {
+      "question": "What technologies do you use?",
+      "answer": "We use modern technologies including React.js, Next.js, Node.js, Python, Laravel, MongoDB, MySQL, Tailwind CSS, and more based on project requirements."
+    },
+    {
+      "question": "Can you redesign my existing website?",
+      "answer": "Absolutely! We specialize in website redesigns that improve user experience, loading speed, and conversion rates. Contact us with your current website URL for a free consultation."
+    },
+    {
+      "question": "How can I start a project with Unique Web Layer?",
+      "answer": "Click the 'Start Project' button on our website, fill out the contact form, or reach out via email or phone. We'll schedule a free consultation to understand your requirements and provide a detailed quote."
+    },
+    {
+      "question": "Do you offer SEO services?",
+      "answer": "Yes, we offer comprehensive SEO packages starting from $299/month including keyword research, on-page SEO, backlink building, and monthly performance reports."
+    },
+    {
+      "question": "What is your payment structure?",
+      "answer": "We typically require 50% advance to start the project and 50% upon completion. For larger projects, we offer milestone-based payments."
+    }
+  ]
+}
