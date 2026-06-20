@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef } from "react";
 import { Stars } from "../components/Stars";
-import Link from "next/link";
-import { FaWhatsapp, FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { FaWhatsapp, FaReact, FaNodeJs } from "react-icons/fa";
 import {
   SiNextdotjs,
   SiTailwindcss,
@@ -14,7 +13,6 @@ import {
 import {
   FiShield,
   FiClock,
-  FiCheckCircle,
   FiArrowRight,
   FiUsers,
   FiGlobe,
@@ -43,6 +41,10 @@ export default function Contact() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
+  // Turnstile
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileRef = useRef<TurnstileInstance>(null);
+
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
 
@@ -65,10 +67,22 @@ export default function Contact() {
     e.preventDefault();
     setSubmitStatus(null);
     if (!validateForm()) return;
+
+    if (!turnstileToken) {
+      setSubmitStatus("error");
+      return;
+    }
+
     setIsSubmitting(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log("Inquiry:", formData);
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, turnstileToken }),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
+
       setSubmitStatus("success");
       setFormData({
         name: "",
@@ -84,14 +98,12 @@ export default function Contact() {
       setTimeout(() => setSubmitStatus(null), 5000);
     } finally {
       setIsSubmitting(false);
+      setTurnstileToken("");
+      turnstileRef.current?.reset();
     }
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
-  ) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
@@ -138,7 +150,7 @@ export default function Contact() {
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
             <span className="bg-gradient-to-r from-white via-purple-300 to-white bg-clip-text text-transparent">
-              Let's Build Your
+              Let&apos;s Build Your
             </span>
             <br />
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
@@ -229,7 +241,8 @@ export default function Contact() {
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-3">
               <div className="flex items-center gap-2 text-xs text-gray-500">
-                <FiShield className="text-purple-400" /> Secure & Confidential
+                <FiShield className="text-purple-400" /> Secure &amp;
+                Confidential
               </div>
               <div className="flex items-center gap-2 text-xs text-gray-500">
                 <FiClock className="text-purple-400" /> 24hr Response
@@ -257,7 +270,7 @@ export default function Contact() {
                   Request a Free Quote
                 </h3>
                 <p className="text-gray-400 text-sm mt-1">
-                  Fill the details and we'll get back to you
+                  Fill the details and we&apos;ll get back to you
                 </p>
               </div>
 
@@ -265,14 +278,15 @@ export default function Contact() {
               {submitStatus === "success" && (
                 <div className="mb-6 bg-green-500/10 border-l-4 border-green-500 p-3 rounded-lg">
                   <p className="text-sm text-green-400 font-medium">
-                    ✓ Thank you! We'll contact you soon.
+                    ✓ Thank you! We&apos;ll contact you soon.
                   </p>
                 </div>
               )}
               {submitStatus === "error" && (
                 <div className="mb-6 bg-red-500/10 border-l-4 border-red-500 p-3 rounded-lg">
                   <p className="text-sm text-red-400 font-medium">
-                    ❌ Something went wrong. Please try again.
+                    ❌ Something went wrong. Please verify captcha &amp; try
+                    again.
                   </p>
                 </div>
               )}
@@ -388,6 +402,18 @@ export default function Contact() {
                       {errors.message}
                     </p>
                   )}
+                </div>
+
+                {/* Cloudflare Turnstile - bot protection */}
+                <div className="flex justify-center">
+                  <Turnstile
+                    ref={turnstileRef}
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                    onSuccess={(token) => setTurnstileToken(token)}
+                    onExpire={() => setTurnstileToken("")}
+                    onError={() => setTurnstileToken("")}
+                    options={{ theme: "dark" }}
+                  />
                 </div>
 
                 {/* Submit Button */}

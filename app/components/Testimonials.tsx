@@ -384,3 +384,4 @@ function RatingBar({ state }: { state: "full" | "half" | "empty" }) {
     </span>
   );
 }
+  
