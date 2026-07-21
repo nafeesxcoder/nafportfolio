@@ -49,17 +49,17 @@ export async function POST(req: Request) {
       );
     }
 
-    // 3. Email bhejo
+    // 3. Email bhejo - ✅ Fixed with correct email and phone
     const { error } = await resend.emails.send({
-      from: "Timex Solution <onboarding@resend.dev>",
-      to: process.env.CONTACT_TO_EMAIL!,
+      from: "Unique Web Layer <onboarding@resend.dev>",
+      to: process.env.CONTACT_TO_EMAIL || "info@uniqueweblayer.com",
       replyTo: email,
       subject: `New Quote Request — ${service} (${name})`,
       html: `
         <div style="font-family:system-ui,Arial,sans-serif;max-width:600px;margin:auto;background:#0f0f17;border-radius:12px;overflow:hidden;border:1px solid #2a2a3a">
           <div style="background:linear-gradient(135deg,#7c3aed,#db2777);padding:24px 28px">
-            <h2 style="margin:0;color:#fff;font-size:20px">New Lead — Quote Request</h2>
-            <p style="margin:4px 0 0;color:#f3e8ff;font-size:13px">Timex Solution Inc.</p>
+            <h2 style="margin:0;color:#fff;font-size:20px">📩 New Lead — Quote Request</h2>
+            <p style="margin:4px 0 0;color:#f3e8ff;font-size:13px">Unique Web Layer</p>
           </div>
           <div style="padding:24px 28px;color:#e5e7eb;font-size:14px;line-height:1.7">
             <table style="width:100%;border-collapse:collapse">
@@ -72,6 +72,10 @@ export async function POST(req: Request) {
             <div style="margin-top:16px;padding:14px 16px;background:#1a1a26;border-left:3px solid #7c3aed;border-radius:8px">
               <p style="margin:0 0 4px;color:#9ca3af;font-size:12px">Message</p>
               <p style="margin:0;white-space:pre-wrap">${message}</p>
+            </div>
+            <div style="margin-top:20px;padding:12px 16px;background:#1a1a26;border-radius:8px;border:1px solid #2a2a3a">
+              <p style="margin:0;color:#9ca3af;font-size:12px">📞 <strong style="color:#e5e7eb">+91 74092-33994</strong></p>
+              <p style="margin:4px 0 0;color:#9ca3af;font-size:12px">✉️ <strong style="color:#e5e7eb">info@uniqueweblayer.com</strong></p>
             </div>
           </div>
         </div>

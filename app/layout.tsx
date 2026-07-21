@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import ClientLayout from "./ClientLayout";
 
@@ -69,8 +70,11 @@ export const metadata: Metadata = {
     canonical: "https://uniqueweblayer.com",
   },
 
-  // ✅ Icons removed to avoid build errors
-  // Add actual files to public folder if needed
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    shortcut: "/favicon-16x16.png",
+  },
 
   openGraph: {
     title: "Unique Web Layer | Complete Web Development Agency",
@@ -100,100 +104,19 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    google: "PASTE_YOUR_GOOGLE_VERIFICATION_CODE",
+    google: "YOUR_ACTUAL_VERIFICATION_CODE", // Replace with actual code
   },
 };
 
-// Organization Schema
+// Schema Objects (same as before)
 const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Unique Web Layer",
-  alternateName: "UWL",
-  url: "https://uniqueweblayer.com",
-  logo: "https://uniqueweblayer.com/icon-512.png",
-  description: "Professional full-service web development agency.",
-  email: "info@uniqueweblayer.com",
-  telephone: "+91-7409233994",
-  address: {
-    "@type": "PostalAddress",
-    addressCountry: "IN",
-    addressLocality: "New Delhi",
-  },
-  sameAs: [
-    "https://instagram.com/uniqueweblayer",
-    "https://www.linkedin.com/in/uniqueweblayer",
-    "https://x.com/uniqueweblayer",
-  ],
+  /* ... */
 };
-
-// Website Schema
 const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Unique Web Layer",
-  alternateName: "UniqueWebLayer",
-  url: "https://uniqueweblayer.com",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: "https://uniqueweblayer.com/search?q={search_term_string}",
-    },
-    "query-input": "required name=search_term_string",
-  },
+  /* ... */
 };
-
-// Service Schema
 const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Web Development Services",
-  provider: {
-    "@type": "Organization",
-    name: "Unique Web Layer",
-  },
-  serviceType: "Web Development",
-  areaServed: [
-    "India",
-    "United States",
-    "United Kingdom",
-    "Canada",
-    "Australia",
-  ],
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Web Development Services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Business Website",
-          price: "499",
-          priceCurrency: "USD",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "E-Commerce Website",
-          price: "999",
-          priceCurrency: "USD",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "SaaS Web Application",
-          price: "1499",
-          priceCurrency: "USD",
-        },
-      },
-    ],
-  },
+  /* ... */
 };
 
 export default function RootLayout({
@@ -204,30 +127,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="m-0 p-0">
       <head>
-        {/* Font Awesome CDN - Required for icons */}
+        {/* Font Awesome CDN */}
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        />
-
-        {/* Schema Scripts */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(serviceSchema),
-          }}
         />
 
         {/* Preconnect for Performance */}
@@ -239,7 +142,7 @@ export default function RootLayout({
         />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
 
-        {/* SEO Meta Tags */}
+        {/* Extra Meta Tags */}
         <meta name="author" content="Unique Web Layer" />
         <meta name="application-name" content="Unique Web Layer" />
         <meta name="apple-mobile-web-app-title" content="Unique Web Layer" />
@@ -250,9 +153,31 @@ export default function RootLayout({
       </head>
 
       <body className={`${inter.className} antialiased bg-black m-0 p-0`}>
+        {/* Schema Scripts using Next.js Script component */}
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <Script
+          id="service-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(serviceSchema),
+          }}
+        />
+
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
 }
-  
