@@ -1,0 +1,267 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #8b5cf6;
+  --primary-dark: #7c3aed;
+  --primary-light: #a78bfa;
+  --primary-hover: #9f67ff;
+  --secondary: #000000;
+  --purple-glow: rgba(139, 92, 246, 0.3);
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-size: 200% 200%;
+  animation: darkGradient 10s ease infinite;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #9f67ff, #7c3aed);
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #8b5cf6, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #8b5cf6;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a78bfa;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.3);
+  color: white;
+}
+
+@keyframes darkGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+/* ============================================================
+   THEME SYSTEM
+   ------------------------------------------------------------
+   The site is authored dark-first with classes like `bg-black`,
+   `text-white`, `text-gray-400`. Tailwind v4 compiles those to
+   `var(--color-black)`, `var(--color-white)` …, so the light theme is
+   produced by REDEFINING those variables — not by rewriting hundreds
+   of class names.
+
+   `data-theme` is set on <html> by the header toggle.
+   ============================================================ */
+
+:root {
+  --page-gradient: linear-gradient(135deg, #000000 0%, #1a0b2e 50%, #000000 100%);
+  --page-glow: rgba(139, 92, 246, 0.15);
+  --hero-glow: rgba(147, 51, 234, 0.2);
+  --star-color: #ffffff;
+  --card-shadow: none;
+}
+
+:root[data-theme="light"] {
+  /* --- Core surfaces and ink ------------------------------------- */
+  /* `bg-black` surfaces become paper; `text-white` becomes ink. */
+  --color-black: #ffffff;
+  --color-white: #171226;
+
+  /* --- Text scale ------------------------------------------------
+     On dark these greys read as "quieter than white", so on light they
+     must read as "quieter than ink" — i.e. the ramp is inverted. */
+  --color-gray-100: #241d33;
+  --color-gray-200: #2c2440;
+  --color-gray-300: #3c3452;
+  --color-gray-400: #554d6b;   /* body copy */
+  --color-gray-500: #6b6383;   /* captions, meta */
+  --color-gray-600: #8b849d;
+  --color-gray-700: #aaa3bb;
+  --color-gray-800: #d6d1e2;   /* hairlines */
+  --color-gray-900: #efecf5;   /* very light fills */
+
+  --color-slate-300: #3c3452;
+  --color-slate-400: #554d6b;
+  --color-slate-500: #6b6383;
+
+  /* --- Deep purples are backgrounds on dark, so they must go pale -- */
+  --color-purple-950: #faf8ff;
+  --color-purple-900: #f3eefe;
+  --color-purple-800: #e9e0fc;
+
+  /* --- Pale accents are text on dark, so they must go deep --------- */
+  --color-purple-100: #3b1a63;
+  --color-purple-200: #4a1d80;
+  --color-purple-300: #6d28d9;
+  --color-emerald-200: #065f46;
+  --color-emerald-300: #047857;
+  --color-cyan-300: #0e7490;
+  --color-pink-300: #9d174d;
+
+  /* --- Page chrome ------------------------------------------------ */
+  --page-gradient: linear-gradient(180deg, #ffffff 0%, #f7f5fc 55%, #ffffff 100%);
+  --page-glow: rgba(139, 92, 246, 0.05);
+  --hero-glow: rgba(147, 51, 234, 0.07);
+  --star-color: #a78bfa;
+  /* Cards are translucent by design; on white they need a lift instead */
+  --card-shadow: 0 1px 2px rgba(23, 18, 38, 0.04),
+    0 10px 30px -14px rgba(23, 18, 38, 0.16);
+}
+
+body {
+  color: var(--color-white);
+  background: var(--page-gradient);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body::before {
+  background: radial-gradient(circle at center, var(--page-glow) 0%, transparent 70%);
+}
+
+/* Glassy cards: the dark theme relies on light overlays that vanish on white,
+   so give them a faint tint and a shadow instead. */
+:root[data-theme="light"] .bg-white\/5,
+:root[data-theme="light"] .bg-white\/10,
+:root[data-theme="light"] .bg-white\/\[0\.03\],
+:root[data-theme="light"] .bg-white\/\[0\.04\] {
+  background-color: rgba(109, 40, 217, 0.045);
+}
+
+:root[data-theme="light"] [class*="border-white/"],
+:root[data-theme="light"] [class*="border-purple-500/"] {
+  box-shadow: var(--card-shadow);
+}
+
+/* The starfield is decoration — on paper it should be a whisper, not confetti */
+:root[data-theme="light"] .uwl-star {
+  opacity: 0.22 !important;
+}
+
+:root[data-theme="light"] ::selection {
+  background: rgba(139, 92, 246, 0.22);
+  color: #171226;
+}
+
+/* Theme-aware brand logo (see components/BrandLogo.tsx) */
+.uwl-logo-light {
+  display: none;
+}
+
+:root[data-theme="light"] .uwl-logo-dark {
+  display: none;
+}
+
+:root[data-theme="light"] .uwl-logo-light {
+  display: block;
+}

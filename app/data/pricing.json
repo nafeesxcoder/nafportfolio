@@ -1,0 +1,318 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "name": "Business/Company Website",
+      "slug": "business",
+      "price": 499,
+      "priceDisplay": "$499",
+      "delivery": "2-3 weeks",
+      "features": [
+        "5-10 pages",
+        "Responsive design",
+        "Contact form",
+        "SEO basic",
+        "1 month support"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "E-Commerce Website",
+      "slug": "ecommerce",
+      "price": 999,
+      "priceDisplay": "$999",
+      "delivery": "4-6 weeks",
+      "features": [
+        "Unlimited products",
+        "Payment gateway",
+        "Shopping cart",
+        "Order tracking",
+        "Inventory management",
+        "6 months support"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Landing Page",
+      "slug": "landing",
+      "price": 199,
+      "priceDisplay": "$199",
+      "delivery": "1-2 weeks",
+      "features": [
+        "Single page design",
+        "CTA buttons",
+        "Lead capture form",
+        "Analytics integration",
+        "A/B testing ready",
+        "Fast loading"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Portfolio Website",
+      "slug": "portfolio",
+      "price": 349,
+      "priceDisplay": "$349",
+      "delivery": "2-3 weeks",
+      "features": [
+        "Projects showcase",
+        "Skills section",
+        "Contact form",
+        "Blog optional",
+        "Resume/CV download",
+        "Client testimonials"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Blog/Content Website",
+      "slug": "blog",
+      "price": 299,
+      "priceDisplay": "$299",
+      "delivery": "2-3 weeks",
+      "features": [
+        "Article management",
+        "Categories & tags",
+        "Comments system",
+        "SEO optimized",
+        "Email newsletter",
+        "Social sharing"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Booking/Appointment Website",
+      "slug": "booking",
+      "price": 449,
+      "priceDisplay": "$449",
+      "delivery": "3-4 weeks",
+      "features": [
+        "Interactive calendar",
+        "Online booking system",
+        "Email/SMS confirmation",
+        "Availability management",
+        "Payment integration",
+        "Automated reminders"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Education/LMS Website",
+      "slug": "lms",
+      "price": 799,
+      "priceDisplay": "$799",
+      "delivery": "4-6 weeks",
+      "features": [
+        "Course management",
+        "Video lessons",
+        "Student dashboard",
+        "Quiz system",
+        "Certificate generation",
+        "Progress tracking"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Real Estate Website",
+      "slug": "real-estate",
+      "price": 649,
+      "priceDisplay": "$649",
+      "delivery": "4-5 weeks",
+      "features": [
+        "Property listings",
+        "Advanced search filters",
+        "Google Maps integration",
+        "Agent profiles",
+        "Virtual tours",
+        "Mortgage calculator"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Restaurant/Food Website",
+      "slug": "restaurant",
+      "price": 349,
+      "priceDisplay": "$349",
+      "delivery": "2-3 weeks",
+      "features": [
+        "Menu display",
+        "Online ordering system",
+        "Location map",
+        "Table reservation",
+        "Customer reviews",
+        "Delivery integration"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "SaaS/Web App",
+      "slug": "saas",
+      "price": 1499,
+      "priceDisplay": "$1499+",
+      "delivery": "6-10 weeks",
+      "features": [
+        "User authentication",
+        "Dashboard interface",
+        "API integrations",
+        "Subscription system",
+        "Admin panel",
+        "Analytics dashboard"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Membership Website",
+      "slug": "membership",
+      "price": 899,
+      "priceDisplay": "$899",
+      "delivery": "4-5 weeks",
+      "features": [
+        "User registration",
+        "Paid content access",
+        "Multiple subscription plans",
+        "Member dashboard",
+        "Content dripping",
+        "Community forums"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Mobile App Development (Android + iOS)",
+      "slug": "mobile-app",
+      "price": 1499,
+      "priceDisplay": "$1499",
+      "delivery": "6-10 weeks",
+      "features": [
+        "Android + iOS from one codebase",
+        "Custom UI/UX",
+        "Push notifications",
+        "In-app payments",
+        "Admin panel",
+        "Play Store + App Store launch"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "React Native App Development",
+      "slug": "react-native",
+      "price": 1699,
+      "priceDisplay": "$1699",
+      "delivery": "6-10 weeks",
+      "features": [
+        "TypeScript codebase",
+        "Native navigation",
+        "Over-the-air updates",
+        "Offline support",
+        "CI/CD store builds"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Flutter App Development",
+      "slug": "flutter",
+      "price": 1699,
+      "priceDisplay": "$1699",
+      "delivery": "6-10 weeks",
+      "features": [
+        "Pixel-perfect UI",
+        "60fps animations",
+        "Firebase backend",
+        "Localisation",
+        "Store launch"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Custom Web Application (MERN)",
+      "slug": "custom-software",
+      "price": 1999,
+      "priceDisplay": "$1999",
+      "delivery": "8-12 weeks",
+      "features": [
+        "Custom CRM / ERP",
+        "Role-based access",
+        "Dashboards & reports",
+        "API integrations",
+        "Full source handover"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "SEO Services",
+      "slug": "seo",
+      "price": 299,
+      "priceDisplay": "$299/month",
+      "delivery": "Ongoing",
+      "features": [
+        "Technical SEO audit",
+        "Keyword research",
+        "On-page optimisation",
+        "Schema markup",
+        "International SEO",
+        "Monthly reports"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Local & International SEO",
+      "slug": "local-seo",
+      "price": 249,
+      "priceDisplay": "$249/month",
+      "delivery": "Ongoing",
+      "features": [
+        "Google Business Profile",
+        "Map pack rankings",
+        "Location pages",
+        "Citations & reviews",
+        "hreflang setup"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Website Maintenance & Support",
+      "slug": "maintenance",
+      "price": 149,
+      "priceDisplay": "$149/month",
+      "delivery": "Ongoing",
+      "features": [
+        "Updates & security patches",
+        "Backups",
+        "Uptime monitoring",
+        "Speed tuning",
+        "Monthly content changes"
+      ]
+    }
+  ],
+  "addOns": [
+    {
+      "name": "Rush Delivery",
+      "price": 150,
+      "description": "2x faster delivery"
+    },
+    {
+      "name": "Priority Support",
+      "price": 99,
+      "description": "24/7 priority support for 1 month"
+    },
+    {
+      "name": "Additional Revisions",
+      "price": 50,
+      "description": "Per extra revision round"
+    },
+    {
+      "name": "Content Writing",
+      "price": 199,
+      "description": "SEO-optimized content for 5 pages"
+    },
+    {
+      "name": "Logo Design",
+      "price": 99,
+      "description": "Professional logo design"
+    },
+    {
+      "name": "Hosting Setup",
+      "price": 49,
+      "description": "1 year hosting + domain setup"
+    }
+  ]
+}

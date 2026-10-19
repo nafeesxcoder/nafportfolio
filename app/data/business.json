@@ -1,0 +1,59 @@
+{
+  "company": {
+    "name": "Unique Web Layer",
+    "tagline": "Web & Mobile App Development Company | Websites, Android & iOS Apps, SEO",
+    "founded": "2020",
+    "mission": "Design, build and rank websites, mobile apps and custom software for businesses in every country."
+  },
+  "contact": {
+    "email": "info@uniqueweblayer.com",
+    "phone": "+91 (740) 923-3994",
+    "address": "A-2/111 New Kondli, New Delhi, India - 110096",
+    "whatsapp": "+91 (740) 923-3994"
+  },
+  "hours": {
+    "monday_friday": {
+      "open": "09:00",
+      "close": "19:00"
+    },
+    "saturday": {
+      "open": "10:00",
+      "close": "16:00"
+    },
+    "sunday": {
+      "open": "Closed",
+      "close": "Emergency support only"
+    }
+  },
+  "serviceArea": {
+    "primary": [
+      "Worldwide",
+      "United States",
+      "United Kingdom",
+      "Canada",
+      "Australia",
+      "UAE",
+      "Saudi Arabia",
+      "Germany",
+      "Singapore",
+      "India"
+    ],
+    "global": [
+      "All countries \u2014 delivered online"
+    ],
+    "local": [
+      "Delhi NCR",
+      "Noida",
+      "Gurugram",
+      "Faridabad",
+      "Ghaziabad"
+    ]
+  },
+  "social": {
+    "github": "https://github.com/uniqueweblayer",
+    "linkedin": "https://linkedin.com/company/uniqueweblayer",
+    "twitter": "https://twitter.com/uniqueweblayer",
+    "instagram": "https://instagram.com/uniqueweblayer",
+    "facebook": "https://facebook.com/uniqueweblayer"
+  }
+}
