@@ -106,7 +106,7 @@ export default function AboutPage() {
 
       <main className="min-h-screen bg-black">
         <section className="relative py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black" />
+          <div className="absolute inset-0 bg-linear-to-b from-black via-purple-950/10 to-black" />
           <Stars />
 
           <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -118,7 +118,7 @@ export default function AboutPage() {
                   About {company.name}
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-white to-purple-300 bg-clip-text text-transparent leading-tight">
                 A development company built
                 <br className="hidden sm:block" /> for remote delivery
               </h1>
@@ -136,9 +136,9 @@ export default function AboutPage() {
               {stats.map((s) => (
                 <div
                   key={s.label}
-                  className="rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-black/40 p-6 text-center"
+                  className="rounded-2xl border border-purple-500/20 bg-linear-to-br from-purple-900/20 to-black/40 p-6 text-center"
                 >
-                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
+                  <div className="text-3xl font-bold bg-linear-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
                     {s.value}
                     {s.suffix}
                   </div>
@@ -149,7 +149,7 @@ export default function AboutPage() {
 
             {/* Story */}
             <div className="grid lg:grid-cols-2 gap-8 mb-20">
-              <div className="rounded-3xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-black/40 p-7 md:p-9">
+              <div className="rounded-3xl border border-purple-500/20 bg-linear-to-br from-purple-900/20 to-black/40 p-7 md:p-9">
                 <h2 className="text-2xl font-bold text-white mb-4">
                   How we got here
                 </h2>
@@ -176,7 +176,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="rounded-3xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-black/40 p-7 md:p-9">
+              <div className="rounded-3xl border border-purple-500/20 bg-linear-to-br from-purple-900/20 to-black/40 p-7 md:p-9">
                 <h2 className="text-2xl font-bold text-white mb-4">
                   What we do
                 </h2>
@@ -205,9 +205,9 @@ export default function AboutPage() {
                   ].map((item) => (
                     <div
                       key={item.t}
-                      className="flex gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/10"
+                      className="flex gap-3 p-3 rounded-xl bg-white/3 border border-white/10"
                     >
-                      <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-600/40 to-pink-600/30 flex items-center justify-center flex-shrink-0">
+                      <div className="w-9 h-9 rounded-lg bg-linear-to-br from-purple-600/40 to-pink-600/30 flex items-center justify-center shrink-0">
                         <i
                           className={`fas ${item.icon} text-purple-200 text-xs`}
                         ></i>
@@ -250,9 +250,9 @@ export default function AboutPage() {
                 {teamFunctions.map((t) => (
                   <div
                     key={t.role}
-                    className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:border-purple-500/40 transition-colors"
+                    className="rounded-2xl border border-white/10 bg-white/3 p-6 hover:border-purple-500/40 transition-colors"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-linear-to-br from-purple-600 to-pink-600 flex items-center justify-center mb-4">
                       <i className={`fas ${t.icon} text-white text-sm`}></i>
                     </div>
                     <h3 className="text-white font-semibold">{t.role}</h3>
@@ -275,7 +275,7 @@ export default function AboutPage() {
                 {values.map((v) => (
                   <div
                     key={v.title}
-                    className="rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-black/40 p-6"
+                    className="rounded-2xl border border-purple-500/20 bg-linear-to-br from-purple-900/20 to-black/40 p-6"
                   >
                     <div className="flex items-center gap-3 mb-3">
                       <i className={`fas ${v.icon} text-purple-400`}></i>
@@ -300,7 +300,7 @@ export default function AboutPage() {
                 {differentiators.map((d) => (
                   <div
                     key={d.title}
-                    className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
+                    className="rounded-2xl border border-white/10 bg-white/3 p-6"
                   >
                     <i
                       className={`fas ${d.icon} text-purple-400 text-lg mb-4 block`}
@@ -318,7 +318,7 @@ export default function AboutPage() {
 
             {/* Engagement + global */}
             <div className="grid lg:grid-cols-2 gap-8 mb-20">
-              <div className="rounded-3xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-black/40 p-7">
+              <div className="rounded-3xl border border-purple-500/20 bg-linear-to-br from-purple-900/20 to-black/40 p-7">
                 <h2 className="text-xl font-bold text-white mb-5">
                   Ways to work with us
                 </h2>
@@ -337,7 +337,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="rounded-3xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-black/40 p-7">
+              <div className="rounded-3xl border border-purple-500/20 bg-linear-to-br from-purple-900/20 to-black/40 p-7">
                 <h2 className="text-xl font-bold text-white mb-3">
                   Where our clients are
                 </h2>
@@ -351,7 +351,7 @@ export default function AboutPage() {
                     <Link
                       key={c.slug}
                       href={`/web-development-company/${c.slug}`}
-                      className="text-xs px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-gray-300 hover:text-purple-200 hover:border-purple-500/50 transition-colors"
+                      className="text-xs px-3 py-1.5 rounded-full bg-white/4 border border-white/10 text-gray-300 hover:text-purple-200 hover:border-purple-500/50 transition-colors"
                     >
                       {c.name}
                     </Link>
@@ -361,7 +361,7 @@ export default function AboutPage() {
             </div>
 
             {/* Contact strip */}
-            <div className="rounded-3xl border border-purple-500/25 bg-gradient-to-br from-purple-900/25 to-black/40 p-8 md:p-12 text-center">
+            <div className="rounded-3xl border border-purple-500/25 bg-linear-to-br from-purple-900/25 to-black/40 p-8 md:p-12 text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-white">
                 Let&apos;s talk about your project
               </h2>
@@ -378,7 +378,7 @@ export default function AboutPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center mt-7">
                 <Link href="/contact">
-                  <button className="px-7 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform w-full sm:w-auto">
+                  <button className="px-7 py-3 rounded-full bg-linear-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform w-full sm:w-auto">
                     Contact Us
                   </button>
                 </Link>

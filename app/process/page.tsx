@@ -99,7 +99,7 @@ export default function ProcessPage() {
                   How We Work
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-white to-purple-300 bg-clip-text text-transparent">
                 From First Call to Launch
               </h1>
               <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
@@ -111,16 +111,16 @@ export default function ProcessPage() {
 
             {/* Steps */}
             <div className="relative">
-              <div className="absolute left-[27px] top-4 bottom-4 w-px bg-gradient-to-b from-purple-500/60 via-purple-500/20 to-transparent hidden sm:block" />
+              <div className="absolute left-[27px] top-4 bottom-4 w-px bg-linear-to-b from-purple-500/60 via-purple-500/20 to-transparent hidden sm:block" />
 
               <div className="space-y-6">
                 {processSteps.map((s) => (
                   <div key={s.step} className="relative flex gap-5">
-                    <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center shadow-lg shadow-purple-900/40 z-10">
+                    <div className="shrink-0 w-14 h-14 rounded-2xl bg-linear-to-br from-purple-600 to-pink-600 flex items-center justify-center shadow-lg shadow-purple-900/40 z-10">
                       <i className={`fas ${s.icon} text-white`}></i>
                     </div>
 
-                    <div className="flex-1 rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm p-6 hover:border-purple-500/50 transition-colors">
+                    <div className="flex-1 rounded-2xl border border-purple-500/20 bg-linear-to-br from-purple-900/20 to-black/40 backdrop-blur-sm p-6 hover:border-purple-500/50 transition-colors">
                       <div className="flex flex-wrap items-center gap-3 mb-2">
                         <span className="text-xs font-mono text-purple-400">
                           STEP {s.step}
@@ -155,9 +155,9 @@ export default function ProcessPage() {
                 {standards.map((s) => (
                   <div
                     key={s.title}
-                    className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:border-purple-500/40 transition-colors"
+                    className="rounded-2xl border border-white/10 bg-white/3 p-6 hover:border-purple-500/40 transition-colors"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600/40 to-pink-600/30 flex items-center justify-center mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-linear-to-br from-purple-600/40 to-pink-600/30 flex items-center justify-center mb-4">
                       <i className={`fas ${s.icon} text-purple-200 text-sm`}></i>
                     </div>
                     <h3 className="text-white font-semibold">{s.title}</h3>
@@ -178,7 +178,7 @@ export default function ProcessPage() {
                 {engagementModels.map((m) => (
                   <div
                     key={m.title}
-                    className="rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-black/40 p-6"
+                    className="rounded-2xl border border-purple-500/20 bg-linear-to-br from-purple-900/20 to-black/40 p-6"
                   >
                     <i
                       className={`fas ${m.icon} text-purple-400 text-xl mb-4 block`}
@@ -193,7 +193,7 @@ export default function ProcessPage() {
             </div>
 
             {/* CTA */}
-            <div className="mt-20 text-center rounded-3xl border border-purple-500/25 bg-gradient-to-br from-purple-900/25 to-black/40 p-8 md:p-12">
+            <div className="mt-20 text-center rounded-3xl border border-purple-500/25 bg-linear-to-br from-purple-900/25 to-black/40 p-8 md:p-12">
               <h2 className="text-2xl md:text-3xl font-bold text-white">
                 Start with step one
               </h2>
@@ -202,7 +202,7 @@ export default function ProcessPage() {
                 usually back with you within one working day.
               </p>
               <Link href="/contact">
-                <button className="mt-7 px-7 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform">
+                <button className="mt-7 px-7 py-3 rounded-full bg-linear-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform">
                   Book a Discovery Call
                 </button>
               </Link>

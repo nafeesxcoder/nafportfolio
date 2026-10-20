@@ -110,10 +110,10 @@ export function WhatsAppFloat({
               x: position === "bottom-right" ? 20 : -20,
             }}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className={`absolute bottom-full mb-4 w-80 overflow-hidden rounded-2xl border border-purple-500/30 bg-gradient-to-br from-purple-900/95 to-black/95 backdrop-blur-xl shadow-2xl ${panelAlignClasses[position]}`}
+            className={`absolute bottom-full mb-4 w-80 overflow-hidden rounded-2xl border border-purple-500/30 bg-linear-to-br from-purple-900/95 to-black/95 backdrop-blur-xl shadow-2xl ${panelAlignClasses[position]}`}
           >
             {/* Pop Chat Header */}
-            <div className="flex items-center justify-between bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-3">
+            <div className="flex items-center justify-between bg-linear-to-r from-purple-600 to-pink-600 px-4 py-3">
               <div className="flex items-center gap-2.5">
                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-white">
                   <MdChat className="h-5 w-5" />
@@ -151,7 +151,7 @@ export function WhatsAppFloat({
                   setShowPopChat(false);
                   setIsOpen(true);
                 }}
-                className="w-full rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2.5 text-sm font-semibold text-white transition-all hover:scale-105 hover:shadow-lg"
+                className="w-full rounded-xl bg-linear-to-r from-purple-600 to-pink-600 px-4 py-2.5 text-sm font-semibold text-white transition-all hover:scale-105 hover:shadow-lg"
               >
                 Chat with Us →
               </button>
@@ -170,10 +170,10 @@ export function WhatsAppFloat({
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 16, scale: 0.94 }}
               transition={{ type: "spring", stiffness: 380, damping: 28 }}
-              className={`absolute bottom-full mb-3 w-[min(22rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-purple-500/30 bg-gradient-to-br from-gray-900 to-black shadow-2xl ${panelAlignClasses[position]}`}
+              className={`absolute bottom-full mb-3 w-[min(22rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-purple-500/30 bg-linear-to-br from-gray-900 to-black shadow-2xl ${panelAlignClasses[position]}`}
             >
               {/* Header */}
-              <div className="flex items-center justify-between bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-3">
+              <div className="flex items-center justify-between bg-linear-to-r from-purple-600 to-pink-600 px-4 py-3">
                 <div className="flex items-center gap-2.5">
                   <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-white">
                     <FaWhatsapp className="h-5 w-5" />
@@ -196,7 +196,7 @@ export function WhatsAppFloat({
               </div>
 
               {/* Chat Messages */}
-              <div className="max-h-80 overflow-y-auto p-4 space-y-3 bg-gradient-to-b from-gray-900/50 to-black/50">
+              <div className="max-h-80 overflow-y-auto p-4 space-y-3 bg-linear-to-b from-gray-900/50 to-black/50">
                 {chatMessages.map((msg, idx) => (
                   <div
                     key={idx}
@@ -205,7 +205,7 @@ export function WhatsAppFloat({
                     <div
                       className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm ${
                         msg.isUser
-                          ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-br-sm"
+                          ? "bg-linear-to-r from-purple-600 to-pink-600 text-white rounded-br-sm"
                           : "bg-white/10 text-gray-200 rounded-bl-sm"
                       }`}
                     >
@@ -228,7 +228,7 @@ export function WhatsAppFloat({
                   />
                   <button
                     onClick={handleSendMessage}
-                    className="rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105"
+                    className="rounded-xl bg-linear-to-r from-purple-600 to-pink-600 px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105"
                   >
                     Send
                   </button>
@@ -256,7 +256,7 @@ export function WhatsAppFloat({
         {/* Main Button */}
         <motion.button
           onClick={() => setIsOpen((o) => !o)}
-          className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg ring-2 ring-white/30 transition-all hover:shadow-xl hover:ring-white/50"
+          className="relative flex h-14 w-14 items-center justify-center rounded-full bg-linear-to-r from-purple-600 to-pink-600 text-white shadow-lg ring-2 ring-white/30 transition-all hover:shadow-xl hover:ring-white/50"
           whileHover={{ scale: 1.06 }}
           whileTap={{ scale: 0.94 }}
           animate={showPopChat && !isOpen ? { scale: [1, 1.1, 1] } : {}}

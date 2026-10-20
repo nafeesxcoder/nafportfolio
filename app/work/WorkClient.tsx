@@ -59,7 +59,7 @@ export default function WorkClient() {
                 Portfolio
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-white to-purple-300 bg-clip-text text-transparent">
               Our Work
             </h1>
             <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
@@ -79,8 +79,8 @@ export default function WorkClient() {
                   onClick={() => setFilter(f.value)}
                   className={`px-4 sm:px-5 py-2 rounded-full text-sm font-medium border transition-all duration-300 ${
                     active
-                      ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white border-transparent shadow-lg shadow-purple-500/25"
-                      : "bg-white/[0.03] text-gray-300 border-white/10 hover:border-purple-500/50 hover:text-white"
+                      ? "bg-linear-to-r from-purple-600 to-pink-600 text-white border-transparent shadow-lg shadow-purple-500/25"
+                      : "bg-white/3 text-gray-300 border-white/10 hover:border-purple-500/50 hover:text-white"
                   }`}
                 >
                   {f.label}
@@ -110,10 +110,10 @@ export default function WorkClient() {
                   }`}
                   style={{ transitionDelay: `${Math.min(index * 70, 420)}ms` }}
                 >
-                  <div className="relative bg-gradient-to-br from-purple-900/40 to-purple-950/30 backdrop-blur-sm rounded-2xl border border-purple-500/30 hover:border-purple-500/60 transition-all duration-500 overflow-hidden hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.02] h-full flex flex-col">
+                  <div className="relative bg-linear-to-br from-purple-900/40 to-purple-950/30 backdrop-blur-sm rounded-2xl border border-purple-500/30 hover:border-purple-500/60 transition-all duration-500 overflow-hidden hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.02] h-full flex flex-col">
                     {/* Image */}
-                    <div className="relative h-52 overflow-hidden bg-gradient-to-br from-purple-900/60 to-black">
-                      <div className="absolute inset-0 bg-gradient-to-t from-purple-950/80 via-transparent to-transparent z-10" />
+                    <div className="relative h-52 overflow-hidden bg-linear-to-br from-purple-900/60 to-black">
+                      <div className="absolute inset-0 bg-linear-to-t from-purple-950/80 via-transparent to-transparent z-10" />
                       {project.image ? (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img
@@ -167,7 +167,7 @@ export default function WorkClient() {
                           {project.title}
                         </h2>
                         {hasLink && (
-                          <div className="flex items-center gap-1.5 flex-shrink-0 mt-1">
+                          <div className="flex items-center gap-1.5 shrink-0 mt-1">
                             <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                             <span className="text-[10px] text-green-500">
                               Live
@@ -215,14 +215,14 @@ export default function WorkClient() {
                           <span>View Live Project</span>
                         </a>
                       ) : (
-                        <span className="inline-flex w-full px-4 py-2.5 rounded-xl text-sm font-medium items-center justify-center gap-2 bg-white/[0.04] border border-dashed border-white/15 text-gray-500">
+                        <span className="inline-flex w-full px-4 py-2.5 rounded-xl text-sm font-medium items-center justify-center gap-2 bg-white/4 border border-dashed border-white/15 text-gray-500">
                           <i className="fas fa-link-slash text-xs"></i>
                           Link coming soon
                         </span>
                       )}
                     </div>
 
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-purple-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
                   </div>
                 </article>
               );
@@ -230,7 +230,7 @@ export default function WorkClient() {
           </div>
 
           {/* CTA */}
-          <div className="mt-16 text-center rounded-3xl border border-purple-500/25 bg-gradient-to-br from-purple-900/25 to-black/40 backdrop-blur-sm p-8 sm:p-12">
+          <div className="mt-16 text-center rounded-3xl border border-purple-500/25 bg-linear-to-br from-purple-900/25 to-black/40 backdrop-blur-sm p-8 sm:p-12">
             <h2 className="text-2xl md:text-3xl font-bold text-white">
               Want a project like these?
             </h2>
@@ -240,7 +240,7 @@ export default function WorkClient() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-7">
               <Link href="/contact">
-                <button className="px-7 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform w-full sm:w-auto">
+                <button className="px-7 py-3 rounded-full bg-linear-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform w-full sm:w-auto">
                   Start a Project
                 </button>
               </Link>

@@ -42,7 +42,7 @@ export default function ProjectsSection() {
               Selected Projects
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold bg-linear-to-r from-white to-purple-300 bg-clip-text text-transparent">
             Work We&apos;ve Shipped
           </h2>
           <p className="text-gray-400 mt-3 max-w-2xl mx-auto">
@@ -63,9 +63,9 @@ export default function ProjectsSection() {
               }`}
               style={{ transitionDelay: `${Math.min(index * 90, 400)}ms` }}
             >
-              <div className="relative h-full bg-gradient-to-br from-purple-900/40 to-purple-950/30 backdrop-blur-sm rounded-2xl border border-purple-500/30 hover:border-purple-500/60 transition-all duration-500 overflow-hidden hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.02]">
-                <div className="relative h-56 overflow-hidden bg-gradient-to-br from-purple-900/60 to-black">
-                  <div className="absolute inset-0 bg-gradient-to-t from-purple-950/80 via-transparent to-transparent z-10" />
+              <div className="relative h-full bg-linear-to-br from-purple-900/40 to-purple-950/30 backdrop-blur-sm rounded-2xl border border-purple-500/30 hover:border-purple-500/60 transition-all duration-500 overflow-hidden hover:shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.02]">
+                <div className="relative h-56 overflow-hidden bg-linear-to-br from-purple-900/60 to-black">
+                  <div className="absolute inset-0 bg-linear-to-t from-purple-950/80 via-transparent to-transparent z-10" />
                   {project.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
@@ -118,7 +118,7 @@ export default function ProjectsSection() {
                   </a>
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-purple-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
               </div>
             </article>
           ))}

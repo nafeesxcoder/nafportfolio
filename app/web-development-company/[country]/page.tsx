@@ -195,7 +195,7 @@ export default async function CountryPage({
                   Serving {c.name}
                 </span>
               </div>
-              <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent leading-tight">
+              <h1 className="text-3xl md:text-5xl font-bold bg-linear-to-r from-white to-purple-300 bg-clip-text text-transparent leading-tight">
                 Web &amp; App Development Company in {c.name}
               </h1>
               <p className="text-gray-400 mt-5 max-w-3xl mx-auto leading-relaxed">
@@ -209,7 +209,7 @@ export default async function CountryPage({
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
                 <Link href="/contact">
-                  <button className="px-7 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform w-full sm:w-auto">
+                  <button className="px-7 py-3 rounded-full bg-linear-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform w-full sm:w-auto">
                     Get a Quote in {c.currency.split(" ")[0]}
                   </button>
                 </Link>
@@ -226,7 +226,7 @@ export default async function CountryPage({
               {highlights.map((h) => (
                 <div
                   key={h.label}
-                  className="rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-black/40 p-5"
+                  className="rounded-2xl border border-purple-500/20 bg-linear-to-br from-purple-900/20 to-black/40 p-5"
                 >
                   <div className="flex items-center gap-2 text-[11px] text-gray-500 uppercase tracking-wide mb-2">
                     <i className={`fas ${h.icon} text-purple-400`}></i>
@@ -243,7 +243,7 @@ export default async function CountryPage({
             </div>
 
             {/* Market note */}
-            <div className="rounded-3xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-black/40 p-7 md:p-9 mb-16">
+            <div className="rounded-3xl border border-purple-500/20 bg-linear-to-br from-purple-900/20 to-black/40 p-7 md:p-9 mb-16">
               <h2 className="text-2xl font-bold text-white mb-4">
                 Building for the {c.name} market
               </h2>
@@ -262,7 +262,7 @@ export default async function CountryPage({
                 {c.cities.map((city) => (
                   <span
                     key={city}
-                    className="text-xs px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-gray-300"
+                    className="text-xs px-3 py-1.5 rounded-full bg-white/4 border border-white/10 text-gray-300"
                   >
                     {city}
                   </span>
@@ -285,10 +285,10 @@ export default async function CountryPage({
                   <Link
                     key={s.slug}
                     href={`/services/${s.slug}`}
-                    className="group rounded-2xl border border-white/10 bg-white/[0.03] p-5 hover:border-purple-500/50 transition-colors"
+                    className="group rounded-2xl border border-white/10 bg-white/3 p-5 hover:border-purple-500/50 transition-colors"
                   >
                     <div
-                      className={`w-10 h-10 rounded-xl bg-gradient-to-br ${s.gradient} flex items-center justify-center mb-3`}
+                      className={`w-10 h-10 rounded-xl bg-linear-to-br ${s.gradient} flex items-center justify-center mb-3`}
                     >
                       <i className={`fas ${s.icon} text-white text-sm`}></i>
                     </div>
@@ -315,11 +315,11 @@ export default async function CountryPage({
                 {faqs.map((f, idx) => (
                   <details
                     key={idx}
-                    className="group rounded-2xl border border-white/10 bg-gradient-to-br from-purple-900/15 to-black/40 p-5 open:border-purple-500/40 transition-colors"
+                    className="group rounded-2xl border border-white/10 bg-linear-to-br from-purple-900/15 to-black/40 p-5 open:border-purple-500/40 transition-colors"
                   >
                     <summary className="cursor-pointer list-none flex items-start justify-between gap-4 text-white font-medium text-sm">
                       {f.question}
-                      <i className="fas fa-chevron-down text-purple-400 text-xs mt-1 flex-shrink-0 transition-transform group-open:rotate-180"></i>
+                      <i className="fas fa-chevron-down text-purple-400 text-xs mt-1 shrink-0 transition-transform group-open:rotate-180"></i>
                     </summary>
                     <p className="text-gray-400 text-sm mt-3 leading-relaxed">
                       {f.answer}
@@ -330,7 +330,7 @@ export default async function CountryPage({
             </div>
 
             {/* CTA */}
-            <div className="text-center rounded-3xl border border-purple-500/25 bg-gradient-to-br from-purple-900/25 to-black/40 p-8 md:p-12">
+            <div className="text-center rounded-3xl border border-purple-500/25 bg-linear-to-br from-purple-900/25 to-black/40 p-8 md:p-12">
               <h2 className="text-2xl md:text-3xl font-bold text-white">
                 Start your project in {c.name}
               </h2>
@@ -340,7 +340,7 @@ export default async function CountryPage({
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center mt-7">
                 <Link href="/contact">
-                  <button className="px-7 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform w-full sm:w-auto">
+                  <button className="px-7 py-3 rounded-full bg-linear-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform w-full sm:w-auto">
                     Get a Free Quote
                   </button>
                 </Link>
@@ -369,7 +369,7 @@ export default async function CountryPage({
                     <Link
                       key={x.slug}
                       href={`/web-development-company/${x.slug}`}
-                      className="text-xs px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-gray-400 hover:text-purple-300 hover:border-purple-500/40 transition-colors"
+                      className="text-xs px-3 py-1.5 rounded-full bg-white/3 border border-white/10 text-gray-400 hover:text-purple-300 hover:border-purple-500/40 transition-colors"
                     >
                       {x.name}
                     </Link>

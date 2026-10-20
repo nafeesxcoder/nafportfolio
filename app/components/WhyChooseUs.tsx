@@ -141,7 +141,7 @@ export default function WhyChooseUs() {
   return (
     <section ref={sectionRef} className="relative py-20 overflow-hidden">
       {/* Premium Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black" />
+      <div className="absolute inset-0 bg-linear-to-b from-black via-purple-950/10 to-black" />
 
       <Stars />
 
@@ -150,8 +150,8 @@ export default function WhyChooseUs() {
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-pink-600/10 rounded-full blur-3xl animate-pulse delay-1000" />
 
       {/* Moving Gradient Lines */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-pink-500/20 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-purple-500/20 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-pink-500/20 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Premium Section Header */}
@@ -161,7 +161,7 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 backdrop-blur-sm mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-linear-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 backdrop-blur-sm mb-4">
             <FaRocket className="w-3 h-3 text-purple-400" />
             <span className="text-xs font-semibold tracking-wider text-purple-300 uppercase">
               Why Choose Us
@@ -169,11 +169,11 @@ export default function WhyChooseUs() {
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-            <span className="bg-gradient-to-r from-white via-purple-300 to-white bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-white via-purple-300 to-white bg-clip-text text-transparent">
               Trusted by
             </span>
             <br />
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               Global Clients
             </span>
           </h2>
@@ -210,10 +210,10 @@ export default function WhyChooseUs() {
                 />
 
                 {/* Inner Card */}
-                <div className="relative bg-gradient-to-br from-gray-900/90 to-black/90 rounded-xl p-4 border border-white/10 backdrop-blur-md transition-all duration-300 h-full">
+                <div className="relative bg-linear-to-br from-gray-900/90 to-black/90 rounded-xl p-4 border border-white/10 backdrop-blur-md transition-all duration-300 h-full">
                   {/* Top Gradient Line */}
                   <motion.div
-                    className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${feature.gradient}`}
+                    className={`absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r ${feature.gradient}`}
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: hoveredId === feature.id ? 1 : 0 }}
                     transition={{ duration: 0.3 }}
@@ -222,11 +222,11 @@ export default function WhyChooseUs() {
                   {/* Icon with Glow Effect */}
                   <div className="relative mb-3">
                     <motion.div
-                      className={`absolute -inset-1.5 bg-gradient-to-r ${feature.gradient} rounded-lg blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-500`}
+                      className={`absolute -inset-1.5 bg-linear-to-r ${feature.gradient} rounded-lg blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-500`}
                       animate={{ opacity: hoveredId === feature.id ? 0.5 : 0 }}
                     />
                     <div
-                      className={`relative w-12 h-12 rounded-lg bg-gradient-to-br ${feature.gradient} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}
+                      className={`relative w-12 h-12 rounded-lg bg-linear-to-br ${feature.gradient} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}
                     >
                       <feature.icon className="text-white text-xl" />
                     </div>
@@ -259,7 +259,7 @@ export default function WhyChooseUs() {
                     {feature.benefits.map((benefit, idx) => (
                       <div key={idx} className="flex items-start gap-1.5">
                         <FiCheckCircle
-                          className="text-[10px] mt-0.5 flex-shrink-0"
+                          className="text-[10px] mt-0.5 shrink-0"
                           style={{ color: feature.color }}
                         />
                         <span className="text-gray-300 text-[11px] leading-relaxed">
@@ -312,7 +312,7 @@ export default function WhyChooseUs() {
             <motion.div
               key={idx}
               whileHover={{ scale: 1.03, y: -2 }}
-              className="flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-sm px-4 py-1.5 rounded-full border border-purple-500/30 hover:border-purple-500/60 transition-all duration-300"
+              className="flex items-center gap-2 bg-linear-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-sm px-4 py-1.5 rounded-full border border-purple-500/30 hover:border-purple-500/60 transition-all duration-300"
             >
               <badge.icon className={`w-3.5 h-3.5 ${badge.color}`} />
               <span className="text-gray-300 text-xs font-medium">

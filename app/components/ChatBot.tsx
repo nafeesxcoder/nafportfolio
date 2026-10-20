@@ -292,7 +292,7 @@ What can I help you with today? Just tell me the service name!`;
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-24 right-6 bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-full p-3 shadow-2xl hover:shadow-lg transition-all duration-300 z-[9999] flex items-center gap-2 group animate-bounce-in"
+          className="fixed bottom-24 right-6 bg-linear-to-r from-purple-600 to-purple-800 text-white rounded-full p-3 shadow-2xl hover:shadow-lg transition-all duration-300 z-[9999] flex items-center gap-2 group animate-bounce-in"
         >
           <img
             src="/robot1.png"
@@ -320,7 +320,7 @@ What can I help you with today? Just tell me the service name!`;
       {isOpen && (
         <div className="fixed bottom-24 right-6 w-80 h-[420px] bg-white rounded-xl shadow-2xl flex flex-col z-[9999] border border-gray-200 overflow-hidden animate-slide-up">
           {/* Header */}
-          <div className="bg-gradient-to-r from-purple-600 to-purple-800 text-white px-4 py-3 flex justify-between items-center">
+          <div className="bg-linear-to-r from-purple-600 to-purple-800 text-white px-4 py-3 flex justify-between items-center">
             <div className="flex items-center gap-2">
               <div className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center">
                 <img
@@ -376,7 +376,7 @@ What can I help you with today? Just tell me the service name!`;
 
             <button
               onClick={openBookingPage}
-              className="w-full bg-gradient-to-r from-purple-600 to-purple-800 text-white py-3 rounded-xl text-sm font-bold hover:from-purple-700 hover:to-purple-900 transition-all duration-300 flex items-center justify-center gap-2 animate-pulse-glow-purple shadow-lg"
+              className="w-full bg-linear-to-r from-purple-600 to-purple-800 text-white py-3 rounded-xl text-sm font-bold hover:from-purple-700 hover:to-purple-900 transition-all duration-300 flex items-center justify-center gap-2 animate-pulse-glow-purple shadow-lg"
             >
               <span className="text-lg">🚀</span>
               START PROJECT - GET QUOTE
@@ -384,7 +384,7 @@ What can I help you with today? Just tell me the service name!`;
             </button>
 
             <div className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none">
-              <div className="absolute inset-0 -translate-x-full animate-shine bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              <div className="absolute inset-0 -translate-x-full animate-shine bg-linear-to-r from-transparent via-white/20 to-transparent" />
             </div>
           </div>
 
@@ -399,7 +399,7 @@ What can I help you with today? Just tell me the service name!`;
                 <div
                   className={`max-w-[85%] rounded-xl px-3 py-1.5 text-xs ${
                     msg.role === "user"
-                      ? "bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-br-none"
+                      ? "bg-linear-to-r from-purple-600 to-purple-800 text-white rounded-br-none"
                       : "bg-white text-gray-800 rounded-bl-none shadow-sm border border-gray-100"
                   }`}
                 >
@@ -448,7 +448,7 @@ What can I help you with today? Just tell me the service name!`;
             <button
               onClick={sendMessage}
               disabled={!input.trim() || isLoading}
-              className="bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-lg px-3 py-1.5 text-xs disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-90 transition-all"
+              className="bg-linear-to-r from-purple-600 to-purple-800 text-white rounded-lg px-3 py-1.5 text-xs disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-90 transition-all"
             >
               Send
             </button>

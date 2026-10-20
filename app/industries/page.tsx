@@ -45,7 +45,7 @@ export default function IndustriesPage() {
                   Industries
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-white to-purple-300 bg-clip-text text-transparent">
                 Industries We Build For
               </h1>
               <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
@@ -59,9 +59,9 @@ export default function IndustriesPage() {
               {industries.map((ind) => (
                 <article
                   key={ind.name}
-                  className="group rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm p-6 hover:border-purple-500/60 hover:-translate-y-1 transition-all duration-300"
+                  className="group rounded-2xl border border-purple-500/20 bg-linear-to-br from-purple-900/20 to-black/40 backdrop-blur-sm p-6 hover:border-purple-500/60 hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-purple-600 to-pink-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <i className={`fas ${ind.icon} text-white`}></i>
                   </div>
                   <h2 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">
@@ -74,7 +74,7 @@ export default function IndustriesPage() {
               ))}
             </div>
 
-            <div className="mt-20 text-center rounded-3xl border border-purple-500/25 bg-gradient-to-br from-purple-900/25 to-black/40 p-8 md:p-12">
+            <div className="mt-20 text-center rounded-3xl border border-purple-500/25 bg-linear-to-br from-purple-900/25 to-black/40 p-8 md:p-12">
               <h2 className="text-2xl md:text-3xl font-bold text-white">
                 Your industry not listed?
               </h2>
@@ -85,7 +85,7 @@ export default function IndustriesPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center mt-7">
                 <Link href="/contact">
-                  <button className="px-7 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform w-full sm:w-auto">
+                  <button className="px-7 py-3 rounded-full bg-linear-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform w-full sm:w-auto">
                     Get in Touch
                   </button>
                 </Link>

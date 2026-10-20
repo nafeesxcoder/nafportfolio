@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import pricingData from "@/data/pricing.json";
-import businessData from "@/data/business.json";
-import faqData from "@/data/faq.json";
-import responsesData from "@/data/responses.json";
+import pricingData from "../../data/pricing.json";
+import businessData from "../../data/business.json";
+import faqData from "../../data/faq.json";
+import responsesData from "../..//data/responses.json";
 
 const GROQ_API_KEY = process.env.GROQ_API_KEY;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;

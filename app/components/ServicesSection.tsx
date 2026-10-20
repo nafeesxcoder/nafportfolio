@@ -452,7 +452,7 @@ export default function ServicesSection() {
   return (
     <section ref={sectionRef} className="relative py-20 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black" />
+      <div className="absolute inset-0 bg-linear-to-b from-black via-purple-950/10 to-black" />
       <Stars />
 
       {/* Animated Background Orbs */}
@@ -467,7 +467,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 backdrop-blur-sm mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-linear-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 backdrop-blur-sm mb-4">
             <FaRocket className="w-3 h-3 text-purple-400" />
             <span className="text-xs font-semibold tracking-wider text-purple-300 uppercase">
               Our Services
@@ -475,11 +475,11 @@ export default function ServicesSection() {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold">
-            <span className="bg-gradient-to-r from-white via-purple-300 to-white bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-white via-purple-300 to-white bg-clip-text text-transparent">
               Everything You Need
             </span>
             <br />
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               Under One Roof
             </span>
           </h2>
@@ -499,13 +499,13 @@ export default function ServicesSection() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden shadow-2xl"
+              className="relative bg-linear-to-br from-gray-900/80 to-black/80 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden shadow-2xl"
             >
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* Left Side - Image (Clickable) */}
                 <Link href={`/services/${currentService.slug}`}>
                   <div className="relative h-[350px] lg:h-[500px] overflow-hidden group/image cursor-pointer">
-                    <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent z-10 lg:bg-gradient-to-r" />
+                    <div className="absolute inset-0 bg-linear-to-r from-black via-transparent to-transparent z-10 lg:bg-linear-to-r" />
 
                     <motion.div
                       whileHover={{ scale: 1.08 }}
@@ -523,7 +523,7 @@ export default function ServicesSection() {
                         />
                       ) : (
                         <div
-                          className={`w-full h-full bg-gradient-to-br ${currentService.gradient} flex items-center justify-center`}
+                          className={`w-full h-full bg-linear-to-br ${currentService.gradient} flex items-center justify-center`}
                         >
                           <div className="text-center">
                             {currentService.icon && (
@@ -564,7 +564,7 @@ export default function ServicesSection() {
                       className="absolute bottom-6 right-6 z-30"
                     >
                       <div
-                        className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${currentService.gradient} flex items-center justify-center shadow-2xl backdrop-blur-sm`}
+                        className={`w-16 h-16 rounded-2xl bg-linear-to-br ${currentService.gradient} flex items-center justify-center shadow-2xl backdrop-blur-sm`}
                       >
                         {currentService.icon && (
                           <currentService.icon className="text-2xl text-white" />
@@ -577,7 +577,7 @@ export default function ServicesSection() {
                 {/* Right Side - Information */}
                 <div className="p-6 lg:p-8">
                   <Link href={`/services/${currentService.slug}`}>
-                    <h3 className="text-2xl lg:text-3xl font-bold mb-3 bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent hover:from-purple-300 hover:to-white transition-all duration-300 cursor-pointer">
+                    <h3 className="text-2xl lg:text-3xl font-bold mb-3 bg-linear-to-r from-white to-purple-300 bg-clip-text text-transparent hover:from-purple-300 hover:to-white transition-all duration-300 cursor-pointer">
                       {currentService.title}
                       <span className="text-sm text-purple-400 ml-2">↗</span>
                     </h3>
@@ -592,7 +592,7 @@ export default function ServicesSection() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="relative mb-6 p-4 rounded-xl bg-gradient-to-r from-purple-600/10 to-transparent border-l-4 border-purple-500"
+                    className="relative mb-6 p-4 rounded-xl bg-linear-to-r from-purple-600/10 to-transparent border-l-4 border-purple-500"
                   >
                     <div className="flex items-start gap-3">
                       <FiTarget className="text-purple-400 mt-0.5" />
@@ -624,7 +624,7 @@ export default function ServicesSection() {
                             transition={{ delay: 0.2 + idx * 0.05 }}
                             className="flex items-center gap-2 text-xs px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 hover:border-purple-500/30 transition-all duration-300"
                           >
-                            <FiCheck className="text-purple-400 text-xs flex-shrink-0" />
+                            <FiCheck className="text-purple-400 text-xs shrink-0" />
                             <span>{feature}</span>
                           </motion.div>
                         ))}
@@ -636,11 +636,11 @@ export default function ServicesSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="relative mb-6 p-4 rounded-xl bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-500/30"
+                    className="relative mb-6 p-4 rounded-xl bg-linear-to-r from-purple-600/20 to-pink-600/20 border border-purple-500/30"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-xl bg-linear-to-br from-purple-600 to-pink-600 flex items-center justify-center">
                           <FiDollarSign className="text-white text-xl" />
                         </div>
                         <div>
@@ -653,7 +653,7 @@ export default function ServicesSection() {
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-xl bg-linear-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
                           <FiClock className="text-white text-xl" />
                         </div>
                         <div className="text-right">
@@ -671,7 +671,7 @@ export default function ServicesSection() {
                   {/* CTA Buttons */}
                   <div className="flex gap-3">
                     <Link href="/contact" className="flex-1">
-                      <button className="group w-full px-6 py-3 rounded-xl text-sm font-semibold bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 flex items-center justify-center gap-2">
+                      <button className="group w-full px-6 py-3 rounded-xl text-sm font-semibold bg-linear-to-r from-purple-600 to-pink-600 text-white hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 flex items-center justify-center gap-2">
                         <span>Get This Website</span>
                         <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
                       </button>
@@ -697,7 +697,7 @@ export default function ServicesSection() {
                 onClick={() => setCurrentSlide(idx)}
                 className={`transition-all duration-300 rounded-full ${
                   currentSlide === idx
-                    ? "w-8 h-2 bg-gradient-to-r from-purple-500 to-pink-500"
+                    ? "w-8 h-2 bg-linear-to-r from-purple-500 to-pink-500"
                     : "w-2 h-2 bg-white/30 hover:bg-white/50"
                 }`}
               />
@@ -757,7 +757,7 @@ export default function ServicesSection() {
               onClick={() => setCurrentSlide(idx)}
               className={`px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 flex items-center gap-2 ${
                 currentSlide === idx
-                  ? `bg-gradient-to-r ${service.gradient} text-white shadow-lg`
+                  ? `bg-linear-to-r ${service.gradient} text-white shadow-lg`
                   : "bg-white/5 border border-white/10 text-gray-400 hover:bg-white/10"
               }`}
             >

@@ -39,7 +39,7 @@ export default function StatsBar() {
   };
 
   return (
-    <section className="relative py-20 bg-gradient-to-b from-black via-purple-950/20 to-black overflow-hidden">
+    <section className="relative py-20 bg-linear-to-b from-black via-purple-950/20 to-black overflow-hidden">
       {/* Stars Background */}
       <Stars />
 
@@ -48,8 +48,8 @@ export default function StatsBar() {
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-pink-600/5 rounded-full blur-3xl animate-pulse delay-1000" />
 
       {/* Moving Gradient Lines */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-pink-500/20 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-purple-500/20 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-pink-500/20 to-transparent" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4">
         {/* Header */}
@@ -60,14 +60,14 @@ export default function StatsBar() {
           viewport={{ once: true }}
           className="mb-12 text-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 backdrop-blur-sm mb-5">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-linear-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 backdrop-blur-sm mb-5">
             <FaRocket className="w-3 h-3 text-purple-400" />
             <span className="text-xs font-semibold tracking-wider text-purple-300">
               OUR ACHIEVEMENTS
             </span>
           </div>
 
-          <p className="text-4xl md:text-5xl font-semibold bg-gradient-to-r from-white via-purple-300 to-white bg-clip-text text-transparent">
+          <p className="text-4xl md:text-5xl font-semibold bg-linear-to-r from-white via-purple-300 to-white bg-clip-text text-transparent">
             Unique Web Layer at a Glance
           </p>
 
@@ -132,12 +132,12 @@ export default function StatsBar() {
               />
 
               {/* Inner Card */}
-              <div className="relative w-full h-full bg-gradient-to-br from-gray-900/90 to-black/90 rounded-2xl flex flex-col items-center justify-center text-center p-6 border border-white/10 backdrop-blur-md shadow-lg group-hover:shadow-[0_0_40px_rgba(139,92,246,0.4)] transition-all duration-300">
+              <div className="relative w-full h-full bg-linear-to-br from-gray-900/90 to-black/90 rounded-2xl flex flex-col items-center justify-center text-center p-6 border border-white/10 backdrop-blur-md shadow-lg group-hover:shadow-[0_0_40px_rgba(139,92,246,0.4)] transition-all duration-300">
                 {/* Icon with Star Effect */}
                 <motion.div
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className={`w-16 h-16 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-4 shadow-lg relative`}
+                  className={`w-16 h-16 rounded-xl bg-linear-to-br ${item.gradient} flex items-center justify-center mb-4 shadow-lg relative`}
                 >
                   <div className="text-white text-2xl">{item.icon}</div>
                   <motion.div
@@ -163,7 +163,7 @@ export default function StatsBar() {
                 {/* Progress Bar */}
                 <div className="w-full h-0.5 bg-white/10 rounded-full mt-4 overflow-hidden">
                   <div
-                    className={`h-full bg-gradient-to-r ${item.gradient} rounded-full transition-all duration-1000`}
+                    className={`h-full bg-linear-to-r ${item.gradient} rounded-full transition-all duration-1000`}
                     style={{ width: hasStarted ? "100%" : "0%" }}
                   />
                 </div>

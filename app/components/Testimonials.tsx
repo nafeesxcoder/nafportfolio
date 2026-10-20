@@ -153,7 +153,7 @@ export default function Testimonials() {
           </div>
 
           <h2 className="mt-5 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-            <span className="bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
               Real Stories. Real Results.
             </span>
           </h2>
@@ -170,8 +170,8 @@ export default function Testimonials() {
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <div className="relative rounded-2xl sm:rounded-3xl p-[1.5px] bg-gradient-to-br from-purple-600/70 via-white/10 to-pink-500/50 shadow-[0_20px_80px_-20px_rgba(146,52,235,0.45)]">
-            <div className="relative rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#120726]/95 via-[#0b0418]/95 to-black/95 backdrop-blur-xl p-5 sm:p-8 md:p-12 overflow-hidden">
+          <div className="relative rounded-2xl sm:rounded-3xl p-[1.5px] bg-linear-to-br from-purple-600/70 via-white/10 to-pink-500/50 shadow-[0_20px_80px_-20px_rgba(146,52,235,0.45)]">
+            <div className="relative rounded-2xl sm:rounded-3xl bg-linear-to-br from-[#120726]/95 via-[#0b0418]/95 to-black/95 backdrop-blur-xl p-5 sm:p-8 md:p-12 overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIndex}
@@ -185,10 +185,10 @@ export default function Testimonials() {
                   <div className="flex flex-col items-center md:items-start gap-4">
                     <div className="relative">
                       <div
-                        className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${active.accent} blur-xl opacity-70`}
+                        className={`absolute inset-0 rounded-2xl bg-linear-to-br ${active.accent} blur-xl opacity-70`}
                       />
                       <div
-                        className={`relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 rounded-2xl bg-gradient-to-br ${active.accent} flex items-center justify-center p-2 sm:p-3 ring-1 ring-white/20 overflow-hidden mx-auto md:mx-0`}
+                        className={`relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 rounded-2xl bg-linear-to-br ${active.accent} flex items-center justify-center p-2 sm:p-3 ring-1 ring-white/20 overflow-hidden mx-auto md:mx-0`}
                       >
                         <Image
                           src={active.logoSrc}
@@ -299,13 +299,13 @@ export default function Testimonials() {
                   onClick={() => setActiveIndex(i)}
                   className={`group relative text-left rounded-xl p-2 sm:p-3 border transition-all duration-300 ${
                     isActive
-                      ? "border-purple-500/60 bg-gradient-to-br from-purple-600/25 to-transparent shadow-[0_8px_30px_-10px_rgba(146,52,235,0.5)]"
-                      : "border-white/10 bg-white/[0.03] hover:border-purple-500/30 hover:bg-white/[0.06]"
+                      ? "border-purple-500/60 bg-linear-to-br from-purple-600/25 to-transparent shadow-[0_8px_30px_-10px_rgba(146,52,235,0.5)]"
+                      : "border-white/10 bg-white/3 hover:border-purple-500/30 hover:bg-white/6"
                   }`}
                 >
                   <div className="flex items-center gap-2 sm:gap-3">
                     <div
-                      className={`h-8 w-8 sm:h-10 sm:w-10 shrink-0 rounded-lg bg-gradient-to-br ${t.accent} flex items-center justify-center p-1 sm:p-1.5 ring-1 ring-white/15 overflow-hidden`}
+                      className={`h-8 w-8 sm:h-10 sm:w-10 shrink-0 rounded-lg bg-linear-to-br ${t.accent} flex items-center justify-center p-1 sm:p-1.5 ring-1 ring-white/15 overflow-hidden`}
                     >
                       <Image
                         src={t.logoSrc}
@@ -336,7 +336,7 @@ export default function Testimonials() {
                       initial={{ width: 0 }}
                       animate={{ width: "100%" }}
                       transition={{ duration: 6, ease: "linear" }}
-                      className="absolute left-2 sm:left-3 right-2 sm:right-3 bottom-1 sm:bottom-1.5 h-0.5 rounded-full bg-gradient-to-r from-purple-500 via-pink-400 to-purple-300"
+                      className="absolute left-2 sm:left-3 right-2 sm:right-3 bottom-1 sm:bottom-1.5 h-0.5 rounded-full bg-linear-to-r from-purple-500 via-pink-400 to-purple-300"
                     />
                   )}
                 </button>
@@ -353,7 +353,7 @@ function RatingBar({ state }: { state: "full" | "half" | "empty" }) {
   return (
     <span className="relative inline-block h-2 w-5 sm:h-2.5 sm:w-6 rounded-full bg-white/10 overflow-hidden">
       <span
-        className={`absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-purple-500 to-pink-400 ${
+        className={`absolute inset-y-0 left-0 rounded-full bg-linear-to-r from-purple-500 to-pink-400 ${
           state === "full" ? "w-full" : state === "half" ? "w-1/2" : "w-0"
         }`}
       />

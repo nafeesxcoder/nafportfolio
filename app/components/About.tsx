@@ -128,7 +128,7 @@ export default function About() {
 
   return (
     <section ref={sectionRef} className="relative py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black" />
+      <div className="absolute inset-0 bg-linear-to-b from-black via-purple-950/10 to-black" />
 
       <Stars />
 
@@ -143,7 +143,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 backdrop-blur-sm mb-5">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-linear-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 backdrop-blur-sm mb-5">
             <FiHexagon className="w-3.5 h-3.5 text-purple-400" />
             <span className="text-xs font-semibold tracking-wider text-purple-300 uppercase">
               About the Company
@@ -151,14 +151,14 @@ export default function About() {
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-            <span className="bg-gradient-to-r from-white via-purple-300 to-white bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-white via-purple-300 to-white bg-clip-text text-transparent">
               One Partner for
             </span>
             <br />
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent relative inline-block">
+            <span className="bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent relative inline-block">
               Web, Apps &amp; SEO
               <motion.span
-                className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"
+                className="absolute -bottom-2 left-0 right-0 h-1 bg-linear-to-r from-purple-500 to-pink-500 rounded-full"
                 initial={{ width: 0 }}
                 animate={isInView ? { width: "100%" } : { width: 0 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
@@ -181,10 +181,10 @@ export default function About() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="relative rounded-3xl border border-purple-500/25 bg-gradient-to-br from-white/[0.07] to-white/[0.02] backdrop-blur-xl p-6 shadow-2xl shadow-purple-900/30">
+              <div className="relative rounded-3xl border border-purple-500/25 bg-linear-to-br from-white/7 to-white/2 backdrop-blur-xl p-6 shadow-2xl shadow-purple-900/30">
                 {/* Header row */}
                 <div className="flex items-center gap-3 pb-5 border-b border-white/10">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-purple-600 to-pink-600 flex items-center justify-center">
                     <FiUsers className="text-white text-xl" />
                   </div>
                   <div>
@@ -202,7 +202,7 @@ export default function About() {
                   {snapshot.map((s) => (
                     <div
                       key={s.label}
-                      className="rounded-xl bg-white/[0.04] border border-white/10 p-3 hover:border-purple-500/40 transition-colors"
+                      className="rounded-xl bg-white/4 border border-white/10 p-3 hover:border-purple-500/40 transition-colors"
                     >
                       <div className="flex items-center gap-2 text-[11px] text-gray-500 uppercase tracking-wide">
                         <i className={`fas ${s.icon} text-purple-400`}></i>
@@ -227,7 +227,7 @@ export default function About() {
                       </div>
                       <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
                         <motion.div
-                          className="h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"
+                          className="h-full bg-linear-to-r from-purple-500 to-pink-500 rounded-full"
                           initial={{ width: "0%" }}
                           animate={
                             isInView
@@ -246,7 +246,7 @@ export default function About() {
               <motion.div
                 animate={{ y: [0, -10, 0], rotate: [0, 8, 0] }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -top-6 -right-4 bg-gradient-to-br from-purple-600 to-pink-600 p-3 rounded-2xl shadow-xl z-20"
+                className="absolute -top-6 -right-4 bg-linear-to-br from-purple-600 to-pink-600 p-3 rounded-2xl shadow-xl z-20"
               >
                 <FaReact className="text-white text-2xl" />
               </motion.div>
@@ -254,7 +254,7 @@ export default function About() {
               <motion.div
                 animate={{ y: [0, 10, 0], rotate: [0, -8, 0] }}
                 transition={{ duration: 4.5, repeat: Infinity, delay: 0.5 }}
-                className="absolute -bottom-6 -left-4 bg-gradient-to-br from-cyan-500 to-blue-600 p-3 rounded-2xl shadow-xl z-20"
+                className="absolute -bottom-6 -left-4 bg-linear-to-br from-cyan-500 to-blue-600 p-3 rounded-2xl shadow-xl z-20"
               >
                 <SiNextdotjs className="text-white text-2xl" />
               </motion.div>
@@ -288,7 +288,7 @@ export default function About() {
               initial={{ opacity: 0, x: 30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6 }}
-              className="relative bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20"
+              className="relative bg-linear-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20"
             >
               <div className="absolute -top-3 -left-2 text-5xl font-serif text-purple-500/30">
                 &ldquo;
@@ -349,9 +349,9 @@ export default function About() {
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.2 + idx * 0.1 }}
                   whileHover={{ x: 5 }}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-white/5 to-transparent border-l-4 border-purple-500 hover:border-purple-400 transition-all duration-300"
+                  className="flex items-center gap-4 p-4 rounded-xl bg-linear-to-r from-white/5 to-transparent border-l-4 border-purple-500 hover:border-purple-400 transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-linear-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center shrink-0">
                     <i
                       className={`fas ${item.icon} text-purple-400 text-sm`}
                     ></i>
@@ -374,13 +374,13 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-linear-to-br from-purple-500 to-pink-500 flex items-center justify-center">
                   <FiCode className="text-white text-sm" />
                 </div>
                 <h3 className="text-lg font-semibold text-white">
                   Core Technologies
                 </h3>
-                <div className="flex-1 h-px bg-gradient-to-r from-purple-500/50 to-transparent" />
+                <div className="flex-1 h-px bg-linear-to-r from-purple-500/50 to-transparent" />
               </div>
 
               <div className="flex flex-wrap gap-2">
@@ -415,7 +415,7 @@ export default function About() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group relative px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold transition-all duration-300 shadow-lg shadow-purple-500/25 overflow-hidden w-full sm:w-auto"
+                  className="group relative px-8 py-3 rounded-full bg-linear-to-r from-purple-600 to-pink-600 text-white font-semibold transition-all duration-300 shadow-lg shadow-purple-500/25 overflow-hidden w-full sm:w-auto"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     More About Us
@@ -464,9 +464,9 @@ export default function About() {
                     }}
                   />
 
-                  <div className="relative bg-gradient-to-br from-gray-900/90 to-black/90 rounded-xl p-6 text-center border border-white/10 backdrop-blur-md transition-all duration-300">
+                  <div className="relative bg-linear-to-br from-gray-900/90 to-black/90 rounded-xl p-6 text-center border border-white/10 backdrop-blur-md transition-all duration-300">
                     <div
-                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mx-auto mb-3`}
+                      className={`w-12 h-12 rounded-xl bg-linear-to-br ${item.gradient} flex items-center justify-center mx-auto mb-3`}
                     >
                       <item.icon className="text-white text-xl" />
                     </div>
@@ -479,7 +479,7 @@ export default function About() {
 
                     <div className="w-full h-0.5 bg-white/10 rounded-full mt-3 overflow-hidden">
                       <motion.div
-                        className={`h-full bg-gradient-to-r ${item.gradient} rounded-full`}
+                        className={`h-full bg-linear-to-r ${item.gradient} rounded-full`}
                         initial={{ width: "0%" }}
                         animate={{ width: isInView ? "100%" : "0%" }}
                         transition={{ duration: 1, delay: 0.5 + idx * 0.1 }}

@@ -63,7 +63,7 @@ export default function ServiceDetail({
               {category}
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-white to-purple-300 bg-clip-text text-transparent">
             {title}
           </h1>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">{description}</p>
@@ -73,7 +73,7 @@ export default function ServiceDetail({
           {/* Left side - Main content */}
           <div className="lg:col-span-2 space-y-8">
             {/* Overview */}
-            <div className="bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
+            <div className="bg-linear-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <i className="fas fa-info-circle text-purple-400"></i>
                 Overview
@@ -82,7 +82,7 @@ export default function ServiceDetail({
             </div>
 
             {/* Features */}
-            <div className="bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
+            <div className="bg-linear-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <i className="fas fa-list-check text-purple-400"></i>
                 Key Features
@@ -101,7 +101,7 @@ export default function ServiceDetail({
             </div>
 
             {/* Process */}
-            <div className="bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
+            <div className="bg-linear-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <i className="fas fa-chart-line text-purple-400"></i>
                 Development Process
@@ -110,7 +110,7 @@ export default function ServiceDetail({
                 {process.map((step, idx) => (
                   <div key={idx} className="flex items-start gap-3">
                     <div
-                      className={`w-8 h-8 rounded-full bg-gradient-to-r ${gradient} flex items-center justify-center flex-shrink-0`}
+                      className={`w-8 h-8 rounded-full bg-linear-to-r ${gradient} flex items-center justify-center shrink-0`}
                     >
                       <span className="text-white text-sm font-bold">
                         {idx + 1}
@@ -123,7 +123,7 @@ export default function ServiceDetail({
             </div>
 
             {/* Technologies */}
-            <div className="bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
+            <div className="bg-linear-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <i className="fas fa-microchip text-purple-400"></i>
                 Technologies Used
@@ -144,11 +144,11 @@ export default function ServiceDetail({
           {/* Right side - Sidebar */}
           <div className="space-y-6">
             {/* Price Card */}
-            <div className="bg-gradient-to-br from-purple-900/40 to-black/60 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30 sticky top-24">
+            <div className="bg-linear-to-br from-purple-900/40 to-black/60 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30 sticky top-24">
               <div className="text-center mb-6">
                 {/* ✅ Fixed: Large icon in price card */}
                 <div
-                  className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center mx-auto mb-4`}
+                  className={`w-20 h-20 rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center mx-auto mb-4`}
                 >
                   <i className={`fas ${icon} text-3xl text-white`}></i>
                 </div>
@@ -168,14 +168,14 @@ export default function ServiceDetail({
               </div>
 
               <Link href="/contact">
-                <button className="w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300">
+                <button className="w-full py-3 rounded-xl bg-linear-to-r from-purple-600 to-purple-800 text-white font-semibold hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300">
                   Get This Service
                 </button>
               </Link>
             </div>
 
             {/* Target Audience */}
-            <div className="bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
+            <div className="bg-linear-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
               <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                 <i className="fas fa-users text-purple-400"></i>
                 Perfect For
@@ -194,7 +194,7 @@ export default function ServiceDetail({
             </div>
 
             {/* Benefits */}
-            <div className="bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
+            <div className="bg-linear-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
               <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                 <i className="fas fa-gem text-purple-400"></i>
                 Key Benefits
@@ -210,7 +210,7 @@ export default function ServiceDetail({
             </div>
 
             {/* Worldwide delivery */}
-            <div className="bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
+            <div className="bg-linear-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
               <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                 <i className="fas fa-earth-americas text-purple-400"></i>
                 Available Worldwide
@@ -245,7 +245,7 @@ export default function ServiceDetail({
 
         {/* FAQs */}
         {faqs && faqs.length > 0 && (
-          <div className="mt-12 bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-purple-500/20">
+          <div className="mt-12 bg-linear-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-purple-500/20">
             <h2 className="text-xl md:text-2xl font-bold text-white mb-6 flex items-center gap-2">
               <i className="fas fa-circle-question text-purple-400"></i>
               Frequently Asked Questions
@@ -254,7 +254,7 @@ export default function ServiceDetail({
               {faqs.map((faq, idx) => (
                 <details
                   key={idx}
-                  className="group rounded-xl border border-white/10 bg-white/[0.03] p-4 open:border-purple-500/40 transition-colors"
+                  className="group rounded-xl border border-white/10 bg-white/3 p-4 open:border-purple-500/40 transition-colors"
                 >
                   <summary className="cursor-pointer list-none flex items-start justify-between gap-4 text-white font-medium text-sm md:text-base">
                     {faq.question}
@@ -270,7 +270,7 @@ export default function ServiceDetail({
         )}
 
         {/* Bottom CTA */}
-        <div className="mt-12 text-center rounded-3xl border border-purple-500/25 bg-gradient-to-br from-purple-900/25 to-black/40 p-8 md:p-12">
+        <div className="mt-12 text-center rounded-3xl border border-purple-500/25 bg-linear-to-br from-purple-900/25 to-black/40 p-8 md:p-12">
           <h2 className="text-2xl md:text-3xl font-bold text-white">
             Ready to start your {title.toLowerCase()} project?
           </h2>
@@ -280,7 +280,7 @@ export default function ServiceDetail({
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-7">
             <Link href="/contact">
-              <button className="px-7 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform w-full sm:w-auto">
+              <button className="px-7 py-3 rounded-full bg-linear-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform w-full sm:w-auto">
                 Get a Free Quote
               </button>
             </Link>

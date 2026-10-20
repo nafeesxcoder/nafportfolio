@@ -129,10 +129,10 @@ export default function Footer() {
   return (
     <footer className="relative bg-black/95 backdrop-blur-sm mt-20">
       {/* Distinct Top Border - Purple Gradient Line */}
-      <div className="absolute -top-0.5 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-purple-500 to-transparent" />
+      <div className="absolute -top-0.5 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-purple-500 to-transparent" />
 
       {/* Top Purple Glow Effect */}
-      <div className="absolute -top-4 left-0 right-0 h-8 bg-gradient-to-b from-purple-500/20 to-transparent blur-md pointer-events-none" />
+      <div className="absolute -top-4 left-0 right-0 h-8 bg-linear-to-b from-purple-500/20 to-transparent blur-md pointer-events-none" />
 
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

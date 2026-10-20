@@ -65,8 +65,8 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/30 to-black animate-gradient" />
-      <div className="absolute inset-0 bg-gradient-to-t from-purple-950/20 via-transparent to-black/30" />
+      <div className="absolute inset-0 bg-linear-to-br from-black via-purple-900/30 to-black animate-gradient" />
+      <div className="absolute inset-0 bg-linear-to-t from-purple-950/20 via-transparent to-black/30" />
       <div
         className="absolute inset-0"
         style={{
@@ -80,7 +80,7 @@ export default function HeroSection() {
       {/* Bottom Circular Design */}
       <div className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none">
         <div className="relative w-full h-20">
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[200%] h-20 rounded-t-full bg-gradient-to-t from-purple-600/15 via-purple-600/5 to-transparent blur-xl animate-pulse-slow" />
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[200%] h-20 rounded-t-full bg-linear-to-t from-purple-600/15 via-purple-600/5 to-transparent blur-xl animate-pulse-slow" />
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[140%] h-16 rounded-t-full border-t border-purple-500/30 animate-spin-slow" />
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[180%] h-20 rounded-t-full border-t border-dashed border-purple-500/20 animate-spin-slow-reverse" />
         </div>
@@ -104,7 +104,7 @@ export default function HeroSection() {
             {/* Heading */}
             <h1 className="text-[2rem] sm:text-5xl lg:text-[3.4rem] font-bold leading-[1.1] animate-slideUp">
               <span className="text-white">We build </span>
-              <span className="bg-gradient-to-r from-purple-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-purple-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 websites &amp; mobile apps
               </span>
               <br />
@@ -138,12 +138,12 @@ export default function HeroSection() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start animate-slideUp delay-300">
               <Link href="/contact">
-                <button className="group relative px-7 py-3 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-800 hover:scale-105 transition-all duration-300 shadow-lg shadow-purple-500/25 overflow-hidden w-full sm:w-auto">
+                <button className="group relative px-7 py-3 rounded-full text-sm font-semibold text-white bg-linear-to-r from-purple-600 to-purple-800 hover:scale-105 transition-all duration-300 shadow-lg shadow-purple-500/25 overflow-hidden w-full sm:w-auto">
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     <i className="fas fa-paper-plane text-xs"></i>
                     Get a Free Quote
                   </span>
-                  <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  <span className="absolute inset-0 bg-linear-to-r from-purple-500 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 </button>
               </Link>
 
@@ -172,9 +172,9 @@ export default function HeroSection() {
           {/* RIGHT - Capability panel (replaces the old photo) */}
           <div className="relative">
             {/* Glow */}
-            <div className="absolute -inset-4 bg-gradient-to-tr from-purple-600/20 via-transparent to-pink-600/20 blur-3xl rounded-full" />
+            <div className="absolute -inset-4 bg-linear-to-tr from-purple-600/20 via-transparent to-pink-600/20 blur-3xl rounded-full" />
 
-            <div className="relative bg-gradient-to-br from-white/[0.07] to-white/[0.02] backdrop-blur-xl rounded-3xl border border-purple-500/25 p-5 sm:p-6 shadow-2xl shadow-purple-900/30">
+            <div className="relative bg-linear-to-br from-white/7 to-white/2 backdrop-blur-xl rounded-3xl border border-purple-500/25 p-5 sm:p-6 shadow-2xl shadow-purple-900/30">
               {/* Window chrome */}
               <div className="flex items-center justify-between mb-5">
                 <div className="flex items-center gap-1.5">
@@ -192,10 +192,10 @@ export default function HeroSection() {
                 {capabilities.map((c, i) => (
                   <div
                     key={c.label}
-                    className="group rounded-2xl bg-white/[0.04] border border-white/10 p-4 hover:border-purple-500/50 hover:bg-purple-600/10 transition-all duration-300"
+                    className="group rounded-2xl bg-white/4 border border-white/10 p-4 hover:border-purple-500/50 hover:bg-purple-600/10 transition-all duration-300"
                     style={{ animationDelay: `${i * 0.1}s` }}
                   >
-                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-purple-600/40 to-pink-600/30 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                    <div className="w-9 h-9 rounded-xl bg-linear-to-br from-purple-600/40 to-pink-600/30 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                       <i className={`fas ${c.icon} text-purple-200 text-sm`}></i>
                     </div>
                     <div className="text-sm font-semibold text-white leading-tight">
@@ -216,7 +216,7 @@ export default function HeroSection() {
                   { v: "7 days", l: "Avg. kickoff" },
                 ].map((s) => (
                   <div key={s.l} className="text-center">
-                    <div className="text-lg font-bold bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
+                    <div className="text-lg font-bold bg-linear-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
                       {s.v}
                     </div>
                     <div className="text-[10px] text-gray-500 uppercase tracking-wide">

@@ -156,7 +156,7 @@ export default function ContactClient({
 
   return (
     <section className="relative min-h-screen overflow-hidden py-12 sm:py-16 md:py-20">
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black" />
+      <div className="absolute inset-0 bg-linear-to-b from-black via-purple-950/10 to-black" />
       <Stars />
 
       <div className="absolute top-20 left-10 w-72 h-72 bg-purple-600/10 rounded-full blur-3xl animate-pulse" />
@@ -165,7 +165,7 @@ export default function ContactClient({
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-8 md:mb-12">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm px-4 py-2 rounded-full mb-4 border border-purple-500/30">
+          <div className="inline-flex items-center gap-2 bg-linear-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm px-4 py-2 rounded-full mb-4 border border-purple-500/30">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
@@ -175,11 +175,11 @@ export default function ContactClient({
             </span>
           </div>
           <Heading className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
-            <span className="bg-gradient-to-r from-white via-purple-300 to-white bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-white via-purple-300 to-white bg-clip-text text-transparent">
               Let&apos;s Build Your
             </span>
             <br />
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               Dream Project
             </span>
           </Heading>
@@ -221,10 +221,10 @@ export default function ContactClient({
               ].map((stat, idx) => (
                 <div
                   key={idx}
-                  className="bg-gradient-to-br from-white/5 to-black/20 backdrop-blur-sm rounded-xl p-3 text-center border border-white/10 hover:border-purple-500/30 transition-all duration-300 group"
+                  className="bg-linear-to-br from-white/5 to-black/20 backdrop-blur-sm rounded-xl p-3 text-center border border-white/10 hover:border-purple-500/30 transition-all duration-300 group"
                 >
                   <div
-                    className={`w-10 h-10 rounded-lg bg-gradient-to-br ${stat.color} flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform`}
+                    className={`w-10 h-10 rounded-lg bg-linear-to-br ${stat.color} flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform`}
                   >
                     <stat.icon className="text-white text-lg" />
                   </div>
@@ -237,7 +237,7 @@ export default function ContactClient({
             </div>
 
             {/* Tech Stack */}
-            <div className="bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-xl p-5 border border-purple-500/20">
+            <div className="bg-linear-to-br from-purple-900/20 to-black/40 backdrop-blur-sm rounded-xl p-5 border border-purple-500/20">
               <h3 className="text-white font-semibold mb-3 flex items-center gap-2">
                 <FiStar className="text-purple-400" /> Tech Stack We Master
               </h3>
@@ -281,12 +281,12 @@ export default function ContactClient({
 
           {/* RIGHT SIDE - Modern Form */}
           <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-xl" />
+            <div className="absolute -inset-4 bg-linear-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-xl" />
 
-            <div className="relative bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-xl rounded-2xl p-6 border border-purple-500/30 shadow-2xl">
+            <div className="relative bg-linear-to-br from-gray-900/90 to-black/90 backdrop-blur-xl rounded-2xl p-6 border border-purple-500/30 shadow-2xl">
               {/* Form Header */}
               <div className="mb-6 text-center">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 mb-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-linear-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 mb-3">
                   <FiSend className="w-3 h-3 text-purple-400" />
                   <span className="text-xs font-medium text-purple-400">
                     Start Your Journey
@@ -448,7 +448,7 @@ export default function ContactClient({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`group w-full py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
+                  className={`group w-full py-3.5 rounded-xl bg-linear-to-r from-purple-600 to-pink-600 text-white font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
                     isSubmitting
                       ? "opacity-70 cursor-not-allowed"
                       : "hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"

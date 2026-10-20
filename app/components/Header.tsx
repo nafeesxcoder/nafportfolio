@@ -102,7 +102,7 @@ export default function Header() {
                 >
                   {item.name}
                   {pathname === item.path && (
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[#751f8c] to-[#b665f2] rounded-full"></span>
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-linear-to-r from-[#751f8c] to-[#b665f2] rounded-full"></span>
                   )}
                 </Link>
               ))}
@@ -187,12 +187,12 @@ export default function Header() {
             <ThemeToggle className="hidden md:flex" />
 
             <Link href="/contact" className="hidden md:block">
-              <button className="group relative px-5 py-2 bg-gradient-to-r from-[#751f8c] to-[#b665f2] rounded-full text-white text-sm font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
+              <button className="group relative px-5 py-2 bg-linear-to-r from-[#751f8c] to-[#b665f2] rounded-full text-white text-sm font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
                 <span className="relative z-10 flex items-center gap-2">
                   <FaRocket className="text-xs" />
                   Get a Quote
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#b665f2] to-[#751f8c] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-[#b665f2] to-[#751f8c] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
             </Link>
           </div>
@@ -246,7 +246,7 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className={`block px-4 py-3 rounded-xl transition-all duration-300 ${
                   pathname === item.path
-                    ? "bg-gradient-to-r from-[#751f8c]/20 to-[#b665f2]/20 text-[#b665f2] border border-purple-500/30"
+                    ? "bg-linear-to-r from-[#751f8c]/20 to-[#b665f2]/20 text-[#b665f2] border border-purple-500/30"
                     : "text-gray-300 hover:bg-white/5"
                 }`}
               >
@@ -260,7 +260,7 @@ export default function Header() {
                 onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                 className={`flex items-center justify-between w-full px-4 py-3 rounded-xl transition-all duration-300 ${
                   pathname.includes("/services")
-                    ? "bg-gradient-to-r from-[#751f8c]/20 to-[#b665f2]/20 text-[#b665f2] border border-purple-500/30"
+                    ? "bg-linear-to-r from-[#751f8c]/20 to-[#b665f2]/20 text-[#b665f2] border border-purple-500/30"
                     : "text-gray-300 hover:bg-white/5"
                 }`}
               >
@@ -324,9 +324,9 @@ export default function Header() {
           </div>
 
           {/* Bottom Section - Hire Me Button */}
-          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent pt-6">
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-linear-to-t from-black to-transparent pt-6">
             <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-              <button className="w-full py-3 bg-gradient-to-r from-[#751f8c] to-[#b665f2] rounded-xl text-white font-semibold text-sm flex items-center justify-center gap-2">
+              <button className="w-full py-3 bg-linear-to-r from-[#751f8c] to-[#b665f2] rounded-xl text-white font-semibold text-sm flex items-center justify-center gap-2">
                 <FaRocket className="text-xs" /> Get a Quote
               </button>
             </Link>

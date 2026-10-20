@@ -31,7 +31,7 @@ export default function TopContactBar() {
   ];
 
   return (
-    <div className="w-full bg-gradient-to-r from-[#751f8c] via-[#b665f2] to-[#751f8c] text-white py-2.5 px-4 hidden md:block">
+    <div className="w-full bg-linear-to-r from-[#751f8c] via-[#b665f2] to-[#751f8c] text-white py-2.5 px-4 hidden md:block">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-3 text-xs sm:text-sm">
           {/* Left - Contact Info */}

@@ -111,10 +111,10 @@ export default function Preloader({ onComplete }: { onComplete?: () => void }) {
           exit={{ opacity: 0, transition: { duration: 0.5 } }}
         >
           {/* Original Purple Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/30 to-black" />
+          <div className="absolute inset-0 bg-linear-to-br from-black via-purple-900/30 to-black" />
 
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-purple-950/20 via-transparent to-black/30" />
+          <div className="absolute inset-0 bg-linear-to-t from-purple-950/20 via-transparent to-black/30" />
 
           {/* Purple Radial Glow - Original */}
           <div
@@ -226,7 +226,7 @@ export default function Preloader({ onComplete }: { onComplete?: () => void }) {
 
           {/* White Progress Bar */}
           <motion.div
-            className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-white/50 via-white to-white/50"
+            className="absolute bottom-0 left-0 h-1 bg-linear-to-r from-white/50 via-white to-white/50"
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ duration: 4.2 }}

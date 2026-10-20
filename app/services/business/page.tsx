@@ -1,6 +1,6 @@
-import ServiceDetail from "@/components/ServiceDetail";
-import ServiceSeo from "@/components/ServiceSeo";
-import { pageMeta } from "@/lib/seo";
+import ServiceDetail from "../../components/ServiceDetail";
+import ServiceSeo from "../../components/ServiceSeo";
+import { pageMeta } from "../../lib/seo";
 
 const faqs = [
   {

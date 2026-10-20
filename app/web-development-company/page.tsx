@@ -63,7 +63,7 @@ export default function CountriesIndexPage() {
                   Worldwide Delivery
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-white to-purple-300 bg-clip-text text-transparent">
                 A Development Company for Every Country
               </h1>
               <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
@@ -78,7 +78,7 @@ export default function CountriesIndexPage() {
               {serviceRegions.map((r) => (
                 <span
                   key={r}
-                  className="text-xs px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-gray-300"
+                  className="text-xs px-3 py-1.5 rounded-full bg-white/4 border border-white/10 text-gray-300"
                 >
                   {r}
                 </span>
@@ -91,7 +91,7 @@ export default function CountriesIndexPage() {
                 <Link
                   key={c.slug}
                   href={`/web-development-company/${c.slug}`}
-                  className="group rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-black/40 p-5 hover:border-purple-500/60 hover:-translate-y-1 transition-all duration-300"
+                  className="group rounded-2xl border border-purple-500/20 bg-linear-to-br from-purple-900/20 to-black/40 p-5 hover:border-purple-500/60 hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="flex items-center justify-between mb-3">
                     <h2 className="text-white font-bold group-hover:text-purple-300 transition-colors">
@@ -125,7 +125,7 @@ export default function CountriesIndexPage() {
               ))}
             </div>
 
-            <div className="mt-16 text-center rounded-3xl border border-purple-500/25 bg-gradient-to-br from-purple-900/25 to-black/40 p-8 md:p-12">
+            <div className="mt-16 text-center rounded-3xl border border-purple-500/25 bg-linear-to-br from-purple-900/25 to-black/40 p-8 md:p-12">
               <h2 className="text-2xl md:text-3xl font-bold text-white">
                 Country not listed?
               </h2>
@@ -135,7 +135,7 @@ export default function CountriesIndexPage() {
                 your currency.
               </p>
               <Link href="/contact">
-                <button className="mt-7 px-7 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform">
+                <button className="mt-7 px-7 py-3 rounded-full bg-linear-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform">
                   Get a Free Quote
                 </button>
               </Link>

@@ -15,7 +15,7 @@ export default function ProcessSection() {
               Our Process
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold bg-linear-to-r from-white to-purple-300 bg-clip-text text-transparent">
             Six Steps, Every Project
           </h2>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
@@ -28,10 +28,10 @@ export default function ProcessSection() {
           {processSteps.map((s) => (
             <div
               key={s.step}
-              className="group relative rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-black/40 p-6 hover:border-purple-500/60 hover:-translate-y-1 transition-all duration-300"
+              className="group relative rounded-2xl border border-purple-500/20 bg-linear-to-br from-purple-900/20 to-black/40 p-6 hover:border-purple-500/60 hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="w-11 h-11 rounded-xl bg-linear-to-br from-purple-600 to-pink-600 flex items-center justify-center group-hover:scale-110 transition-transform">
                   <i className={`fas ${s.icon} text-white text-sm`}></i>
                 </div>
                 <span className="text-3xl font-bold text-white/5 group-hover:text-purple-500/20 transition-colors">

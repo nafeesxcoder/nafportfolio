@@ -68,7 +68,7 @@ export default function TechnologiesPage() {
                   Our Stack
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-white to-purple-300 bg-clip-text text-transparent">
                 Technologies We Build With
               </h1>
               <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
@@ -83,10 +83,10 @@ export default function TechnologiesPage() {
               {techStack.map((group) => (
                 <div
                   key={group.group}
-                  className="rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm p-6 hover:border-purple-500/50 transition-colors"
+                  className="rounded-2xl border border-purple-500/20 bg-linear-to-br from-purple-900/20 to-black/40 backdrop-blur-sm p-6 hover:border-purple-500/50 transition-colors"
                 >
                   <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-linear-to-br from-purple-600 to-pink-600 flex items-center justify-center">
                       <i className={`fas ${group.icon} text-white text-sm`}></i>
                     </div>
                     <h2 className="text-lg font-bold text-white">
@@ -118,9 +118,9 @@ export default function TechnologiesPage() {
                 {whyThisStack.map((w) => (
                   <div
                     key={w.title}
-                    className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
+                    className="rounded-2xl border border-white/10 bg-white/3 p-6"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600/40 to-pink-600/30 flex items-center justify-center mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-linear-to-br from-purple-600/40 to-pink-600/30 flex items-center justify-center mb-4">
                       <i className={`fas ${w.icon} text-purple-200 text-sm`}></i>
                     </div>
                     <h3 className="text-white font-semibold">{w.title}</h3>
@@ -132,7 +132,7 @@ export default function TechnologiesPage() {
               </div>
             </div>
 
-            <div className="mt-20 text-center rounded-3xl border border-purple-500/25 bg-gradient-to-br from-purple-900/25 to-black/40 p-8 md:p-12">
+            <div className="mt-20 text-center rounded-3xl border border-purple-500/25 bg-linear-to-br from-purple-900/25 to-black/40 p-8 md:p-12">
               <h2 className="text-2xl md:text-3xl font-bold text-white">
                 Have a stack preference?
               </h2>
@@ -141,7 +141,7 @@ export default function TechnologiesPage() {
                 codebases as often as we start new ones.
               </p>
               <Link href="/contact">
-                <button className="mt-7 px-7 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform">
+                <button className="mt-7 px-7 py-3 rounded-full bg-linear-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform">
                   Talk to a Developer
                 </button>
               </Link>

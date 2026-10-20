@@ -81,7 +81,7 @@ export default function ServicesListPage() {
                   {services.length} Services
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-white to-purple-300 bg-clip-text text-transparent">
                 What We Build
               </h1>
               <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
@@ -101,7 +101,7 @@ export default function ServicesListPage() {
                   <div className="flex flex-col sm:flex-row sm:items-end gap-4 mb-8">
                     <div className="flex items-center gap-4">
                       <div
-                        className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${meta.accent} flex items-center justify-center flex-shrink-0`}
+                        className={`w-12 h-12 rounded-2xl bg-linear-to-br ${meta.accent} flex items-center justify-center shrink-0`}
                       >
                         <i className={`fas ${meta.icon} text-white`}></i>
                       </div>
@@ -119,9 +119,9 @@ export default function ServicesListPage() {
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                     {list.map((s) => (
                       <Link key={s.slug} href={`/services/${s.slug}`}>
-                        <article className="group h-full rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-black/40 backdrop-blur-sm p-6 hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                        <article className="group h-full rounded-2xl border border-purple-500/20 bg-linear-to-br from-purple-900/20 to-black/40 backdrop-blur-sm p-6 hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-1 transition-all duration-300 flex flex-col">
                           <div
-                            className={`w-12 h-12 rounded-xl bg-gradient-to-br ${s.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
+                            className={`w-12 h-12 rounded-xl bg-linear-to-br ${s.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
                           >
                             <i className={`fas ${s.icon} text-white`}></i>
                           </div>
@@ -184,9 +184,9 @@ export default function ServicesListPage() {
                 {engagementModels.map((m) => (
                   <div
                     key={m.title}
-                    className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:border-purple-500/40 transition-colors"
+                    className="rounded-2xl border border-white/10 bg-white/3 p-6 hover:border-purple-500/40 transition-colors"
                   >
-                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-600/40 to-pink-600/30 flex items-center justify-center mb-4">
+                    <div className="w-11 h-11 rounded-xl bg-linear-to-br from-purple-600/40 to-pink-600/30 flex items-center justify-center mb-4">
                       <i className={`fas ${m.icon} text-purple-200`}></i>
                     </div>
                     <h3 className="text-white font-bold text-lg">{m.title}</h3>
@@ -209,7 +209,7 @@ export default function ServicesListPage() {
             </div>
 
             {/* CTA */}
-            <div className="text-center rounded-3xl border border-purple-500/25 bg-gradient-to-br from-purple-900/25 to-black/40 p-8 md:p-12">
+            <div className="text-center rounded-3xl border border-purple-500/25 bg-linear-to-br from-purple-900/25 to-black/40 p-8 md:p-12">
               <h2 className="text-2xl md:text-3xl font-bold text-white">
                 Not sure which service you need?
               </h2>
@@ -220,7 +220,7 @@ export default function ServicesListPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center mt-7">
                 <Link href="/contact">
-                  <button className="px-7 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform w-full sm:w-auto">
+                  <button className="px-7 py-3 rounded-full bg-linear-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform w-full sm:w-auto">
                     Get a Free Quote
                   </button>
                 </Link>

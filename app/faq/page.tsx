@@ -57,7 +57,7 @@ export default function FaqPage() {
                   Questions
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-purple-300 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-white to-purple-300 bg-clip-text text-transparent">
                 Frequently Asked Questions
               </h1>
               <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
@@ -70,12 +70,12 @@ export default function FaqPage() {
               {faqs.map((faq, idx) => (
                 <details
                   key={idx}
-                  className="group rounded-2xl border border-white/10 bg-gradient-to-br from-purple-900/15 to-black/40 p-5 open:border-purple-500/40 transition-colors"
+                  className="group rounded-2xl border border-white/10 bg-linear-to-br from-purple-900/15 to-black/40 p-5 open:border-purple-500/40 transition-colors"
                   {...(idx === 0 ? { open: true } : {})}
                 >
                   <summary className="cursor-pointer list-none flex items-start justify-between gap-4 text-white font-semibold">
                     <span>{faq.question}</span>
-                    <i className="fas fa-chevron-down text-purple-400 text-xs mt-1.5 flex-shrink-0 transition-transform group-open:rotate-180"></i>
+                    <i className="fas fa-chevron-down text-purple-400 text-xs mt-1.5 shrink-0 transition-transform group-open:rotate-180"></i>
                   </summary>
                   <p className="text-gray-400 text-sm mt-3 leading-relaxed">
                     {faq.answer}
@@ -84,7 +84,7 @@ export default function FaqPage() {
               ))}
             </div>
 
-            <div className="mt-16 text-center rounded-3xl border border-purple-500/25 bg-gradient-to-br from-purple-900/25 to-black/40 p-8 md:p-12">
+            <div className="mt-16 text-center rounded-3xl border border-purple-500/25 bg-linear-to-br from-purple-900/25 to-black/40 p-8 md:p-12">
               <h2 className="text-2xl md:text-3xl font-bold text-white">
                 Still have a question?
               </h2>
@@ -100,7 +100,7 @@ export default function FaqPage() {
                 any time zone.
               </p>
               <Link href="/contact">
-                <button className="mt-7 px-7 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform">
+                <button className="mt-7 px-7 py-3 rounded-full bg-linear-to-r from-purple-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition-transform">
                   Contact Us
                 </button>
               </Link>
